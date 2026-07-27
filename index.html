@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>本草奇探 · 场景资产图集</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC","STSong","Songti SC",serif;line-height:1.7;overflow-x:hidden}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#0a0a14}
+::-webkit-scrollbar-thumb{background:rgba(160,180,130,.25);border-radius:3px}
+
+/* ===== Password Gate ===== */
+.pw-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:#0a0a14;z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column}
+.pw-overlay.hidden{display:none}
+.pw-box{text-align:center;padding:60px 40px;border:1px solid rgba(160,180,130,.1);border-radius:8px;background:rgba(255,255,255,.01);max-width:400px}
+.pw-box h2{font-size:28px;color:#c8d8b0;letter-spacing:.15em;margin-bottom:24px;font-weight:400}
+.pw-box input{width:100%;padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(160,180,130,.2);border-radius:4px;color:#ede4d4;font-size:16px;text-align:center;font-family:inherit;outline:none;letter-spacing:.1em}
+.pw-box input:focus{border-color:rgba(160,200,120,.4)}
+.pw-box .pw-error{color:rgba(220,140,120,.6);font-size:12px;margin-top:12px;display:none;letter-spacing:.08em}
+
+/* ===== Sidebar ===== */
+.sidebar{position:fixed;top:0;left:0;width:200px;height:100vh;background:linear-gradient(180deg,#0d0d1f 0%,#0a0a14 100%);border-right:1px solid rgba(160,180,130,.08);z-index:100;overflow-y:auto;padding-bottom:40px}
+.sidebar-logo{padding:32px 20px 24px;text-align:center}
+.sidebar-logo .title{font-size:17px;font-weight:700;color:#c8d8b0;letter-spacing:.15em;text-shadow:0 0 30px rgba(140,180,100,.2)}
+.sidebar-logo .sub{font-size:10px;color:rgba(160,180,130,.45);letter-spacing:.15em;margin-top:4px}
+.sidebar-nav{padding:0 16px}
+.sidebar-nav a{display:block;padding:8px 14px;font-size:13px;color:rgba(200,180,150,.55);text-decoration:none;border-radius:4px;transition:all .2s;margin-bottom:2px}
+.sidebar-nav a:hover,.sidebar-nav a.active{color:#e0d4b8;background:rgba(160,200,120,.08)}
+.sidebar-nav .nav-major{font-size:11px;color:rgba(160,180,130,.4);letter-spacing:.15em;padding:18px 14px 4px;border-top:1px solid rgba(160,180,130,.08);margin-top:4px}
+.sidebar-nav .nav-sub{padding-left:28px;font-size:12px}
+
+/* ===== Main ===== */
+.main{margin-left:200px;min-height:100vh}
+.container{max-width:1400px;margin:0 auto;padding:0 32px}
+.hero{padding:60px 0 40px;text-align:center}
+.hero h1{font-size:48px;font-weight:700;color:#c8d8b0;letter-spacing:.2em;text-shadow:0 0 60px rgba(140,180,100,.2);margin-bottom:8px}
+.hero .subtitle{font-size:14px;color:rgba(170,190,140,.5);letter-spacing:.25em}
+.hero .project-info{font-size:12px;color:rgba(160,180,130,.35);margin-top:12px;letter-spacing:.1em}
+
+/* ===== Cat Divider ===== */
+.cat-divider{max-width:1400px;margin:50px auto 16px;padding:0 24px;display:flex;align-items:center;gap:16px}
+.cat-divider .line{flex:1;height:1px;background:rgba(160,180,130,.08)}
+.cat-divider .cat-label{font-size:13px;letter-spacing:.25em;color:rgba(160,180,130,.35);white-space:nowrap}
+
+/* ===== Section Title ===== */
+.section-title{max-width:1400px;margin:36px auto 20px;padding:0 24px;display:flex;align-items:center;gap:14px}
+.section-title .line{flex:1;height:1px;background:rgba(160,180,130,.1)}
+.section-title .label{font-size:14px;color:rgba(200,190,160,.55);letter-spacing:.15em;white-space:nowrap}
+
+/* ===== Card Grid ===== */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:20px;max-width:1400px;margin:0 auto 40px;padding:0 24px}
+.card{background:#111524;border:1px solid rgba(160,180,130,.08);border-radius:4px;overflow:hidden;cursor:pointer;transition:all .3s}
+.card:hover{border-color:rgba(160,200,120,.2);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.card img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.card-info{padding:10px 16px 14px}
+.card-name{font-size:14px;color:#d4c8a8;margin-bottom:2px}
+.card-desc{font-size:12px;color:rgba(210,190,160,.4)}
+.card .badge{display:inline-block;font-size:10px;background:rgba(160,200,120,.1);color:rgba(160,180,130,.5);padding:2px 8px;border-radius:3px;margin-left:8px;vertical-align:middle}
+
+/* ===== Lightbox ===== */
+.lightbox-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center}
+.lightbox-overlay.active{display:flex}
+.lightbox-overlay img{max-width:90vw;max-height:90vh;object-fit:contain;border:1px solid rgba(160,180,130,.1)}
+.lightbox-close{position:fixed;top:20px;right:30px;font-size:32px;color:rgba(200,180,150,.5);cursor:pointer;z-index:10000}
+.lightbox-close:hover{color:#e0d4b8}
+.lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);font-size:40px;color:rgba(200,180,150,.4);cursor:pointer;z-index:10000;user-select:none}
+.lightbox-nav:hover{color:#e0d4b8}
+.lightbox-nav.prev{left:30px}
+.lightbox-nav.next{right:30px}
+
+/* ===== Footer ===== */
+.footer{text-align:center;padding:40px 24px 60px;color:rgba(160,180,130,.3);font-size:11px;letter-spacing:.1em}
+</style>
+</head>
+<body>
+
+<!-- ═══ PASSWORD GATE ═══ -->
+<div class="pw-overlay" id="pwOverlay">
+  <div class="pw-box">
+    <h2>本 草 奇 探</h2>
+    <input type="password" id="pwInput" placeholder="请输入访问密码" autofocus onkeydown="if(event.key==='Enter')checkPassword()">
+    <div class="pw-error" id="pwError">密码错误，请重试</div>
+  </div>
+</div>
+
+<!-- ═══ SIDEBAR ═══ -->
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="title">本 草 奇 探</div>
+    <div class="sub">场景资产 · EP01-EP03</div>
+  </div>
+  <div class="sidebar-nav">
+    <a href="#top" data-nav="top">▸ 页面顶部</a>
+    <div class="nav-major">成华集团</div>
+    <a href="#sec-chenghua-parking" data-nav="parking">🅿️ 地下停车场</a>
+    <a href="#sec-chenghua-building" data-nav="building">🏢 写字楼</a>
+    <a href="#sec-chenghua-office" data-nav="office">💼 办公区</a>
+    <a href="#sec-chenghua-zen" data-nav="zen">🧘 正念空间</a>
+    <div class="nav-major">采风香堂</div>
+    <a href="#sec-caifeng-outside" data-nav="caifeng-out">🏠 外立面</a>
+    <a href="#sec-caifeng-f1" data-nav="caifeng-f1">🪴 一层营业</a>
+    <a href="#sec-caifeng-f2" data-nav="caifeng-f2">🔬 二层实验</a>
+    <a href="#sec-caifeng-f3" data-nav="caifeng-f3">🛋️ 三层生活</a>
+    <a href="#sec-caifeng-f4" data-nav="caifeng-f4">🌺 四层花房</a>
+    <div class="nav-major">城市空间</div>
+    <a href="#sec-city-home" data-nav="city-home">🏚️ 住宅</a>
+    <a href="#sec-city-hospital" data-nav="city-hosp">🏥 医院</a>
+    <a href="#sec-city-campus" data-nav="city-campus">🎓 美院</a>
+    <a href="#sec-city-street" data-nav="city-street">🌃 老街/夜路</a>
+    <div class="nav-major">渊木深处</div>
+    <a href="#sec-yuanmu" data-nav="yuanmu">🌑 地下空间</a>
+  </div>
+</nav>
+
+<!-- ═══ MAIN ═══ -->
+<div class="main" id="top">
+<div class="container">
+
+  <div class="hero">
+    <h1>本 草 奇 探</h1>
+    <div class="subtitle">EP01-EP03 · 场景美术资产图集</div>
+    <div class="project-info">第一单元《渊木》· 东方都市奇幻现实主义 · 55 张场景（含备选版本）</div>
+  </div>
+
+  <!-- Content rendered by JS -->
+  <div id="content-root"></div>
+
+  <div class="footer">
+    不思异：本草奇探 · EP01-EP03 场景资产图集<br>
+    成华集团 · 采风香堂 · 城市空间 · 渊木深处 · 55 张
+  </div>
+
+</div>
+</div>
+
+<!-- ═══ LIGHTBOX ═══ -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <span class="lightbox-nav prev" onclick="navLightbox(-1)">‹</span>
+  <span class="lightbox-nav next" onclick="navLightbox(1)">›</span>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+// ===== Password Gate =====
+(function(){
+  var HASH = "019be397cf10ba2e242d7507db0852b1dcab423c62bd150024ef1333a68136aa";
+  if(sessionStorage.getItem("_pw_ok") === HASH){
+    document.getElementById("pwOverlay").classList.add("hidden");
+    return;
+  }
+  async function sha256(m){var e=new TextEncoder().encode(m);var d=await crypto.subtle.digest("SHA-256",e);return Array.from(new Uint8Array(d)).map(function(b){return b.toString(16).padStart(2,"0")}).join("")}
+  window.checkPassword = function(){
+    var v = document.getElementById("pwInput").value;
+    sha256(v).then(function(h){
+      if(h === HASH){
+        sessionStorage.setItem("_pw_ok", HASH);
+        document.getElementById("pwOverlay").classList.add("hidden");
+        document.getElementById("pwError").style.display = "none";
+      } else {
+        document.getElementById("pwError").style.display = "block";
+        document.getElementById("pwInput").value = "";
+      }
+    });
+  };
+})();
+
+// ===== Scene Data =====
+var scenes = [
+  // ── 成华集团 · 地下停车场 ──
+  {file:"1A地下停车场总貌.jpg",name:"地下停车场总貌",desc:"EP01 黄雅悦消失前最后一次出现的地点",section:"chenghua-parking"},
+  {file:"1A地下停车场总貌-备.jpg",name:"地下停车场总貌（备选）",desc:"备选版本",section:"chenghua-parking",badge:"备"},
+  {file:"1B地下停车场电梯厅.jpg",name:"停车场电梯厅",desc:"通往成华集团大堂的过渡空间",section:"chenghua-parking"},
+  {file:"1C通风管线区域_气味追踪点.jpg",name:"通风管线·气味追踪点",desc:"程雨馨追踪异常植物气味的入口",section:"chenghua-parking"},
+  {file:"1C通风管线区域_气味追踪点-备.jpg",name:"通风管线（备选）",desc:"备选版本",section:"chenghua-parking",badge:"备"},
+
+  // ── 成华集团 · 写字楼 ──
+  {file:"2A成华集团写字楼外立面.jpg",name:"成华集团外立面",desc:"现代企业总部·冷蓝灰玻璃幕墙",section:"chenghua-building"},
+  {file:"2A成华集团写字楼外立面-备.jpg",name:"成华集团外立面（备选）",desc:"备选版本",section:"chenghua-building",badge:"备"},
+  {file:"2B成华集团大堂.jpg",name:"成华集团大堂",desc:"正念计划的企业门面",section:"chenghua-building"},
+  {file:"2B成华集团大堂-备.jpg",name:"成华集团大堂（备选）",desc:"备选版本",section:"chenghua-building",badge:"备"},
+
+  // ── 成华集团 · 办公区 ──
+  {file:"3A成华集团办公大厅总貌.jpg",name:"办公大厅总貌",desc:"开放式办公·正念计划执行层",section:"chenghua-office"},
+  {file:"3A成华集团办公大厅总貌-备.jpg",name:"办公大厅（备选）",desc:"备选版本",section:"chenghua-office",badge:"备"},
+  {file:"3B工位局部_员工视角.jpg",name:"工位局部·员工视角",desc:"黄雅悦工位·灯盏蕈拟态事件第一现场",section:"chenghua-office"},
+  {file:"3C会议室.jpg",name:"会议室",desc:"正念计划核心决策空间",section:"chenghua-office"},
+  {file:"3D电梯厅_走廊.jpg",name:"电梯厅·走廊",desc:"成华集团内部动线",section:"chenghua-office"},
+  {file:"3D电梯厅_走廊-备.jpg",name:"电梯厅·走廊（备选）",desc:"备选版本",section:"chenghua-office",badge:"备"},
+
+  // ── 成华集团 · 正念空间 ──
+  {file:"4A正念空间总貌.jpg",name:"正念空间总貌",desc:"成华集团员工的身心调节中心",section:"chenghua-zen"},
+  {file:"4B呼吸训练区.jpg",name:"呼吸训练区",desc:"渊木感染通过正念课程扩散",section:"chenghua-zen"},
+  {file:"4C休息角_水吧.jpg",name:"休息角·水吧",desc:"感染者在不知不觉中成为宿主",section:"chenghua-zen"},
+  {file:"4C休息角_水吧-备.jpg",name:"休息角·水吧（备选）",desc:"备选版本",section:"chenghua-zen",badge:"备"},
+
+  // ── 采风香堂 · 外立面 ──
+  {file:"5A采风香堂外立面总貌.jpg",name:"采风香堂外立面",desc:"隐匿于城市街区中的植物研究基地",section:"caifeng-out"},
+  {file:"5B采风香堂建筑总图_概念总览.jpg",name:"建筑总图·概念总览",desc:"四层空间功能分布一览",section:"caifeng-out"},
+
+  // ── 采风香堂 · 一层营业 ──
+  {file:"5C一层营业层总貌.jpg",name:"一层营业层总貌",desc:"对外香品零售·城市居民入口",section:"caifeng-f1"},
+  {file:"5C一层营业层总貌-备.jpg",name:"一层营业层（备选）",desc:"备选版本",section:"caifeng-f1",badge:"备"},
+  {file:"5D一层客户接待区.jpg",name:"客户接待区",desc:"异常事件委托的第一站",section:"caifeng-f1"},
+
+  // ── 采风香堂 · 二层工作实验层 ──
+  {file:"5E二层工作实验层总貌.jpg",name:"二层工作实验层总貌",desc:"核心研究区·异常植物分析中心",section:"caifeng-f2"},
+  {file:"5E二层工作实验层总貌-备.jpg",name:"二层实验层（备选A）",desc:"备选版本",section:"caifeng-f2",badge:"备"},
+  {file:"5E二层工作实验层总貌-备2.jpg",name:"二层实验层（备选B）",desc:"备选版本2",section:"caifeng-f2",badge:"备"},
+  {file:"5F萧子期工作区.jpg",name:"萧子期工作区",desc:"制香台·《蕈谱》手稿·旧钢笔·样本盒",section:"caifeng-f2"},
+  {file:"5F萧子期工作区-备.jpg",name:"萧子期工作区（备选）",desc:"备选版本",section:"caifeng-f2",badge:"备"},
+  {file:"5G成语馨分析区-备.jpg",name:"程雨馨分析区",desc:"气味标签墙·异常植物图谱",section:"caifeng-f2",badge:"备"},
+  {file:"5H陈宇晨设备区.jpg",name:"陈宇晨设备区",desc:"改造工坊·千面昙薄膜研发台",section:"caifeng-f2"},
+  {file:"5H陈宇晨设备区-备.jpg",name:"陈宇晨设备区（备选）",desc:"备选版本",section:"caifeng-f2",badge:"备"},
+
+  // ── 采风香堂 · 三层生活 ──
+  {file:"5I三层生活社交层总貌.jpg",name:"三层生活社交层总貌",desc:"三人组日常起居·虹姐的客厅",section:"caifeng-f3"},
+  {file:"5I三层生活社交层总貌-备.jpg",name:"三层生活层（备选）",desc:"备选版本",section:"caifeng-f3",badge:"备"},
+  {file:"5J卧室之一（可泛用）.jpg",name:"卧室之一",desc:"可泛用于任一主角的起居空间",section:"caifeng-f3"},
+  {file:"5J卧室之一（可泛用）-备.jpg",name:"卧室（备选）",desc:"备选版本",section:"caifeng-f3",badge:"备"},
+
+  // ── 采风香堂 · 四层花房 ──
+  {file:"5K四层屋顶花房总貌.jpg",name:"四层屋顶花房总貌",desc:"异常植物培育与观察中心",section:"caifeng-f4"},
+  {file:"5L异常植物观察区（花房内）.jpg",name:"异常植物观察区",desc:"花房内部·渊木样本保存区",section:"caifeng-f4"},
+  {file:"5L异常植物观察区（花房内）-备.jpg",name:"异常植物观察区（备选）",desc:"备选版本",section:"caifeng-f4",badge:"备"},
+
+  // ── 城市空间 · 住宅 ──
+  {file:"6A普通年轻人出租屋.jpg",name:"普通年轻人出租屋",desc:"程雨馨作为美院学生的日常居所",section:"city-home"},
+  {file:"7A林勇住宅总貌.jpg",name:"林勇住宅总貌",desc:"第一案受害者·渊木感染源头之一",section:"city-home"},
+
+  // ── 城市空间 · 医院 ──
+  {file:"8A医院走廊.jpg",name:"医院走廊",desc:"灯盏蕈受害者送医场景",section:"city-hospital"},
+  {file:"8A医院走廊-备.jpg",name:"医院走廊（备选）",desc:"备选版本",section:"city-hospital",badge:"备"},
+  {file:"8B病房.jpg",name:"病房",desc:"黄雅悦恢复观察室",section:"city-hospital"},
+
+  // ── 城市空间 · 美院 ──
+  {file:"9A美院校园外部.jpg",name:"美院校园外部",desc:"程雨馨的学校·白日正常感",section:"city-campus"},
+  {file:"9A美院校园外部-备.jpg",name:"美院校园外部（备选）",desc:"备选版本",section:"city-campus",badge:"备"},
+  {file:"9B礼堂_发布会空间.jpg",name:"礼堂·发布会空间",desc:"EP01 毕业典礼·黄雅悦学士服场景",section:"city-campus"},
+
+  // ── 城市空间 · 老街/夜路 ──
+  {file:"12A老街过渡空间.jpg",name:"老街过渡空间",desc:"城市旧区·渊木感染蔓延边界",section:"city-street"},
+  {file:"12A老街过渡空间-备.jpg",name:"老街过渡空间（备选）",desc:"备选版本",section:"city-street",badge:"备"},
+  {file:"12B城市夜路.jpg",name:"城市夜路",desc:"EP01 雨夜追踪·异常植物阴影",section:"city-street"},
+
+  // ── 渊木深处 ──
+  {file:"10A地下设备层总貌.jpg",name:"地下设备层总貌",desc:"成华集团地下·渊木感染核心区域",section:"yuanmu"},
+  {file:"10A地下设备层总貌-备.jpg",name:"地下设备层（备选）",desc:"备选版本",section:"yuanmu",badge:"备"},
+  {file:"11A渊木核心空间总貌.jpg",name:"渊木核心空间总貌",desc:"根系网络中心·异常植物母体所在",section:"yuanmu"},
+  {file:"11A渊木核心空间总貌-备.jpg",name:"渊木核心空间（备选）",desc:"备选版本",section:"yuanmu",badge:"备"},
+  {file:"11B渊木局部_根系细节.jpg",name:"渊木局部·根系细节",desc:"异常植物微观·根须与情绪共生",section:"yuanmu"},
+];
+
+// ===== Section labels =====
+var sectionLabels = {
+  "chenghua-parking":  "🅿️ 成华集团 · 地下停车场",
+  "chenghua-building": "🏢 成华集团 · 写字楼",
+  "chenghua-office":   "💼 成华集团 · 办公区",
+  "chenghua-zen":      "🧘 成华集团 · 正念空间",
+  "caifeng-out":       "🏠 采风香堂 · 外立面",
+  "caifeng-f1":        "🪴 采风香堂 · 一层营业",
+  "caifeng-f2":        "🔬 采风香堂 · 二层实验",
+  "caifeng-f3":        "🛋️ 采风香堂 · 三层生活",
+  "caifeng-f4":        "🌺 采风香堂 · 四层花房",
+  "city-home":         "🏚️ 城市空间 · 住宅",
+  "city-hospital":     "🏥 城市空间 · 医院",
+  "city-campus":       "🎓 城市空间 · 美院",
+  "city-street":       "🌃 城市空间 · 老街/夜路",
+  "yuanmu":            "🌑 渊木深处 · 地下空间"
+};
+
+// ===== Render content =====
+var root = document.getElementById("content-root");
+var currentSection = null;
+var secIdMap = {
+  "chenghua-parking":"sec-chenghua-parking",
+  "chenghua-building":"sec-chenghua-building",
+  "chenghua-office":"sec-chenghua-office",
+  "chenghua-zen":"sec-chenghua-zen",
+  "caifeng-out":"sec-caifeng-outside",
+  "caifeng-f1":"sec-caifeng-f1",
+  "caifeng-f2":"sec-caifeng-f2",
+  "caifeng-f3":"sec-caifeng-f3",
+  "caifeng-f4":"sec-caifeng-f4",
+  "city-home":"sec-city-home",
+  "city-hospital":"sec-city-hospital",
+  "city-campus":"sec-city-campus",
+  "city-street":"sec-city-street",
+  "yuanmu":"sec-yuanmu"
+};
+
+scenes.forEach(function(s){
+  if(s.section !== currentSection){
+    currentSection = s.section;
+    var sid = secIdMap[s.section] || ("sec-"+s.section);
+    root.insertAdjacentHTML("beforeend",
+      '<div class="cat-divider" id="'+sid+'"><div class="line"></div><span class="cat-label">'+sectionLabels[s.section]+'</span><div class="line"></div></div>'+
+      '<div class="section-title"><div class="line"></div><span class="label">'+sectionLabels[s.section]+'</span><div class="line"></div></div>'+
+      '<div class="card-grid" id="grid-'+s.section+'">'
+    );
+    currentGridId = "grid-"+s.section;
+  }
+  var badge = s.badge ? '<span class="badge">'+s.badge+'</span>' : '';
+  var grid = document.getElementById("grid-"+s.section);
+  grid.insertAdjacentHTML("beforeend",
+    '<div class="card" onclick="openLightbox(this.querySelector(\'img\'),\''+s.section+'\')">'+
+      '<img src="'+s.file+'" alt="'+s.name+'" loading="lazy">'+
+      '<div class="card-info"><div class="card-name">'+s.name+badge+'</div><div class="card-desc">'+s.desc+'</div></div>'+
+    '</div>'
+  );
+});
+
+// ===== Lightbox =====
+var currentImages = [];
+var currentIndex = 0;
+
+function openLightbox(img, groupId){
+  var grid = document.getElementById("grid-" + groupId);
+  if(!grid) return;
+  var imgs = grid.querySelectorAll("img");
+  currentImages = Array.from(imgs).map(function(i){return i.src});
+  currentIndex = currentImages.indexOf(img.src);
+  if(currentIndex < 0) currentIndex = 0;
+  showLightbox();
+}
+
+function showLightbox(){
+  document.getElementById("lightboxImg").src = currentImages[currentIndex];
+  document.getElementById("lightbox").classList.add("active");
+}
+
+function closeLightbox(e){
+  if(e && e.target !== document.getElementById("lightbox") && e.target.tagName !== "IMG") return;
+  document.getElementById("lightbox").classList.remove("active");
+}
+
+function navLightbox(dir){
+  currentIndex = (currentIndex + dir + currentImages.length) % currentImages.length;
+  showLightbox();
+}
+
+document.addEventListener("keydown", function(e){
+  if(!document.getElementById("lightbox").classList.contains("active")) return;
+  if(e.key === "Escape") closeLightbox();
+  if(e.key === "ArrowLeft") navLightbox(-1);
+  if(e.key === "ArrowRight") navLightbox(1);
+});
+
+// ===== Scroll spy =====
+var navLinks = document.querySelectorAll(".sidebar-nav a[data-nav]");
+var sectionMap = {
+  "top":"#top",
+  "parking":"#sec-chenghua-parking",
+  "building":"#sec-chenghua-building",
+  "office":"#sec-chenghua-office",
+  "zen":"#sec-chenghua-zen",
+  "caifeng-out":"#sec-caifeng-outside",
+  "caifeng-f1":"#sec-caifeng-f1",
+  "caifeng-f2":"#sec-caifeng-f2",
+  "caifeng-f3":"#sec-caifeng-f3",
+  "caifeng-f4":"#sec-caifeng-f4",
+  "city-home":"#sec-city-home",
+  "city-hosp":"#sec-city-hospital",
+  "city-campus":"#sec-city-campus",
+  "city-street":"#sec-city-street",
+  "yuanmu":"#sec-yuanmu"
+};
+
+window.addEventListener("scroll", function(){
+  var scrollPos = window.scrollY + 120;
+  var current = "top";
+  for(var key in sectionMap){
+    var el = document.querySelector(sectionMap[key]);
+    if(el && el.offsetTop <= scrollPos) current = key;
+  }
+  navLinks.forEach(function(a){
+    a.classList.toggle("active", a.getAttribute("data-nav") === current);
+  });
+});
+</script>
+</body>
+</html>
