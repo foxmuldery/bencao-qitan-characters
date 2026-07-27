@@ -21,6 +21,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
 .sidebar-nav a{display:block;padding:8px 14px;font-size:13px;color:rgba(200,180,150,.55);text-decoration:none;border-radius:4px;transition:all .2s;margin-bottom:2px}
 .sidebar-nav a:hover,.sidebar-nav a.active{color:#e0d4b8;background:rgba(160,200,120,.08)}
 .sidebar-nav .nav-major{font-size:11px;color:rgba(200,170,120,.4);letter-spacing:.15em;padding:18px 14px 4px;border-top:1px solid rgba(180,160,120,.08);margin-top:4px}
+.sidebar-nav .nav-sub{padding-left:28px;font-size:12px}
 
 /* ===== Main ===== */
 .main{margin-left:200px;min-height:100vh}
@@ -115,7 +116,9 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
     <div class="nav-major">项目圣经</div>
     <a href="#bible-concept" data-nav="bible-concept">🌿 美术圣经</a>
     <div class="nav-major">主角三人组</div>
-    <a href="#sec-xiaoziqi" data-nav="xiaoziqi">🔬 萧子期 · 制香师</a>
+    <a href="#sec-xiaoziqi" data-nav="xiaoziqi">🔬 萧子期 · 基础</a>
+    <a href="#sec-xiaoziqi-daily" data-nav="xiaoziqi-daily" class="nav-sub">👔 日常造型</a>
+    <a href="#sec-xiaoziqi-case" data-nav="xiaoziqi-case" class="nav-sub">🔍 探案造型</a>
     <a href="#sec-chenyuchen" data-nav="chenyuchen">🔧 陈宇晨 · 发明者</a>
     <a href="#sec-chengyuxin" data-nav="chengyuxin">🌸 程雨馨 · 感知者</a>
     <div class="nav-major">核心配角</div>
@@ -193,7 +196,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
   </div>
 
   <div id="sec-xiaoziqi"></div>
-  <div class="section-title"><div class="line"></div><span class="label">🔬 萧子期 · 造型资产（5张）</span><div class="line"></div></div>
+  <div class="section-title"><div class="line"></div><span class="label">🔬 萧子期 · 基础造型（5张）</span><div class="line"></div></div>
   <div class="card-grid" id="grid-xiaoziqi">
     <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi')">
       <img src="萧子期_正面全身.jpg" alt="萧子期 正面全身" loading="lazy">
@@ -214,6 +217,58 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
     <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi')">
       <img src="萧子期_动态站姿.jpg" alt="萧子期 动态站姿" loading="lazy">
       <div class="card-info"><div class="card-name">动态站姿</div><div class="card-desc">调查状态 · 采菌刀+药烟管+样本包</div></div>
+    </div>
+  </div>
+
+  <!-- 萧子期 · 日常造型 -->
+  <div id="sec-xiaoziqi-daily"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👔 萧子期 · 日常造型（5张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-xiaoziqi-daily">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-daily')">
+      <img src="萧子期_日常_正面全身.jpg" alt="萧子期 日常 正面全身" loading="lazy">
+      <div class="card-info"><div class="card-name">正面全身</div><div class="card-desc">香堂日常 · 深蓝灰外套+棉麻衬衫+功能裤</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-daily')">
+      <img src="萧子期_日常_背面全身.jpg" alt="萧子期 日常 背面全身" loading="lazy">
+      <div class="card-info"><div class="card-name">背面全身</div><div class="card-desc">背后视角 · 日常装备轻量化</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-daily')">
+      <img src="萧子期_日常_侧面全身.jpg" alt="萧子期 日常 侧面全身" loading="lazy">
+      <div class="card-info"><div class="card-name">侧面全身</div><div class="card-desc">侧面轮廓 · 安静克制气质</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-daily')">
+      <img src="萧子期_日常_特写细节.jpg" alt="萧子期 日常 特写细节" loading="lazy">
+      <div class="card-info"><div class="card-name">特写细节</div><div class="card-desc">面部+上半身 · 《蕈谱》/旧钢笔/香具</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-daily')">
+      <img src="萧子期_日常_动态站姿.jpg" alt="萧子期 日常 动态站姿" loading="lazy">
+      <div class="card-info"><div class="card-name">动态站姿</div><div class="card-desc">日常工作姿态 · 制香中</div></div>
+    </div>
+  </div>
+
+  <!-- 萧子期 · 探案造型 -->
+  <div id="sec-xiaoziqi-case"></div>
+  <div class="section-title"><div class="line"></div><span class="label">🔍 萧子期 · 探案造型（5张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-xiaoziqi-case">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-case')">
+      <img src="萧子期_探案_正面全身.jpg" alt="萧子期 探案 正面全身" loading="lazy">
+      <div class="card-info"><div class="card-name">正面全身</div><div class="card-desc">外勤调查 · 增加样本包+采菌刀+药烟管</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-case')">
+      <img src="萧子期_探案_背面全身.jpg" alt="萧子期 探案 背面全身" loading="lazy">
+      <div class="card-info"><div class="card-name">背面全身</div><div class="card-desc">背后视角 · 装备包+中和剂可见</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-case')">
+      <img src="萧子期_探案_侧面全身.jpg" alt="萧子期 探案 侧面全身" loading="lazy">
+      <div class="card-info"><div class="card-name">侧面全身</div><div class="card-desc">侧面轮廓 · 行动状态</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-case')">
+      <img src="萧子期_探案_特写细节.jpg" alt="萧子期 探案 特写细节" loading="lazy">
+      <div class="card-info"><div class="card-name">特写细节</div><div class="card-desc">面部+装备细节 · 采菌刀+药烟管</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-case')">
+      <img src="萧子期_探案_动态站姿.jpg" alt="萧子期 探案 动态站姿" loading="lazy">
+      <div class="card-info"><div class="card-name">动态站姿</div><div class="card-desc">调查行动姿态 · 蹲姿采菌</div></div>
     </div>
   </div>
 
@@ -319,7 +374,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
   <!-- Footer -->
   <div class="footer">
     不思异：本草奇探 · 角色造型与视觉资产图集<br>
-    3 位主角 · 15 张造型已入库 · 资产持续更新中 · 陈宇晨/萧子期/程雨馨各5张
+    3 位主角 · 25 张造型已入库 · 萧子期3套(基础/日常/探案)各5张 · 陈宇晨/程雨馨各5张
   </div>
 
 </div>
@@ -416,6 +471,8 @@ var sectionMap = {
   "top":"#top",
   "bible-concept":"#bible-concept",
   "xiaoziqi":"#sec-xiaoziqi",
+  "xiaoziqi-daily":"#sec-xiaoziqi-daily",
+  "xiaoziqi-case":"#sec-xiaoziqi-case",
   "chenyuchen":"#sec-chenyuchen",
   "chengyuxin":"#sec-chengyuxin",
   "hongjie":"#sec-hongjie"
