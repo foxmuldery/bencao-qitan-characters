@@ -94,6 +94,8 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
   </div>
   <div class="sidebar-nav">
     <a href="#top" data-nav="top">▸ 页面顶部</a>
+    <div class="nav-major">开场</div>
+    <a href="#sec-opening" data-nav="opening">🌿 植物博物馆</a>
     <div class="nav-major">成华集团</div>
     <a href="#sec-chenghua-parking" data-nav="parking">🅿️ 地下停车场</a>
     <a href="#sec-chenghua-building" data-nav="building">🏢 写字楼</a>
@@ -122,7 +124,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
   <div class="hero">
     <h1>本 草 奇 探</h1>
     <div class="subtitle">EP01-EP03 · 场景美术资产图集</div>
-    <div class="project-info">第一单元《渊木》· 东方都市奇幻现实主义 · 55 张场景（含备选版本）</div>
+    <div class="project-info">第一单元《渊木》· 东方都市奇幻现实主义 · 67 张场景（含开场+备选版本）</div>
   </div>
 
   <!-- Content rendered by JS -->
@@ -130,7 +132,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
 
   <div class="footer">
     不思异：本草奇探 · EP01-EP03 场景资产图集<br>
-    成华集团 · 采风香堂 · 城市空间 · 渊木深处 · 55 张
+    成华集团 · 采风香堂 · 城市空间 · 渊木深处 · 67 张（含开场12张+备选版本）
   </div>
 
 </div>
@@ -170,6 +172,20 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
 
 // ===== Scene Data =====
 var scenes = [
+  // ── 开场 · 植物博物馆 ──
+  {file:"开场_01_植物博物馆外立面.png",name:"植物博物馆外立面",desc:"EP01冷启动·植物博物馆正门·故事世界入口",section:"opening"},
+  {file:"开场_02_植物博物馆建筑外观.png",name:"植物博物馆建筑外观",desc:"全景建筑·现代主义与东方自然融合",section:"opening"},
+  {file:"开场_03_植物博物馆大厅总貌.png",name:"植物博物馆大厅总貌",desc:"挑高大堂·阳光穿透玻璃穹顶",section:"opening"},
+  {file:"开场_04_植物博物馆穹顶空间.png",name:"穹顶空间",desc:"巨型穹顶下方·光与植物的神圣尺度",section:"opening"},
+  {file:"开场_05_植物博物馆展览区.png",name:"展览区总貌",desc:"标本展廊·城市居民日常参观",section:"opening"},
+  {file:"开场_06_植物博物馆纵深长廊.png",name:"纵深长廊",desc:"长焦纵深·植物的无限延伸感",section:"opening"},
+  {file:"开场_07_植物标本特写陈列.png",name:"植物标本特写陈列",desc:"玻璃柜中的异常植物标本·细节质感",section:"opening"},
+  {file:"开场_08_奇异植物展览区.png",name:"奇异植物展览区",desc:"罕见标本展区·暗示异常植物的存在",section:"opening"},
+  {file:"开场_09_博物馆暗室研究区.png",name:"博物馆暗室研究区",desc:"幕后科研空间·植物分类学氛围",section:"opening"},
+  {file:"开场_10_博物馆建筑细节.png",name:"博物馆建筑细节",desc:"建筑细部·材质与光影的冷峻质感",section:"opening"},
+  {file:"开场_11_地下工业通道.png",name:"地下工业通道",desc:"博物馆地下层·通往隐藏世界的暗示",section:"opening"},
+  {file:"开场_12_杂乱工作室走廊.png",name:"杂乱工作室走廊",desc:"研究者的工作痕迹·真实感与混乱美",section:"opening"},
+
   // ── 成华集团 · 地下停车场 ──
   {file:"1A地下停车场总貌.jpg",name:"地下停车场总貌",desc:"EP01 黄雅悦消失前最后一次出现的地点",section:"chenghua-parking"},
   {file:"1A地下停车场总貌-备.jpg",name:"地下停车场总貌（备选）",desc:"备选版本",section:"chenghua-parking",badge:"备"},
@@ -256,6 +272,7 @@ var scenes = [
 
 // ===== Section labels =====
 var sectionLabels = {
+  "opening":           "🌿 开场 · 植物博物馆",
   "chenghua-parking":  "🅿️ 成华集团 · 地下停车场",
   "chenghua-building": "🏢 成华集团 · 写字楼",
   "chenghua-office":   "💼 成华集团 · 办公区",
@@ -276,6 +293,7 @@ var sectionLabels = {
 var root = document.getElementById("content-root");
 var currentSection = null;
 var secIdMap = {
+  "opening":"sec-opening",
   "chenghua-parking":"sec-chenghua-parking",
   "chenghua-building":"sec-chenghua-building",
   "chenghua-office":"sec-chenghua-office",
@@ -353,6 +371,7 @@ document.addEventListener("keydown", function(e){
 var navLinks = document.querySelectorAll(".sidebar-nav a[data-nav]");
 var sectionMap = {
   "top":"#top",
+  "opening":"#sec-opening",
   "parking":"#sec-chenghua-parking",
   "building":"#sec-chenghua-building",
   "office":"#sec-chenghua-office",
