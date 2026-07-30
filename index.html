@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>本草奇探 · 道具资产图集</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",serif;line-height:1.6}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#0a0a14}
+::-webkit-scrollbar-thumb{background:rgba(160,180,130,.25);border-radius:3px}
+
+.pw-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:#0a0a14;z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column}
+.pw-overlay.hidden{display:none}
+.pw-box{text-align:center;padding:60px 40px;border:1px solid rgba(160,180,130,.1);border-radius:8px;background:rgba(255,255,255,.01);max-width:400px}
+.pw-box h2{font-size:28px;color:#c8d8b0;letter-spacing:.15em;margin-bottom:24px;font-weight:400}
+.pw-box input{width:100%;padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(160,180,130,.2);border-radius:4px;color:#ede4d4;font-size:16px;text-align:center;font-family:inherit;outline:none;letter-spacing:.1em}
+.pw-box input:focus{border-color:rgba(160,200,120,.4)}
+.pw-box .pw-error{color:rgba(220,140,120,.6);font-size:12px;margin-top:12px;display:none}
+
+.sidebar{position:fixed;top:0;left:0;width:190px;height:100vh;background:linear-gradient(180deg,#0d0d1f 0%,#0a0a14 100%);border-right:1px solid rgba(160,180,130,.08);z-index:100;overflow-y:auto;padding-bottom:40px}
+.sidebar-logo{padding:28px 16px 20px;text-align:center}
+.sidebar-logo .title{font-size:15px;font-weight:700;color:#c8d8b0;letter-spacing:.12em}
+.sidebar-logo .sub{font-size:10px;color:rgba(160,180,130,.4);letter-spacing:.12em;margin-top:4px}
+.sidebar-nav{padding:0 12px}
+.sidebar-nav a{display:block;padding:6px 12px;font-size:12px;color:rgba(200,180,150,.5);text-decoration:none;border-radius:4px;transition:all .2s}
+.sidebar-nav a:hover,.sidebar-nav a.active{color:#e0d4b8;background:rgba(160,200,120,.08)}
+.sidebar-nav .nav-major{font-size:10px;color:rgba(160,180,130,.35);letter-spacing:.15em;padding:16px 12px 4px;border-top:1px solid rgba(160,180,130,.06);margin-top:4px}
+
+.main{margin-left:190px;min-height:100vh}
+.hero{padding:50px 0 30px;text-align:center}
+.hero h1{font-size:42px;font-weight:700;color:#c8d8b0;letter-spacing:.18em;text-shadow:0 0 50px rgba(140,180,100,.18)}
+.hero .subtitle{font-size:13px;color:rgba(170,190,140,.45);letter-spacing:.2em;margin-top:8px}
+
+.cat-divider{max-width:1200px;margin:40px auto 12px;padding:0 24px;display:flex;align-items:center;gap:14px}
+.cat-divider .line{flex:1;height:1px;background:rgba(160,180,130,.06)}
+.cat-divider .cat-label{font-size:12px;letter-spacing:.2em;color:rgba(160,180,130,.3);white-space:nowrap}
+
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;max-width:1200px;margin:0 auto 30px;padding:0 24px}
+.card{background:#111524;border:1px solid rgba(160,180,130,.06);border-radius:4px;overflow:hidden;cursor:pointer;transition:all .2s}
+.card:hover{border-color:rgba(160,200,120,.15);transform:translateY(-2px)}
+.card img{width:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.card-info{padding:8px 14px 12px}
+.card-name{font-size:12px;color:#d4c8a8;line-height:1.4}
+.card .badge{display:inline-block;font-size:9px;background:rgba(160,200,120,.08);color:rgba(160,180,130,.4);padding:1px 6px;border-radius:3px;margin-left:6px;vertical-align:middle}
+
+.lightbox-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.94);z-index:9999;align-items:center;justify-content:center}
+.lightbox-overlay.active{display:flex}
+.lightbox-overlay img{max-width:90vw;max-height:90vh;object-fit:contain}
+.lightbox-close{position:fixed;top:20px;right:30px;font-size:30px;color:rgba(200,180,150,.5);cursor:pointer;z-index:10000}
+.lightbox-close:hover{color:#e0d4b8}
+.lightbox-nav{position:fixed;top:50%;font-size:36px;color:rgba(200,180,150,.3);cursor:pointer;z-index:10000;user-select:none}
+.lightbox-nav:hover{color:#e0d4b8}
+.lightbox-nav.prev{left:24px}
+.lightbox-nav.next{right:24px}
+
+.footer{text-align:center;padding:40px 24px 60px;color:rgba(160,180,130,.25);font-size:11px;letter-spacing:.1em}
+</style>
+</head>
+<body>
+
+<div class="pw-overlay" id="pwOverlay">
+  <div class="pw-box">
+    <h2>本 草 奇 探</h2>
+    <input type="password" id="pwInput" placeholder="请输入访问密码" autofocus onkeydown="if(event.key==='Enter')checkPassword()">
+    <div class="pw-error" id="pwError">密码错误，请重试</div>
+  </div>
+</div>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="title">道具资产</div>
+    <div class="sub">本草奇探·EP01-EP03</div>
+  </div>
+  <div class="sidebar-nav" id="sidebarNav"></div>
+</nav>
+
+<div class="main" id="top">
+  <div class="hero">
+    <h1>本 草 奇 探</h1>
+    <div class="subtitle">EP01-EP03 · 全道具设计资产图集</div>
+  </div>
+  <div id="content-root"></div>
+  <div class="footer">本草奇探 EP01-EP03 · 8类90件道具 · 资产持续更新中</div>
+</div>
+
+<div class="lightbox-overlay" id="lightbox" onclick="this.classList.remove('active')">
+  <span class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('active')">&times;</span>
+  <span class="lightbox-nav prev" onclick="navLightbox(-1)">‹</span>
+  <span class="lightbox-nav next" onclick="navLightbox(1)">›</span>
+  <img id="lightboxImg" src="">
+</div>
+
+<script>
+(function(){
+  var HASH="019be397cf10ba2e242d7507db0852b1dcab423c62bd150024ef1333a68136aa";
+  if(sessionStorage.getItem("_pw_ok")===HASH){document.getElementById("pwOverlay").classList.add("hidden");return}
+  async function sha256(m){var e=new TextEncoder().encode(m);var d=await crypto.subtle.digest("SHA-256",e);return Array.from(new Uint8Array(d)).map(function(b){return b.toString(16).padStart(2,"0")}).join("")}
+  window.checkPassword=function(){var v=document.getElementById("pwInput").value;sha256(v).then(function(h){if(h===HASH){sessionStorage.setItem("_pw_ok",HASH);document.getElementById("pwOverlay").classList.add("hidden")}else{document.getElementById("pwError").style.display="block";document.getElementById("pwInput").value=""}})}
+})();
+
+// ===== Category config =====
+var cats=[
+  {id:"seeds",name:"🪵 特殊道具",sec:"sec-seeds"},
+  {id:"A",name:"🎒 A·主角人物专属道具",sec:"sec-A"},
+  {id:"B",name:"🏠 B·采风香堂功能道具",sec:"sec-B"},
+  {id:"C",name:"🏢 C·成华集团办公道具",sec:"sec-C"},
+  {id:"D",name:"🅿️ D·地下停车场道具",sec:"sec-D"},
+  {id:"E",name:"🏥 E·现实生活道具",sec:"sec-E"},
+  {id:"F",name:"📄 F·纸本文书道具",sec:"sec-F"},
+  {id:"G",name:"🌱 G·异常植物道具",sec:"sec-G"},
+  {id:"H",name:"🖼️ H·气氛背景道具",sec:"sec-H"}
+];
+
+// ===== Props data =====
+var items=[
+  {file:"种钉_核心透视图.jpg",name:"种钉",desc:"萧子期核心武器·黑檀古木+藤蔓+翡翠树脂",cat:"seeds"},
+
+  {file:"A01_萧子期旧钢笔.png",name:"萧子期旧钢笔",cat:"A"},
+  {file:"A01_萧子期旧钢笔_备.png",name:"萧子期旧钢笔（备选）",cat:"A",bk:"备"},
+  {file:"A02_萧子期植物笔记本_配方本.png",name:"萧子期植物笔记本·配方本",cat:"A"},
+  {file:"A02_萧子期植物笔记本_配方本_备.png",name:"配方本（备选）",cat:"A",bk:"备"},
+  {file:"A03_萧子期失败香品样本.png",name:"萧子期失败香品样本",cat:"A"},
+  {file:"A03_萧子期失败香品样本_备.png",name:"失败香品样本（备选）",cat:"A",bk:"备"},
+  {file:"A04_成语馨植物纹样草稿组.png",name:"程雨馨植物纹样草稿组",cat:"A"},
+  {file:"A04_成语馨植物纹样草稿组_备.png",name:"植物纹样草稿（备选）",cat:"A",bk:"备"},
+  {file:"A05_成语馨色卡_材料样本夹.png",name:"程雨馨色卡·材料样本夹",cat:"A"},
+  {file:"A05_成语馨色卡_材料样本夹_备.png",name:"色卡·样本夹（备选）",cat:"A",bk:"备"},
+  {file:"A06_陈宇晨DIY工具箱.png",name:"陈宇晨DIY工具箱",cat:"A"},
+  {file:"A06_陈宇晨DIY工具箱_备.png",name:"DIY工具箱（备选）",cat:"A",bk:"备"},
+  {file:"A07_陈宇晨拆开的旧电子设备组.png",name:"陈宇晨拆开的旧电子设备组",cat:"A"},
+  {file:"A07_陈宇晨拆开的旧电子设备组_备.png",name:"旧电子设备组（备选）",cat:"A",bk:"备"},
+
+  {file:"B01_香品展示瓶组.png",name:"香品展示瓶组",cat:"B"},
+  {file:"B01_香品展示瓶组_备1.png",name:"香品展示瓶组（备选1）",cat:"B",bk:"备"},
+  {file:"B01_香品展示瓶组_备2.png",name:"香品展示瓶组（备选2）",cat:"B",bk:"备"},
+  {file:"B02_植物样本观察柜内容组.png",name:"植物样本观察柜内容组",cat:"B"},
+  {file:"B02_植物样本观察柜内容组_备1.png",name:"样本观察柜（备选1）",cat:"B",bk:"备"},
+  {file:"B02_植物样本观察柜内容组_备2.png",name:"样本观察柜（备选2）",cat:"B",bk:"备"},
+  {file:"B03_香堂包装材料组.png",name:"香堂包装材料组",cat:"B"},
+  {file:"B03_香堂包装材料组_备1.png",name:"包装材料组（备选1）",cat:"B",bk:"备"},
+  {file:"B03_香堂包装材料组_备2.png",name:"包装材料组（备选2）",cat:"B",bk:"备"},
+  {file:"B04_调香器具组.png",name:"调香器具组",cat:"B"},
+  {file:"B04_调香器具组_备1.png",name:"调香器具组（备选1）",cat:"B",bk:"备"},
+  {file:"B04_调香器具组_备2.png",name:"调香器具组（备选2）",cat:"B",bk:"备"},
+  {file:"B05_工作层资料墙_便签墙.png",name:"工作层资料墙·便签墙",cat:"B"},
+  {file:"B05_工作层资料墙_便签墙_备1.png",name:"资料墙·便签墙（备选1）",cat:"B",bk:"备"},
+  {file:"B05_工作层资料墙_便签墙_备2.png",name:"资料墙·便签墙（备选2）",cat:"B",bk:"备"},
+  {file:"B06_三层生活层游戏设备组.png",name:"三层游戏设备组",cat:"B"},
+  {file:"B06_三层生活层游戏设备组_备1.png",name:"游戏设备组（备选1）",cat:"B",bk:"备"},
+  {file:"B06_三层生活层游戏设备组_备2.png",name:"游戏设备组（备选2）",cat:"B",bk:"备"},
+  {file:"B07_三层厨房_夜宵道具组.png",name:"三层厨房·夜宵道具组",cat:"B"},
+  {file:"B07_三层厨房_夜宵道具组_备1.png",name:"厨房·夜宵道具（备选1）",cat:"B",bk:"备"},
+  {file:"B07_三层厨房_夜宵道具组_备2.png",name:"厨房·夜宵道具（备选2）",cat:"B",bk:"备"},
+  {file:"B08_屋顶花房培育架与喷雾系统.png",name:"屋顶花房培育架与喷雾系统",cat:"B"},
+  {file:"B08_屋顶花房培育架与喷雾系统_备1.png",name:"花房培育架（备选1）",cat:"B",bk:"备"},
+  {file:"B08_屋顶花房培育架与喷雾系统_备2.png",name:"花房培育架（备选2）",cat:"B",bk:"备"},
+  {file:"B09_异常植物隔离罩_观察罩.png",name:"异常植物隔离罩·观察罩",cat:"B"},
+  {file:"B09_异常植物隔离罩_观察罩_备1.png",name:"隔离罩·观察罩（备选1）",cat:"B",bk:"备"},
+  {file:"B09_异常植物隔离罩_观察罩_备2.png",name:"隔离罩·观察罩（备选2）",cat:"B",bk:"备"},
+
+  {file:"C01_企业宣传手册_员工手册.png",name:"企业宣传手册·员工手册",cat:"C"},
+  {file:"C01_企业宣传手册_员工手册_备.png",name:"宣传手册（备选）",cat:"C",bk:"备"},
+  {file:"C02_工位基础道具套组.png",name:"工位基础道具套组",cat:"C"},
+  {file:"C02_工位基础道具套组_备.png",name:"工位道具套组（备选）",cat:"C",bk:"备"},
+  {file:"C03_工牌_门禁卡.png",name:"工牌·门禁卡",cat:"C"},
+  {file:"C03_工牌_门禁卡_备.png",name:"工牌·门禁卡（备选）",cat:"C",bk:"备"},
+  {file:"C04_会议室企业文化板_白板内容.png",name:"企业文化板·白板内容",cat:"C"},
+  {file:"C04_会议室企业文化板_白板内容_备.png",name:"文化板·白板（备选）",cat:"C",bk:"备"},
+  {file:"C05_正念空间瑜伽垫与坐垫组.png",name:"正念空间瑜伽垫与坐垫组",cat:"C"},
+  {file:"C05_正念空间瑜伽垫与坐垫组_备.png",name:"瑜伽垫·坐垫组（备选）",cat:"C",bk:"备"},
+  {file:"C06_正念课程投影物料.png",name:"正念课程投影物料",cat:"C"},
+  {file:"C06_正念课程投影物料_备.png",name:"正念投影物料（备选）",cat:"C",bk:"备"},
+
+  {file:"D01_停车场导视牌与柱号系统_备.png",name:"停车场导视牌与柱号系统",cat:"D",bk:"备"},
+  {file:"D02_停车场清洁车_保洁工具_备.png",name:"停车场清洁车·保洁工具",cat:"D",bk:"备"},
+  {file:"D03_通风管线检修牌_设备标签_备.png",name:"通风管线检修牌·设备标签",cat:"D",bk:"备"},
+  {file:"D04_地下设备层阀门与控制面板组_备.png",name:"地下设备层阀门与控制面板组",cat:"D",bk:"备"},
+
+  {file:"E01_医院病房基础道具组.png",name:"医院病房基础道具组",cat:"E"},
+  {file:"E02_美院学生随身物组.png",name:"美院学生随身物组",cat:"E"},
+  {file:"E02_美院学生随身物组_备.png",name:"美院学生随身物（备选）",cat:"E",bk:"备"},
+  {file:"E03_普通出租屋生活道具组.png",name:"普通出租屋生活道具组",cat:"E"},
+  {file:"E03_普通出租屋生活道具组_备.png",name:"出租屋道具组（备选）",cat:"E",bk:"备"},
+  {file:"E04_林勇住宅衰败生活道具组.png",name:"林勇住宅衰败生活道具组",cat:"E"},
+  {file:"E04_林勇住宅衰败生活道具组_备.png",name:"林勇住宅道具（备选）",cat:"E",bk:"备"},
+
+  {file:"F01_案件调查资料夹.png",name:"案件调查资料夹",cat:"F"},
+  {file:"F01_案件调查资料夹_备.png",name:"案件调查资料夹（备选）",cat:"F",bk:"备"},
+  {file:"F02_植物编号卡_标签组.png",name:"植物编号卡·标签组",cat:"F"},
+  {file:"F02_植物编号卡_标签组_备.png",name:"编号卡·标签组（备选）",cat:"F",bk:"备"},
+  {file:"F03_成华集团宣传视频拍摄物料_展板.png",name:"宣传视频拍摄物料·展板",cat:"F"},
+  {file:"F03_成华集团宣传视频拍摄物料_展板_备.png",name:"宣传物料·展板（备选）",cat:"F",bk:"备"},
+
+  {file:"G01_怨灵木门板_木门污染版本.png",name:"怨灵木门板·污染版本",cat:"G"},
+  {file:"G01_怨灵木门板_木门污染版本_备.png",name:"怨灵木门板（备选）",cat:"G",bk:"备"},
+  {file:"G02_根须污染痕迹组.png",name:"根须污染痕迹组",cat:"G"},
+  {file:"G02_根须污染痕迹组_备.png",name:"根须污染痕迹（备选）",cat:"G",bk:"备"},
+  {file:"G03_绿色花粉_木屑状污染粉末.png",name:"绿色花粉·木屑状污染粉末",cat:"G"},
+  {file:"G03_绿色花粉_木屑状污染粉末_备.png",name:"绿色花粉·粉末（备选）",cat:"G",bk:"备"},
+  {file:"G04_渊木核心组织块_结节.png",name:"渊木核心组织块·结节",cat:"G"},
+  {file:"G04_渊木核心组织块_结节_备.png",name:"渊木核心组织块（备选）",cat:"G",bk:"备"},
+  {file:"G05_异常植物样本瓶.png",name:"异常植物样本瓶",cat:"G"},
+  {file:"G05_异常植物样本瓶_备.png",name:"异常植物样本瓶（备选）",cat:"G",bk:"备"},
+
+  {file:"H01_小型观叶植物与盆栽系统.png",name:"小型观叶植物与盆栽系统",cat:"H"},
+  {file:"H01_小型观叶植物与盆栽系统_备.png",name:"观叶植物·盆栽（备选）",cat:"H",bk:"备"},
+  {file:"H02_手办_娱乐陈设组.png",name:"手办·娱乐陈设组",cat:"H"},
+  {file:"H02_手办_娱乐陈设组_备.png",name:"手办·陈设组（备选）",cat:"H",bk:"备"},
+  {file:"H03_旧照片_家庭相框组.png",name:"旧照片·家庭相框组",cat:"H"},
+  {file:"H03_旧照片_家庭相框组_备.png",name:"旧照片·相框组（备选）",cat:"H",bk:"备"}
+];
+
+// ===== Render =====
+var root=document.getElementById("content-root");
+var nav=document.getElementById("sidebarNav");
+nav.innerHTML='<a href="#top">▸ 页面顶部</a>';
+
+cats.forEach(function(c){
+  nav.innerHTML+='<div class="nav-major">'+c.name.split('·')[0]+'</div><a href="#'+c.sec+'">'+c.name+'</a>';
+  root.insertAdjacentHTML("beforeend",
+    '<div class="cat-divider" id="'+c.sec+'"><div class="line"></div><span class="cat-label">'+c.name+'</span><div class="line"></div></div>'+
+    '<div class="card-grid" id="grid-'+c.id+'"></div>'
+  );
+});
+
+items.forEach(function(it){
+  var grid=document.getElementById("grid-"+it.cat);
+  if(!grid) return;
+  var badge=it.bk?'<span class="badge">'+it.bk+'</span>':'';
+  grid.insertAdjacentHTML("beforeend",
+    '<div class="card" onclick="openLightbox(this.querySelector(\'img\'),\''+it.cat+'\')">'+
+      '<img src="'+it.file+'" alt="'+it.name+'" loading="lazy">'+
+      '<div class="card-info"><div class="card-name">'+it.name+badge+'</div></div>'+
+    '</div>'
+  );
+});
+
+// ===== Lightbox =====
+var curImgs=[],curIdx=0;
+function openLightbox(img,gridId){
+  var g=document.getElementById("grid-"+gridId);
+  if(!g) return;
+  curImgs=Array.from(g.querySelectorAll("img")).map(function(i){return i.src});
+  curIdx=curImgs.indexOf(img.src);
+  if(curIdx<0) curIdx=0;
+  document.getElementById("lightboxImg").src=curImgs[curIdx];
+  document.getElementById("lightbox").classList.add("active");
+}
+function navLightbox(dir){
+  curIdx=(curIdx+dir+curImgs.length)%curImgs.length;
+  document.getElementById("lightboxImg").src=curImgs[curIdx];
+}
+document.addEventListener("keydown",function(e){
+  if(!document.getElementById("lightbox").classList.contains("active"))return;
+  if(e.key==="Escape")document.getElementById("lightbox").classList.remove("active");
+  if(e.key==="ArrowLeft")navLightbox(-1);
+  if(e.key==="ArrowRight")navLightbox(1);
+});
+
+// Scroll spy
+var nls=document.querySelectorAll(".sidebar-nav a[data-nav]");
+var sm={"top":"#top"};
+cats.forEach(function(c){sm[c.id]=("#"+c.sec)});
+window.addEventListener("scroll",function(){
+  var sp=window.scrollY+120,cur="top";
+  for(var k in sm){var el=document.querySelector(sm[k]);if(el&&el.offsetTop<=sp)cur=k}
+  nls.forEach(function(a){a.classList.toggle("active",a.getAttribute("data-nav")===cur)})
+});
+nls.forEach(function(a){a.setAttribute("data-nav",a.getAttribute("href").replace("#sec-","").replace("#","top"))});
+</script>
+</body>
+</html>
