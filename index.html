@@ -92,6 +92,19 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
 /* ===== Placeholder ===== */
 .placeholder-card{display:flex;align-items:center;justify-content:center;background:#111524;border:1px dashed rgba(160,180,130,.08);border-radius:4px;aspect-ratio:3/4;min-height:300px}
 .placeholder-card .text{font-size:13px;color:rgba(160,180,130,.2);letter-spacing:.15em}
+
+/* ===== Cross-Comparison ===== */
+.cmp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;max-width:1400px;margin:0 auto 40px;padding:0 24px}
+.cmp-card{background:#111524;border:1px solid rgba(160,180,130,.08);border-radius:4px;overflow:hidden;cursor:pointer;transition:all .3s}
+.cmp-card:hover{border-color:rgba(160,200,120,.2);transform:translateY(-3px)}
+.cmp-card img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover}
+.cmp-card .cmp-info{padding:10px 12px 14px}
+.cmp-card .cmp-char{font-size:10px;color:rgba(160,200,120,.45);letter-spacing:.1em;text-transform:uppercase}
+.cmp-card .cmp-name{font-size:13px;color:#d4c8a8;margin-top:2px}
+.cmp-subtitle{max-width:1400px;margin:0 auto 8px;padding:0 24px;font-size:12px;color:rgba(160,180,130,.3);letter-spacing:.08em}
+.view-toggle{max-width:1400px;margin:0 auto 24px;padding:0 24px;display:flex;gap:8px}
+.view-toggle button{background:rgba(160,200,120,.05);border:1px solid rgba(160,180,130,.12);color:rgba(160,180,130,.5);font-size:12px;padding:6px 18px;border-radius:20px;cursor:pointer;font-family:inherit;letter-spacing:.08em;transition:all .2s}
+.view-toggle button:hover,.view-toggle button.active{background:rgba(160,200,120,.12);color:#c8d8b0;border-color:rgba(160,200,120,.25)}
 </style>
 </head>
 <body>
@@ -131,6 +144,11 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
     <div class="nav-major">核心配角</div>
     <a href="#sec-oldman" data-nav="oldman">🧓 神秘老者</a>
     <a href="#sec-hongjie" data-nav="hongjie">🐱 虹姐 · 香堂主</a>
+    <div class="nav-major">↔ 横向对比</div>
+    <a href="#cmp-fullbody" data-nav="cmp-fullbody" class="nav-sub">🔄 全身造型对比</a>
+    <a href="#cmp-face" data-nav="cmp-face" class="nav-sub">🔄 面部角度对比</a>
+    <a href="#cmp-expr" data-nav="cmp-expr" class="nav-sub">🔄 表情状态对比</a>
+    <a href="#cmp-consistency" data-nav="cmp-consistency" class="nav-sub">🔄 一致性对比</a>
   </div>
 </nav>
 
@@ -802,6 +820,33 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
     <div class="placeholder-card"><div class="text">造型资产待生成</div></div>
   </div>
 
+  <!-- ═══ 横向对比 ═══ -->
+  <div class="cat-divider" id="cmp-anchor"><div class="line"></div><span class="cat-label">↔ 横 向 对 比</span><div class="line"></div></div>
+  <div class="view-toggle">
+    <button class="active" onclick="setCmpView('grid')">📐 网格视图</button>
+    <button onclick="setCmpView('row')">📏 行对比视图</button>
+  </div>
+
+  <div id="cmp-fullbody"></div>
+  <div class="section-title"><div class="line"></div><span class="label">🔄 全身造型对比</span><div class="line"></div></div>
+  <div class="cmp-subtitle">按资产类型横向对比：正面全身 · 背面全身 · 侧面全身 · 特写细节 · 动态站姿</div>
+  <div id="cmp-fullbody-grid"></div>
+
+  <div id="cmp-face"></div>
+  <div class="section-title"><div class="line"></div><span class="label">🔄 面部角度对比</span><div class="line"></div></div>
+  <div class="cmp-subtitle">按资产类型横向对比：正面正视 · 左右45° · 正侧 · 仰俯视</div>
+  <div id="cmp-face-grid"></div>
+
+  <div id="cmp-expr"></div>
+  <div class="section-title"><div class="line"></div><span class="label">🔄 表情状态对比</span><div class="line"></div></div>
+  <div class="cmp-subtitle">按资产类型横向对比：默认状态 · 微笑 · 释然 · 思考 · 疑惑 · 犹豫 · 惊讶 · 恐惧 · 悲伤 · 愤怒 · 压力 · 招牌</div>
+  <div id="cmp-expr-grid"></div>
+
+  <div id="cmp-consistency"></div>
+  <div class="section-title"><div class="line"></div><span class="label">🔄 一致性资产对比</span><div class="line"></div></div>
+  <div class="cmp-subtitle">按资产类型横向对比：剪影识别 · 服装材质板 · 脸部细节 · 随身物</div>
+  <div id="cmp-consistency-grid"></div>
+
   <!-- Footer -->
   <div class="footer">
     不思异：本草奇探 · 角色造型与视觉资产图集<br>
@@ -896,7 +941,112 @@ document.addEventListener("keydown", function(e){
   if(e.key === "ArrowRight") navLightbox(1);
 });
 
-// ===== Scroll spy =====
+// ===== Cross-Comparison Builder =====
+var CHAR_KEYS = ['xiaoziqi','chenyuchen','chengyuxin','oldman'];
+var CHAR_NAMES = {'xiaoziqi':'萧子期','chenyuchen':'陈宇晨','chengyuxin':'程雨馨','oldman':'神秘老者'};
+var CATS = {
+  fullbody: {grid:'cmp-fullbody-grid', types:['正面全身','背面全身','侧面全身','特写细节','动态站姿']},
+  face:     {grid:'cmp-face-grid',     types:['正面正视','左侧45°','右侧45°','左侧正侧','右侧正侧','仰视角度','俯视角度']},
+  expr:     {grid:'cmp-expr-grid',     types:['默认状态','轻微微笑','释然','思考','疑惑','犹豫','惊讶','恐惧','悲伤','愤怒','压力状态','角色招牌']},
+  consistency:{grid:'cmp-consistency-grid', types:['剪影识别系统','服装结构与材质板','脸部+眼镜+发型细节','脸部+发型细节','随*物资产']}
+};
+
+function buildComparison(){
+  // Scrape all existing cards
+  var allCards = {};
+  CHAR_KEYS.forEach(function(ck){
+    allCards[ck] = {};
+    ['','-face','-expr','-consistency'].forEach(function(suffix){
+      var gridId = 'grid-' + ck + suffix;
+      var grid = document.getElementById(gridId);
+      if(!grid) return;
+      Array.from(grid.querySelectorAll('.card')).forEach(function(card){
+        if(card.classList.contains('placeholder-card')) return;
+        var name = card.querySelector('.card-name');
+        var img = card.querySelector('img');
+        var desc = card.querySelector('.card-desc');
+        if(!name || !img) return;
+        allCards[ck][name.textContent.trim()] = {
+          src: img.src,
+          alt: img.alt || name.textContent.trim(),
+          desc: desc ? desc.textContent.trim() : ''
+        };
+      });
+    });
+  });
+
+  // Build each category
+  for(var cat in CATS){
+    var cfg = CATS[cat];
+    var container = document.getElementById(cfg.grid);
+    if(!container) continue;
+
+    cfg.types.forEach(function(typeName){
+      // Collect cards for this type from each character
+      var cards = [];
+      CHAR_KEYS.forEach(function(ck){
+        // Fuzzy match
+        var matched = null;
+        for(var cn in allCards[ck]){
+          if(cn === typeName || cn.indexOf(typeName) >= 0 || (typeName.indexOf('*')>=0 && new RegExp(typeName.replace(/\*/g,'.*')).test(cn))){
+            matched = allCards[ck][cn];
+            break;
+          }
+        }
+        if(matched) cards.push({char: ck, charName: CHAR_NAMES[ck], data: matched});
+      });
+      if(cards.length === 0) return;
+
+      var subtitle = document.createElement('div');
+      subtitle.className = 'cmp-subtitle';
+      subtitle.textContent = '▸ ' + typeName + ' （' + cards.length + '个角色）';
+      container.appendChild(subtitle);
+
+      var grid = document.createElement('div');
+      grid.className = 'cmp-grid';
+      cards.forEach(function(c){
+        var card = document.createElement('div');
+        card.className = 'cmp-card';
+        card.onclick = function(){ openCmpLightbox(c.data.src, grid); };
+        card.innerHTML = '<img src="' + c.data.src + '" alt="' + c.data.alt + '" loading="lazy">'+
+          '<div class="cmp-info"><div class="cmp-char">' + c.charName + '</div>'+
+          '<div class="cmp-name">' + (c.data.alt || typeName) + '</div></div>';
+        grid.appendChild(card);
+      });
+      container.appendChild(grid);
+    });
+  }
+}
+
+function openCmpLightbox(src, grid){
+  var imgs = grid.querySelectorAll('img');
+  currentImages = Array.from(imgs).map(function(i){return i.src});
+  currentIndex = currentImages.indexOf(src);
+  if(currentIndex < 0) currentIndex = 0;
+  showLightbox();
+}
+
+var cmpView = 'grid';
+function setCmpView(view){
+  cmpView = view;
+  document.querySelectorAll('.view-toggle button').forEach(function(b){
+    b.classList.toggle('active', b.textContent.indexOf(view==='grid'?'网格':'行')>=0);
+  });
+  document.querySelectorAll('.cmp-grid').forEach(function(g){
+    if(view==='row'){
+      g.style.gridTemplateColumns = 'repeat(' + Math.min(5, g.querySelectorAll('.cmp-card').length) + ', 1fr)';
+      g.style.maxWidth = '100%';
+    } else {
+      g.style.gridTemplateColumns = 'repeat(auto-fill, minmax(280px, 1fr))';
+      g.style.maxWidth = '';
+    }
+  });
+}
+
+// Build on page load
+buildComparison();
+
+// ===== Updated Scroll Spy =====
 var navLinks = document.querySelectorAll(".sidebar-nav a[data-nav]");
 var sectionMap = {
   "top":"#top",
@@ -914,7 +1064,11 @@ var sectionMap = {
   "chengyuxin-expr":"#sec-chengyuxin-expr",
   "chengyuxin-consistency":"#sec-chengyuxin-consistency",
   "oldman":"#sec-oldman",
-  "hongjie":"#sec-hongjie"
+  "hongjie":"#sec-hongjie",
+  "cmp-fullbody":"#cmp-fullbody",
+  "cmp-face":"#cmp-face",
+  "cmp-expr":"#cmp-expr",
+  "cmp-consistency":"#cmp-consistency"
 };
 
 window.addEventListener("scroll", function(){
