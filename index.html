@@ -96,6 +96,8 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
     <a href="#top" data-nav="top">▸ 页面顶部</a>
     <div class="nav-major">开场</div>
     <a href="#sec-opening" data-nav="opening">🌿 植物博物馆</a>
+    <div class="nav-major">异常存在</div>
+    <a href="#sec-yuanmu" data-nav="yuanmu">🌳 怨灵木</a>
     <a href="#sec-chenghua-set" data-nav="chenghua-set">🏗️ 美术设定</a>
     <div class="nav-major">成华集团</div>
     <a href="#sec-chenghua-parking" data-nav="parking">🅿️ 地下停车场</a>
@@ -125,7 +127,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
   <div class="hero">
     <h1>本 草 奇 探</h1>
     <div class="subtitle">EP01-EP03 · 场景美术资产图集</div>
-    <div class="project-info">第一单元《渊木》· 东方都市奇幻现实主义 · 84 张场景（含开场+美术设定+备选版本）</div>
+    <div class="project-info">第一单元《渊木》· 东方都市奇幻现实主义 · 92 张场景（含怨灵木+开场+美术设定+备选版本）</div>
   </div>
 
   <!-- Content rendered by JS -->
@@ -133,7 +135,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
 
   <div class="footer">
     不思异：本草奇探 · EP01-EP03 场景资产图集<br>
-    成华集团 · 采风香堂 · 城市空间 · 渊木深处 · 84 张（含开场12张+美术设定17张+备选版本）
+    怨灵木8张 · 成华集团 · 采风香堂 · 城市空间 · 渊木深处 · 92 张
   </div>
 
 </div>
@@ -186,6 +188,16 @@ var scenes = [
   {file:"开场_10_博物馆建筑细节.png",name:"博物馆建筑细节",desc:"建筑细部·材质与光影的冷峻质感",section:"opening"},
   {file:"开场_11_地下工业通道.png",name:"地下工业通道",desc:"博物馆地下层·通往隐藏世界的暗示",section:"opening"},
   {file:"开场_12_杂乱工作室走廊.png",name:"杂乱工作室走廊",desc:"研究者的工作痕迹·真实感与混乱美",section:"opening"},
+
+  // ── 怨灵木 · 异常存在 ──
+  {file:"怨灵木_主体_整树全貌.png",name:"怨灵木 · 整树全貌",desc:"巨型异木扎根工业设施·琥珀裂口+发光花冠",section:"yuanmu"},
+  {file:"怨灵木_主体_异花特写.png",name:"怨灵木 · 异花特写",desc:"半透明莲状异花·琥珀球心·暗紫渐变花瓣",section:"yuanmu"},
+  {file:"怨灵木_主体_年轮截面.png",name:"怨灵木 · 年轮截面",desc:"巨木横截面·键盘/树脂/晶体嵌入·情绪年轮",section:"yuanmu"},
+  {file:"怨灵木_表皮资产_初期.png",name:"表皮资产 · 初期",desc:"木质返生·情绪年轮初现·门板材质向树体过渡",section:"yuanmu"},
+  {file:"怨灵木_表皮资产_即将爆发.png",name:"表皮资产 · 即将爆发",desc:"年轮密集·裂缝加深·树脂活跃·边缘纤维化",section:"yuanmu"},
+  {file:"怨灵木_表皮资产_彻底爆发.png",name:"表皮资产 · 彻底爆发",desc:"整间会议室被木质表皮包裹·紫/青/白微光结节",section:"yuanmu"},
+  {file:"怨灵木_输导资产_即将爆发.png",name:"输导资产 · 即将爆发",desc:"风管/线缆井/墙体夹层/天花板剖面·输导膜蔓延",section:"yuanmu"},
+  {file:"怨灵木_输导资产_彻底爆发.png",name:"输导资产 · 彻底爆发",desc:"整栋办公楼输导系统生命化·中央空调变呼吸器官",section:"yuanmu"},
 
   // ── 成华集团 · 美术设定 ──
   {file:"中轴对称的成华集团现代中庭.png",name:"成华集团现代中庭",desc:"美术设定·中轴对称现代中庭",section:"chenghua-set"},
@@ -293,6 +305,7 @@ var scenes = [
 // ===== Section labels =====
 var sectionLabels = {
   "opening":           "🌿 开场 · 植物博物馆",
+  "yuanmu":            "🌳 怨灵木 · 异常存在",
   "chenghua-set":      "🏗️ 成华集团 · 美术设定",
   "chenghua-parking":  "🅿️ 成华集团 · 地下停车场",
   "chenghua-building": "🏢 成华集团 · 写字楼",
@@ -315,6 +328,7 @@ var root = document.getElementById("content-root");
 var currentSection = null;
 var secIdMap = {
   "opening":"sec-opening",
+  "yuanmu":"sec-yuanmu",
   "chenghua-set":"sec-chenghua-set",
   "chenghua-parking":"sec-chenghua-parking",
   "chenghua-building":"sec-chenghua-building",
@@ -394,6 +408,7 @@ var navLinks = document.querySelectorAll(".sidebar-nav a[data-nav]");
 var sectionMap = {
   "top":"#top",
   "opening":"#sec-opening",
+  "yuanmu":"#sec-yuanmu",
   "chenghua-set":"#sec-chenghua-set",
   "parking":"#sec-chenghua-parking",
   "building":"#sec-chenghua-building",
