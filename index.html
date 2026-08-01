@@ -96,6 +96,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
     <a href="#top" data-nav="top">▸ 页面顶部</a>
     <div class="nav-major">开场</div>
     <a href="#sec-opening" data-nav="opening">🌿 植物博物馆</a>
+    <a href="#sec-chenghua-set" data-nav="chenghua-set">🏗️ 美术设定</a>
     <div class="nav-major">成华集团</div>
     <a href="#sec-chenghua-parking" data-nav="parking">🅿️ 地下停车场</a>
     <a href="#sec-chenghua-building" data-nav="building">🏢 写字楼</a>
@@ -124,7 +125,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
   <div class="hero">
     <h1>本 草 奇 探</h1>
     <div class="subtitle">EP01-EP03 · 场景美术资产图集</div>
-    <div class="project-info">第一单元《渊木》· 东方都市奇幻现实主义 · 67 张场景（含开场+备选版本）</div>
+    <div class="project-info">第一单元《渊木》· 东方都市奇幻现实主义 · 84 张场景（含开场+美术设定+备选版本）</div>
   </div>
 
   <!-- Content rendered by JS -->
@@ -132,7 +133,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
 
   <div class="footer">
     不思异：本草奇探 · EP01-EP03 场景资产图集<br>
-    成华集团 · 采风香堂 · 城市空间 · 渊木深处 · 67 张（含开场12张+备选版本）
+    成华集团 · 采风香堂 · 城市空间 · 渊木深处 · 84 张（含开场12张+美术设定17张+备选版本）
   </div>
 
 </div>
@@ -185,6 +186,25 @@ var scenes = [
   {file:"开场_10_博物馆建筑细节.png",name:"博物馆建筑细节",desc:"建筑细部·材质与光影的冷峻质感",section:"opening"},
   {file:"开场_11_地下工业通道.png",name:"地下工业通道",desc:"博物馆地下层·通往隐藏世界的暗示",section:"opening"},
   {file:"开场_12_杂乱工作室走廊.png",name:"杂乱工作室走廊",desc:"研究者的工作痕迹·真实感与混乱美",section:"opening"},
+
+  // ── 成华集团 · 美术设定 ──
+  {file:"中轴对称的成华集团现代中庭.png",name:"成华集团现代中庭",desc:"美术设定·中轴对称现代中庭",section:"chenghua-set"},
+  {file:"成华集团对称现代大堂.png",name:"成华集团对称现代大堂",desc:"美术设定·对称现代大堂",section:"chenghua-set"},
+  {file:"混凝土极简企业大堂.png",name:"混凝土极简企业大堂",desc:"美术设定·混凝土极简大堂",section:"chenghua-set"},
+  {file:"厚重混凝土大厅与成华集团标志.png",name:"厚重混凝土大厅",desc:"美术设定·厚重混凝土+集团标志",section:"chenghua-set"},
+  {file:"大型开放式办公室全景.png",name:"大型开放式办公室",desc:"美术设定·开放办公全景",section:"chenghua-set"},
+  {file:"办公室纵深与金色题字.png",name:"办公室纵深与金色题字",desc:"美术设定·纵深+金色题字",section:"chenghua-set"},
+  {file:"庄严对称的企业会议厅.png",name:"庄严对称会议厅",desc:"美术设定·企业会议厅",section:"chenghua-set"},
+  {file:"档案大厅的对称长廊.png",name:"档案大厅对称长廊",desc:"美术设定·档案大厅长廊",section:"chenghua-set"},
+  {file:"档案阅览室的静谧长廊.png",name:"档案阅览室静谧长廊",desc:"美术设定·档案阅览室",section:"chenghua-set"},
+  {file:"走廊尽头的静谧光影.png",name:"走廊尽头静谧光影",desc:"美术设定·走廊光影",section:"chenghua-set"},
+  {file:"共享茶水间与储物柜_想标题.png",name:"共享茶水间与储物柜",desc:"美术设定·茶水间+储物柜",section:"chenghua-set"},
+  {file:"冥想空间_专注当下_提升能量.png",name:"冥想空间",desc:"美术设定·冥想/正念空间",section:"chenghua-set"},
+  {file:"成华_宏大企业室内.png",name:"宏大企业室内",desc:"美术设定·宏大室内宽景",section:"chenghua-set"},
+  {file:"成华_写实室内宽景.png",name:"写实室内宽景",desc:"美术设定·写实室内",section:"chenghua-set"},
+  {file:"成华_工业风大堂宽景.png",name:"工业风大堂宽景",desc:"美术设定·工业风大堂",section:"chenghua-set"},
+  {file:"成华_空间设计汇总板.png",name:"空间设计汇总板",desc:"美术设定·设计汇总板",section:"chenghua-set"},
+  {file:"成华_美术方向概念板.png",name:"美术方向概念板",desc:"美术设定·方向概念板",section:"chenghua-set"},
 
   // ── 成华集团 · 地下停车场 ──
   {file:"1A地下停车场总貌.jpg",name:"地下停车场总貌",desc:"EP01 黄雅悦消失前最后一次出现的地点",section:"chenghua-parking"},
@@ -273,6 +293,7 @@ var scenes = [
 // ===== Section labels =====
 var sectionLabels = {
   "opening":           "🌿 开场 · 植物博物馆",
+  "chenghua-set":      "🏗️ 成华集团 · 美术设定",
   "chenghua-parking":  "🅿️ 成华集团 · 地下停车场",
   "chenghua-building": "🏢 成华集团 · 写字楼",
   "chenghua-office":   "💼 成华集团 · 办公区",
@@ -294,6 +315,7 @@ var root = document.getElementById("content-root");
 var currentSection = null;
 var secIdMap = {
   "opening":"sec-opening",
+  "chenghua-set":"sec-chenghua-set",
   "chenghua-parking":"sec-chenghua-parking",
   "chenghua-building":"sec-chenghua-building",
   "chenghua-office":"sec-chenghua-office",
@@ -372,6 +394,7 @@ var navLinks = document.querySelectorAll(".sidebar-nav a[data-nav]");
 var sectionMap = {
   "top":"#top",
   "opening":"#sec-opening",
+  "chenghua-set":"#sec-chenghua-set",
   "parking":"#sec-chenghua-parking",
   "building":"#sec-chenghua-building",
   "office":"#sec-chenghua-office",
