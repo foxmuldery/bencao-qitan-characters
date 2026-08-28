@@ -64,6 +64,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
 
 /* ===== Card Grid ===== */
 .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:20px;max-width:1400px;margin:0 auto 60px;padding:0 24px}
+    .card-grid.cols-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1500px;margin:0 auto 60px;padding:0 24px}
 .card{background:#111524;border:1px solid rgba(160,180,130,.08);border-radius:4px;overflow:hidden;cursor:pointer;transition:all .3s}
 .card:hover{border-color:rgba(160,200,120,.2);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
 .card img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover}
@@ -251,7 +252,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
       <strong>风格迭代 · 复古都市调性</strong> —— 故事与调性调整后，萧子期造型改为低饱和复古都市风：灰紫条纹立领夹克 / 棕色刺绣大衣 + 米白衬衫 + 短裤 + 乐福鞋 + 皮具。每套含全身与头部特写。
     </div>
   </div>
-  <div class="card-grid" id="grid-xiaoziqi">
+  <div class="card-grid cols-4" id="grid-xiaoziqi">
     <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi')">
       <img src="萧子期_新造型1_全身.jpg" alt="新造型1 全身" loading="lazy">
       <div class="card-info"><div class="card-name">新造型 1 · 全身</div><div class="card-desc">灰紫条纹立领夹克+米白衬衫+灰粉短裤+乐福鞋+流苏皮包</div></div>
@@ -433,7 +434,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
 
   <div id="sec-chenyuchen"></div>
   <div class="section-title"><div class="line"></div><span class="label">🔧 陈宇晨 · 日常造型（5张）</span><div class="line"></div></div>
-  <div class="card-grid" id="grid-chenyuchen">
+  <div class="card-grid cols-4" id="grid-chenyuchen">
     <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen')">
       <img src="陈宇晨_正面全身.jpg" alt="陈宇晨 正面全身" loading="lazy">
       <div class="card-info"><div class="card-name">正面全身</div><div class="card-desc">标准站姿 · 工装外套+卫衣+机能裤</div></div>
@@ -583,7 +584,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
   <!-- 陈宇晨 · 冒险造型 -->
   <div id="sec-chenyuchen-adventure"></div>
   <div class="section-title"><div class="line"></div><span class="label">🗡️ 陈宇晨 · 冒险造型（5张）</span><div class="line"></div></div>
-  <div class="card-grid" id="grid-chenyuchen-adventure">
+  <div class="card-grid cols-4" id="grid-chenyuchen-adventure">
     <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-adventure')">
       <img src="陈宇晨_冒险_正面全身.jpg" alt="冒险 正面全身" loading="lazy">
       <div class="card-info"><div class="card-name">正面全身</div><div class="card-desc">外勤冒险 · 机能装备全副武装</div></div></div>
@@ -641,7 +642,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
 
   <div id="sec-chengyuxin"></div>
   <div class="section-title"><div class="line"></div><span class="label">🌸 程雨馨 · 日常造型（5张）</span><div class="line"></div></div>
-  <div class="card-grid" id="grid-chengyuxin">
+  <div class="card-grid cols-4" id="grid-chengyuxin">
     <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin')">
       <img src="程雨馨_日常_正面全身.jpg" alt="程雨馨 日常正面全身" loading="lazy">
       <div class="card-info"><div class="card-name">正面全身</div><div class="card-desc">日常长裤造型 · 米白工装衬衫+T恤+卡其长裤+帆布包</div></div>
@@ -666,7 +667,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
 
   <div id="sec-chengyuxin-adventure"></div>
   <div class="section-title"><div class="line"></div><span class="label">🗡️ 程雨馨 · 冒险造型（4张）</span><div class="line"></div></div>
-  <div class="card-grid" id="grid-chengyuxin-adventure">
+  <div class="card-grid cols-4" id="grid-chengyuxin-adventure">
     <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-adventure')">
       <img src="程雨馨_冒险_正面全身.jpg" alt="正面全身" loading="lazy">
       <div class="card-info"><div class="card-name">正面全身</div><div class="card-desc">蓝白拼色连帽外套+米色工装短裤+雨靴 · 户外侦察装备</div></div>
@@ -809,7 +810,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
 
   <div id="sec-oldman"></div>
   <div class="section-title"><div class="line"></div><span class="label">🧓 神秘老者 · 造型资产（5张）</span><div class="line"></div></div>
-  <div class="card-grid" id="grid-oldman">
+  <div class="card-grid cols-4" id="grid-oldman">
     <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman')">
       <img src="神秘老者_正面全身.jpg" alt="正面全身" loading="lazy">
       <div class="card-info"><div class="card-name">正面全身</div><div class="card-desc">标准站姿 · 中式长衫·沉稳内敛</div></div>
@@ -958,7 +959,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
 
   <div id="sec-hongjie"></div>
   <div class="section-title"><div class="line"></div><span class="label">👘 虹姐 · 造型资产（5张）</span><div class="line"></div></div>
-  <div class="card-grid" id="grid-hongjie">
+  <div class="card-grid cols-4" id="grid-hongjie">
     <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie')">
       <img src="虹姐_正面全身.jpg" alt="正面全身" loading="lazy">
       <div class="card-info"><div class="card-name">正面全身</div><div class="card-desc">坐轮椅标准正面 · 成熟女性·沉稳气质</div></div></div>
@@ -1052,7 +1053,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
 
   <div id="sec-huangyayue"></div>
   <div class="section-title"><div class="line"></div><span class="label">👘 黄雅悦（感染）· 造型资产（5张）</span><div class="line"></div></div>
-  <div class="card-grid" id="grid-huangyayue">
+  <div class="card-grid cols-4" id="grid-huangyayue">
     <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue')">
       <img src="黄雅悦感染_正面全身.jpg" alt="正面全身" loading="lazy">
       <div class="card-info"><div class="card-name">正面全身</div><div class="card-desc">感染体标准站姿 · 木质病变初现</div></div></div>
@@ -1141,7 +1142,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
 
   <div id="sec-huangyayue-normal"></div>
   <div class="section-title"><div class="line"></div><span class="label">👘 黄雅悦 · 造型资产（5张）</span><div class="line"></div></div>
-  <div class="card-grid" id="grid-huangyayue-normal">
+  <div class="card-grid cols-4" id="grid-huangyayue-normal">
     <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal')">
       <img src="黄雅悦_正面全身.jpg" alt="正面全身" loading="lazy">
       <div class="card-info"><div class="card-name">正面全身</div><div class="card-desc">标准站姿 · 清爽明亮的年轻女性</div></div></div>
@@ -1236,7 +1237,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
 
   <div id="sec-linyong"></div>
   <div class="section-title"><div class="line"></div><span class="label">👘 林勇 · 造型资产（5张）</span><div class="line"></div></div>
-  <div class="card-grid" id="grid-linyong">
+  <div class="card-grid cols-4" id="grid-linyong">
     <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong')">
       <img src="林勇_正面全身.jpg" alt="正面全身" loading="lazy">
       <div class="card-info"><div class="card-name">正面全身</div><div class="card-desc">标准站姿 · 衰败感衣着·沉默气质</div></div></div>
@@ -1315,7 +1316,7 @@ body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",
 
   <div id="sec-xiaolin"></div>
   <div class="section-title"><div class="line"></div><span class="label">👘 小林平时 · 造型资产（1张）</span><div class="line"></div></div>
-  <div class="card-grid" id="grid-xiaolin">
+  <div class="card-grid cols-4" id="grid-xiaolin">
     <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin')">
       <img src="小林平时_背面全身.jpg" alt="背面全身" loading="lazy"><div class="card-info"><div class="card-name">背面全身</div><div class="card-desc">背影视角 · 内搭不可见</div></div></div>
   </div>
