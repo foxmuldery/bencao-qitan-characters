@@ -1,0 +1,76 @@
+{
+  "project": "本草奇探",
+  "target": "foxmuldery/bencao-qitan-characters",
+  "status": "complete-source-trees-verified",
+  "sources": [
+    {
+      "number": "010",
+      "slug": "characters",
+      "label": "角色造型",
+      "repository": "foxmuldery/bencao-qitan-characters",
+      "commit": "b45e3879c0ca897fa290575b0f22a37cb132b077",
+      "tree": "d042f9700dab62092a84d74a3b9e7a747102d0a1",
+      "files": 342,
+      "verified_tree": "d042f9700dab62092a84d74a3b9e7a747102d0a1",
+      "entry_exists": true
+    },
+    {
+      "number": "011",
+      "slug": "facebible",
+      "label": "面部设定",
+      "repository": "foxmuldery/bencao-qitan-facebible",
+      "commit": "2d0de6b8c2723f3ab78e2442fc697152692905db",
+      "tree": "b22467c38bcb62e195e32c78fb8f74901d14e981",
+      "files": 53,
+      "verified_tree": "b22467c38bcb62e195e32c78fb8f74901d14e981",
+      "entry_exists": true
+    },
+    {
+      "number": "012",
+      "slug": "monsters",
+      "label": "怪物",
+      "repository": "foxmuldery/bencao-qitan-monsters",
+      "commit": "14e5d17c9386abd9125aa660ded1e4ee9ab607ca",
+      "tree": "47c01f162f60d73ef7f1363cadc0e1992fc72c63",
+      "files": 168,
+      "verified_tree": "47c01f162f60d73ef7f1363cadc0e1992fc72c63",
+      "entry_exists": true
+    },
+    {
+      "number": "013",
+      "slug": "props",
+      "label": "道具",
+      "repository": "foxmuldery/bencao-qitan-props",
+      "commit": "eefdb0591c2c3c036a3c009eb4c98547479a7c36",
+      "tree": "89e97a8692436284b96d977c596e43336ab76bd5",
+      "files": 176,
+      "verified_tree": "89e97a8692436284b96d977c596e43336ab76bd5",
+      "entry_exists": true
+    },
+    {
+      "number": "014",
+      "slug": "reference",
+      "label": "视觉参考",
+      "repository": "foxmuldery/bencao-qitan-reference",
+      "commit": "262318149077ae7ae5257d6d6b08aba694379912",
+      "tree": "377fa2c9092c1a1938bf1be06e2dd5543d48d410",
+      "files": 75,
+      "verified_tree": "377fa2c9092c1a1938bf1be06e2dd5543d48d410",
+      "entry_exists": true
+    },
+    {
+      "number": "015",
+      "slug": "scenes",
+      "label": "场景",
+      "repository": "foxmuldery/bencao-qitan-scenes",
+      "commit": "0a0e1fc1b6162167453314f5d38210b583f559f2",
+      "tree": "a2e0aa75a8cee83bda740cf6dca9349e1259e309",
+      "files": 99,
+      "verified_tree": "a2e0aa75a8cee83bda740cf6dca9349e1259e309",
+      "entry_exists": true
+    }
+  ],
+  "original_repositories_modified": false,
+  "old_homepage_modified": false,
+  "scope": "Default-branch Git histories and exact file trees; no external databases, browser storage, Releases, or LFS hydration claimed"
+}
