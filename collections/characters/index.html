@@ -1,0 +1,1769 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>本草奇探 · 角色造型图集</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC","STSong","Songti SC",serif;line-height:1.7;overflow-x:hidden}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#0a0a14}
+::-webkit-scrollbar-thumb{background:rgba(180,160,120,.25);border-radius:3px}
+
+/* ===== Sidebar ===== */
+.sidebar{position:fixed;top:0;left:0;width:200px;height:100vh;background:linear-gradient(180deg,#0d0d1f 0%,#0a0a14 100%);border-right:1px solid rgba(180,160,120,.08);z-index:100;overflow-y:auto;padding-bottom:40px}
+.sidebar-logo{padding:32px 20px 24px;text-align:center}
+.sidebar-logo .title{font-size:18px;font-weight:700;color:#e0d4b8;letter-spacing:.15em;text-shadow:0 0 30px rgba(160,200,120,.25)}
+.sidebar-logo .sub{font-size:11px;color:rgba(160,180,130,.45);letter-spacing:.15em;margin-top:6px}
+.sidebar-nav{padding:0 16px}
+.sidebar-nav a{display:block;padding:8px 14px;font-size:13px;color:rgba(200,180,150,.55);text-decoration:none;border-radius:4px;transition:all .2s;margin-bottom:2px}
+.sidebar-nav a:hover,.sidebar-nav a.active{color:#e0d4b8;background:rgba(160,200,120,.08)}
+.sidebar-nav .nav-major{font-size:11px;color:rgba(200,170,120,.4);letter-spacing:.15em;padding:18px 14px 4px;border-top:1px solid rgba(180,160,120,.08);margin-top:4px}
+.sidebar-nav .nav-sub{padding-left:28px;font-size:12px}
+
+/* ===== Main ===== */
+.main{margin-left:200px;min-height:100vh}
+.container{max-width:1400px;margin:0 auto;padding:0 32px}
+.hero{padding:60px 0 40px;text-align:center}
+.hero h1{font-size:48px;font-weight:700;color:#c8d8b0;letter-spacing:.2em;text-shadow:0 0 60px rgba(140,180,100,.2);margin-bottom:8px}
+.hero .subtitle{font-size:14px;color:rgba(170,190,140,.5);letter-spacing:.25em}
+.hero .project-info{font-size:12px;color:rgba(160,180,130,.35);margin-top:12px;letter-spacing:.1em}
+
+/* ===== Core Concept ===== */
+.concept-block{max-width:900px;margin:0 auto 50px;text-align:center}
+.concept-block .definition{font-size:16px;color:#d4c8a8;line-height:2;padding:20px 0;font-style:italic}
+.concept-block .tone-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:12px}
+.concept-block .tone-tags span{font-size:11px;color:rgba(160,180,130,.5);border:1px solid rgba(160,180,120,.12);padding:4px 14px;border-radius:20px;letter-spacing:.08em}
+
+/* ===== Bible ===== */
+.bible-core{max-width:900px;margin:0 auto 40px;text-align:center}
+.voice-box{max-width:900px;margin:-20px auto 40px;text-align:center;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+.voice-item{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.02);border:1px solid rgba(180,160,120,.08);border-radius:6px;padding:10px 16px}
+.voice-label{font-size:12px;color:#e0d4b8;letter-spacing:.1em;white-space:nowrap}
+.voice-item audio{height:36px;max-width:260px}
+.voice-item audio::-webkit-media-controls-panel{background:#111524}
+.bible-definition{font-size:14px;color:rgba(210,190,160,.65);line-height:1.9;margin-bottom:16px;letter-spacing:.06em}
+.bible-toggle{background:rgba(160,200,120,.05);border:1px solid rgba(160,180,130,.12);color:rgba(160,180,130,.55);font-size:12px;padding:8px 24px;border-radius:20px;cursor:pointer;font-family:inherit;letter-spacing:.1em;transition:all .2s}
+.bible-toggle:hover{background:rgba(160,200,120,.1);color:#c8d8b0}
+.bible-detail{display:none;text-align:left;max-width:800px;margin:24px auto 0;padding:24px 28px;background:rgba(255,255,255,.015);border:1px solid rgba(160,180,130,.08);border-radius:6px;font-size:13px;color:rgba(200,180,150,.55);line-height:2}
+.bible-detail.active{display:block}
+.bible-detail .copy-btn{display:inline-block;background:rgba(160,200,120,.1);border:1px solid rgba(160,180,130,.15);color:rgba(160,180,130,.55);font-size:11px;padding:4px 14px;border-radius:4px;cursor:pointer;margin:12px 0 0;font-family:inherit;transition:all .2s}
+.bible-detail .copy-btn:hover{background:rgba(160,200,120,.18);color:#c8d8b0}
+
+/* ===== Category Divider ===== */
+.cat-divider{max-width:1400px;margin:60px auto 20px;padding:0 24px;display:flex;align-items:center;gap:16px}
+.cat-divider .line{flex:1;height:1px;background:rgba(160,180,130,.08)}
+.cat-divider .cat-label{font-size:13px;letter-spacing:.25em;color:rgba(160,180,130,.35);white-space:nowrap}
+
+/* ===== Section Title ===== */
+.section-title{max-width:1400px;margin:50px auto 24px;padding:0 24px;display:flex;align-items:center;gap:14px}
+.section-title .line{flex:1;height:1px;background:rgba(160,180,130,.1)}
+.section-title .label{font-size:14px;color:rgba(200,190,160,.55);letter-spacing:.15em;white-space:nowrap}
+
+/* ===== Card Grid ===== */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:20px;max-width:1400px;margin:0 auto 60px;padding:0 24px}
+    .card-grid.cols-4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1500px;margin:0 auto 60px;padding:0 24px}
+.card{background:#111524;border:1px solid rgba(160,180,130,.08);border-radius:4px;overflow:hidden;cursor:pointer;transition:all .3s}
+.card:hover{border-color:rgba(160,200,120,.2);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.card img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover}
+.card-info{padding:12px 16px 16px}
+.card-name{font-size:16px;color:#d4c8a8;margin-bottom:4px}
+.card-desc{font-size:13px;color:rgba(210,190,160,.45)}
+
+/* ===== Lightbox ===== */
+.lightbox-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center}
+.lightbox-overlay.active{display:flex}
+.lightbox-overlay img{max-width:90vw;max-height:90vh;object-fit:contain;border:1px solid rgba(160,180,130,.1)}
+.lightbox-close{position:fixed;top:20px;right:30px;font-size:32px;color:rgba(200,180,150,.5);cursor:pointer;z-index:10000;transition:color .2s}
+.lightbox-close:hover{color:#e0d4b8}
+.lightbox-nav{position:fixed;top:50%;transform:translateY(-50%);font-size:40px;color:rgba(200,180,150,.4);cursor:pointer;z-index:10000;user-select:none;transition:color .2s}
+.lightbox-nav:hover{color:#e0d4b8}
+.lightbox-nav.prev{left:30px}
+.lightbox-nav.next{right:30px}
+
+/* ===== Password Gate ===== */
+.pw-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:#0a0a14;z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column}
+.pw-overlay.hidden{display:none}
+.pw-box{text-align:center;padding:60px 40px;border:1px solid rgba(160,180,130,.1);border-radius:8px;background:rgba(255,255,255,.01);max-width:400px}
+.pw-box h2{font-size:28px;color:#c8d8b0;letter-spacing:.15em;margin-bottom:24px;font-weight:400}
+.pw-box input{width:100%;padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(160,180,130,.2);border-radius:4px;color:#ede4d4;font-size:16px;text-align:center;font-family:inherit;outline:none;letter-spacing:.1em}
+.pw-box input:focus{border-color:rgba(160,200,120,.4)}
+.pw-box .pw-error{color:rgba(220,140,120,.6);font-size:12px;margin-top:12px;display:none;letter-spacing:.08em}
+
+/* ===== Footer ===== */
+.footer{text-align:center;padding:40px 24px 60px;color:rgba(160,180,130,.3);font-size:11px;letter-spacing:.1em}
+
+/* ===== Placeholder ===== */
+.placeholder-card{display:flex;align-items:center;justify-content:center;background:#111524;border:1px dashed rgba(160,180,130,.08);border-radius:4px;aspect-ratio:3/4;min-height:300px}
+.placeholder-card .text{font-size:13px;color:rgba(160,180,130,.2);letter-spacing:.15em}
+
+/* ===== Cross-Comparison ===== */
+.cmp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;max-width:1400px;margin:0 auto 40px;padding:0 24px}
+.cmp-card{background:#111524;border:1px solid rgba(160,180,130,.08);border-radius:4px;overflow:hidden;cursor:pointer;transition:all .3s}
+.cmp-card:hover{border-color:rgba(160,200,120,.2);transform:translateY(-3px)}
+.cmp-card img{width:100%;display:block;aspect-ratio:3/4;object-fit:cover}
+.cmp-card .cmp-info{padding:10px 12px 14px}
+.cmp-card .cmp-char{font-size:10px;color:rgba(160,200,120,.45);letter-spacing:.1em;text-transform:uppercase}
+.cmp-card .cmp-name{font-size:13px;color:#d4c8a8;margin-top:2px}
+.cmp-subtitle{max-width:1400px;margin:0 auto 8px;padding:0 24px;font-size:12px;color:rgba(160,180,130,.3);letter-spacing:.08em}
+.view-toggle{max-width:1400px;margin:0 auto 24px;padding:0 24px;display:flex;gap:8px}
+.view-toggle button{background:rgba(160,200,120,.05);border:1px solid rgba(160,180,130,.12);color:rgba(160,180,130,.5);font-size:12px;padding:6px 18px;border-radius:20px;cursor:pointer;font-family:inherit;letter-spacing:.08em;transition:all .2s}
+.view-toggle button:hover,.view-toggle button.active{background:rgba(160,200,120,.12);color:#c8d8b0;border-color:rgba(160,200,120,.25)}
+</style>
+</head>
+<body>
+
+<!-- ═══ PASSWORD GATE ═══ -->
+<div class="pw-overlay" id="pwOverlay">
+  <div class="pw-box">
+    <h2>本 草 奇 探</h2>
+    <input type="password" id="pwInput" placeholder="请输入访问密码" autofocus onkeydown="if(event.key==='Enter')checkPassword()">
+    <div class="pw-error" id="pwError">密码错误，请重试</div>
+  </div>
+</div>
+
+<!-- ═══ SIDEBAR ═══ -->
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="title">本 草 奇 探</div>
+    <div class="sub">HERBAL DETECTIVE</div>
+  </div>
+  <div class="sidebar-nav">
+    <a href="#top" data-nav="top">▸ 页面顶部</a>
+    <div class="nav-major">项目圣经</div>
+    <a href="#bible-concept" data-nav="bible-concept">🌿 美术圣经</a>
+    <div class="nav-major">主角三人组</div>
+    <a href="#sec-xiaoziqi" data-nav="xiaoziqi">🔬 萧子期 · 新造型</a>
+    <a href="#sec-xiaoziqi-1" data-nav="xiaoziqi-1" class="nav-sub">👘 新造型 1</a>
+    <a href="#sec-xiaoziqi-2" data-nav="xiaoziqi-2" class="nav-sub">👘 新造型 2</a>
+    <a href="#sec-xiaoziqi-3" data-nav="xiaoziqi-3" class="nav-sub">👘 新造型 3</a>
+    <a href="#sec-xiaoziqi-4" data-nav="xiaoziqi-4" class="nav-sub">👘 新造型 4</a>
+    <a href="#sec-xiaoziqi-face" data-nav="xiaoziqi-face" class="nav-sub">📐 面部资产</a>
+    <a href="#sec-xiaoziqi-expr" data-nav="xiaoziqi-expr" class="nav-sub">😶 表情资产</a>
+    <a href="#sec-chenyuchen" data-nav="chenyuchen">🔧 陈宇晨 · 新造型</a>
+    <a href="#sec-chenyuchen-1" data-nav="chenyuchen-1" class="nav-sub">👘 新造型 1</a>
+    <a href="#sec-chenyuchen-2" data-nav="chenyuchen-2" class="nav-sub">👘 新造型 2</a>
+    <a href="#sec-chenyuchen-3" data-nav="chenyuchen-3" class="nav-sub">👘 新造型 3</a>
+    <a href="#sec-chenyuchen-4" data-nav="chenyuchen-4" class="nav-sub">👘 新造型 4</a>
+    <a href="#sec-chenyuchen-5" data-nav="chenyuchen-5" class="nav-sub">👘 新造型 5</a>
+    <a href="#sec-chenyuchen-6" data-nav="chenyuchen-6" class="nav-sub">👘 新造型 6</a>
+    <a href="#sec-chenyuchen-face" data-nav="chenyuchen-face" class="nav-sub">📐 面部资产</a>
+    <a href="#sec-chenyuchen-expr" data-nav="chenyuchen-expr" class="nav-sub">😶 表情资产</a>
+    <a href="#sec-chengyuxin" data-nav="chengyuxin">🌸 程雨馨 · 新造型</a>
+    <a href="#sec-chengyuxin-1" data-nav="chengyuxin-1" class="nav-sub">👘 新造型 1</a>
+    <a href="#sec-chengyuxin-2" data-nav="chengyuxin-2" class="nav-sub">👘 新造型 2</a>
+    <a href="#sec-chengyuxin-3" data-nav="chengyuxin-3" class="nav-sub">👘 新造型 3</a>
+    <a href="#sec-chengyuxin-4" data-nav="chengyuxin-4" class="nav-sub">👘 新造型 4</a>
+    <a href="#sec-chengyuxin-face" data-nav="chengyuxin-face" class="nav-sub">📐 面部资产</a>
+    <a href="#sec-chengyuxin-expr" data-nav="chengyuxin-expr" class="nav-sub">😶 表情资产</a>
+    <div class="nav-major">核心配角</div>
+    <a href="#sec-oldman" data-nav="oldman">🧓 神秘老者</a>
+    <a href="#sec-huangyayue" data-nav="huangyayue">🌿 黄雅悦（感染）</a>
+    <a href="#sec-huangyayue-normal" data-nav="huangyayue-normal">🌻 黄雅悦（正常）</a>
+    <a href="#sec-huangyayue-normal-cons" data-nav="huangyayue-normal-cons" class="nav-sub">🔗 一致性补充</a>
+    <a href="#sec-linyong" data-nav="linyong">🏚️ 林勇</a>
+    <a href="#sec-xiaolin" data-nav="xiaolin">👔 小林平时</a>
+    <a href="#sec-xiaolin-infected" data-nav="xiaolin-infected">🌿 小林（感染）</a>
+    <a href="#sec-hongjie" data-nav="hongjie">🐱 虹姐 · 造型</a>
+    <a href="#sec-hongjie-expr" data-nav="hongjie-expr" class="nav-sub">😶 表情资产</a>
+    <a href="#sec-hongjie-consistency" data-nav="hongjie-consistency" class="nav-sub">🔗 一致性</a>
+    <div class="nav-major">↔ 横向对比</div>
+    <a href="#cmp-fullbody" data-nav="cmp-fullbody" class="nav-sub">🔄 全身造型对比</a>
+    <a href="#cmp-face" data-nav="cmp-face" class="nav-sub">🔄 面部角度对比</a>
+    <a href="#cmp-expr" data-nav="cmp-expr" class="nav-sub">🔄 表情状态对比</a>
+    <a href="#cmp-consistency" data-nav="cmp-consistency" class="nav-sub">🔄 一致性对比</a>
+  </div>
+</nav>
+
+<!-- ═══ MAIN ═══ -->
+<div class="main" id="top">
+<div class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <h1>本 草 奇 探</h1>
+    <div class="subtitle">不思异：本草奇探 · 角色造型与视觉资产图集</div>
+    <div class="project-info">东方都市奇幻现实主义 · 当代中国城市 × 异常植物生命 · 第一单元《渊木》</div>
+  </div>
+
+  <!-- Core Concept -->
+  <div class="concept-block">
+    <div class="definition">「城市表面属于人类：写字楼、商场、医院、学校。但城市之下，还有另一套生命系统：植物、根系、香气、记忆、情绪。异常本草不是怪物——它们是自然生命与人类情绪长期共存后产生的异常形态。」</div>
+    <div class="tone-tags">
+      <span>东方都市奇幻</span><span>现实主义</span><span>当代中国</span><span>植物生命</span><span>香气记忆</span>
+      <span>70%现实</span><span>20%微妙异常</span><span>10%超现实奇观</span>
+    </div>
+  </div>
+
+  <!-- ═══ 美术圣经 ═══ -->
+  <div class="cat-divider" id="bible-concept">
+    <div class="line"></div><span class="cat-label">美 术 圣 经</span><div class="line"></div>
+  </div>
+
+  <div class="bible-core">
+    <div class="bible-definition">
+      核心视觉定位：<strong>东方都市奇幻现实主义</strong> —— 不是幻想创造现实之外的世界，而是让现实显露隐藏的幻想。<br>
+      视觉比例：70% 现实 + 20% 微妙异常 + 10% 超现实奇观。越接近现实，异常出现时越有力量。
+    </div>
+    <button class="bible-toggle" onclick="toggleBible()" id="bibleToggle">▸ 查阅完整美术圣经</button>
+    <div class="bible-detail" id="bibleDetail">
+      <h4 style="color:#c8d8b0;margin-bottom:12px">🌿 美术总命题</h4>
+      <p>城市表面属于人类，但城市之下还有另一套生命系统：植物、根系、香气、记忆、情绪。</p>
+      <p style="margin-top:8px">异常本草不是来自另一个维度的入侵者——它们是自然生命与人类情绪长期共存后产生的异常形态。</p>
+
+      <h4 style="color:#c8d8b0;margin:20px 0 12px">🎨 三层世界视觉系统</h4>
+      <p><strong>第一层·人类现实层</strong>：秩序 · 灰/白/黑/冷蓝<br>
+      <strong>第二层·植物感知层</strong>：异常 · 绿色渗透/根须/香气<br>
+      <strong>第三层·渊木深处</strong>：远古记忆 · 暗绿/琥珀/根系网络</p>
+
+      <h4 style="color:#c8d8b0;margin:20px 0 12px">🪵 美术方法论</h4>
+      <p><strong>真实材料产生幻想</strong>——所有幻想元素必须拥有现实来源。禁止无来源CG设计、游戏装备感、魔法城堡感。</p>
+      <p style="margin-top:8px"><strong>时间感</strong>——每个空间都应有过去（它曾经是什么）、现在（谁正在使用）、未来（它将如何变化）。</p>
+      <p style="margin-top:8px"><strong>真实生活优先</strong>——避免样板间/展厅/博物馆，真正的人生活在有使用痕迹的空间里。</p>
+
+      <h4 style="color:#c8d8b0;margin:20px 0 12px">🌱 核心主题</h4>
+      <p>植物不是装饰——它们是角色。异常本草与人类情绪互相塑造：愤怒长成荆棘，悲伤凝为树脂，秘密藏在根系。</p>
+
+      <button class="copy-btn" onclick="copyBible()">📋 一键复制圣经全文</button>
+      <span id="copyConfirm" style="font-size:11px;color:rgba(160,180,130,.35);margin-left:12px;display:none">✓ 已复制</span>
+    </div>
+  </div>
+
+  <!-- ═══ 萧子期 ═══ -->
+  <div class="cat-divider" id="bible-xiaoziqi">
+    <div class="line"></div><span class="cat-label">萧 子 期 · 制 香 师</span><div class="line"></div>
+  </div>
+
+  <div class="bible-core">
+    <div class="bible-definition">
+      <strong>26岁 · 采风香堂成员 · 年轻制香师 · 异常本草调查者</strong><br>
+      团队中的判断者与守护者。拥有丰富的异常植物知识，习惯依靠记录、分析和经验解决问题。<br>
+      核心矛盾：知道太多，但无法改变过去。<br>
+      造型关键词：克制 · 稳定 · 隐藏职业 · 年轻调查者<br>
+      装备：《蕈谱》、旧钢笔、香具、样本盒、采菌刀、药烟管
+    </div>
+  </div>
+
+  <div class="voice-box">
+    <div class="voice-item"><span class="voice-label">🎙️ 长版</span><audio controls preload="none" src="配音/萧子期_配音_不然呢？你真以为卖香能养活那么多人.mp3"></audio></div>
+    <div class="voice-item"><span class="voice-label">🎙️ 短版</span><audio controls preload="none" src="配音/萧子期_配音_给你开工资.mp3"></audio></div>
+  </div>
+
+    <div id="sec-xiaoziqi"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 萧子期 · 新造型（4套 · 20张）</span><div class="line"></div></div>
+  <div class="bible-core" style="max-width:900px;margin:0 auto 20px">
+    <div class="bible-definition">
+      <strong>风格迭代 · 复古都市调性</strong> —— 故事与调性调整后，萧子期造型改为低饱和复古都市风，每套造型含：全身照、头部特写、标准三视图、纯服装细节、无头手定妆。
+    </div>
+  </div>
+  <div id="sec-xiaoziqi-1"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 萧子期 · 新造型 1（5张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-xiaoziqi-1">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-1')">
+      <img src="萧子期_新造型1_全身.jpg" alt="新造型1 全身" loading="lazy">
+      <div class="card-info"><div class="card-name">全身</div><div class="card-desc">灰紫条纹立领夹克+米白衬衫+灰粉短裤+乐福鞋+流苏皮包</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-1')">
+      <img src="萧子期_新造型1_头.jpg" alt="新造型1 头部" loading="lazy">
+      <div class="card-info"><div class="card-name">头部</div><div class="card-desc">复古都市 · 夹克短裤</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-1')">
+      <img src="萧子期_新造型1_一致性_标准三视图.jpg" alt="新造型1 标准三视图" loading="lazy">
+      <div class="card-info"><div class="card-name">标准三视图</div><div class="card-desc">服装结构锁型</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-1')">
+      <img src="萧子期_新造型1_一致性_纯服装细节.jpg" alt="新造型1 纯服装细节" loading="lazy">
+      <div class="card-info"><div class="card-name">纯服装细节</div><div class="card-desc">面料与版型细节</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-1')">
+      <img src="萧子期_新造型1_一致性_造型定妆_无头手.jpg" alt="新造型1 造型定妆" loading="lazy">
+      <div class="card-info"><div class="card-name">造型定妆</div><div class="card-desc">造型比例与服装落点</div></div>
+    </div>
+  </div>
+
+  <div id="sec-xiaoziqi-2"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 萧子期 · 新造型 2（5张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-xiaoziqi-2">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-2')">
+      <img src="萧子期_新造型2_全身.jpg" alt="新造型2 全身" loading="lazy">
+      <div class="card-info"><div class="card-name">全身</div><div class="card-desc">棕色刺绣大衣+蓝白条纹衬衫+米白高腰短裤+焦糖皮包</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-2')">
+      <img src="萧子期_新造型2_头.jpg" alt="新造型2 头部" loading="lazy">
+      <div class="card-info"><div class="card-name">头部</div><div class="card-desc">复古学院 · 刺绣大衣</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-2')">
+      <img src="萧子期_新造型2_一致性_标准三视图.jpg" alt="新造型2 标准三视图" loading="lazy">
+      <div class="card-info"><div class="card-name">标准三视图</div><div class="card-desc">服装结构锁型</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-2')">
+      <img src="萧子期_新造型2_一致性_纯服装细节.jpg" alt="新造型2 纯服装细节" loading="lazy">
+      <div class="card-info"><div class="card-name">纯服装细节</div><div class="card-desc">面料与版型细节</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-2')">
+      <img src="萧子期_新造型2_一致性_造型定妆_无头手.jpg" alt="新造型2 造型定妆" loading="lazy">
+      <div class="card-info"><div class="card-name">造型定妆</div><div class="card-desc">造型比例与服装落点</div></div>
+    </div>
+  </div>
+
+  <div id="sec-xiaoziqi-3"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 萧子期 · 新造型 3（5张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-xiaoziqi-3">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-3')">
+      <img src="萧子期_新造型3_全身.jpg" alt="新造型3 全身" loading="lazy">
+      <div class="card-info"><div class="card-name">全身</div><div class="card-desc">深墨绿长风衣+酒红领带+深棕高腰宽腿裤+黑皮鞋</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-3')">
+      <img src="萧子期_新造型3_头.jpg" alt="新造型3 头部" loading="lazy">
+      <div class="card-info"><div class="card-name">头部</div><div class="card-desc">复古侦探 · 墨绿长款</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-3')">
+      <img src="萧子期_新造型3_一致性_标准三视图.jpg" alt="新造型3 标准三视图" loading="lazy">
+      <div class="card-info"><div class="card-name">标准三视图</div><div class="card-desc">服装结构锁型</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-3')">
+      <img src="萧子期_新造型3_一致性_纯服装细节.jpg" alt="新造型3 纯服装细节" loading="lazy">
+      <div class="card-info"><div class="card-name">纯服装细节</div><div class="card-desc">面料与版型细节</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-3')">
+      <img src="萧子期_新造型3_一致性_造型定妆_无头手.jpg" alt="新造型3 造型定妆" loading="lazy">
+      <div class="card-info"><div class="card-name">造型定妆</div><div class="card-desc">造型比例与服装落点</div></div>
+    </div>
+  </div>
+
+  <div id="sec-xiaoziqi-4"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 萧子期 · 新造型 4（5张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-xiaoziqi-4">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-4')">
+      <img src="萧子期_新造型4_全身.jpg" alt="新造型4 全身" loading="lazy">
+      <div class="card-info"><div class="card-name">全身</div><div class="card-desc">灰玫瑰粉长风衣+灰褐格纹西装短裤+菱格领带+乐福鞋</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-4')">
+      <img src="萧子期_新造型4_头.jpg" alt="新造型4 头部" loading="lazy">
+      <div class="card-info"><div class="card-name">头部</div><div class="card-desc">英伦绅士 · 粉色风衣</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-4')">
+      <img src="萧子期_新造型4_一致性_标准三视图.jpg" alt="新造型4 标准三视图" loading="lazy">
+      <div class="card-info"><div class="card-name">标准三视图</div><div class="card-desc">服装结构锁型</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-4')">
+      <img src="萧子期_新造型4_一致性_纯服装细节.jpg" alt="新造型4 纯服装细节" loading="lazy">
+      <div class="card-info"><div class="card-name">纯服装细节</div><div class="card-desc">面料与版型细节</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-4')">
+      <img src="萧子期_新造型4_一致性_造型定妆_无头手.jpg" alt="新造型4 造型定妆" loading="lazy">
+      <div class="card-info"><div class="card-name">造型定妆</div><div class="card-desc">造型比例与服装落点</div></div>
+    </div>
+  </div>
+
+  <!-- 萧子期 · 面部资产 --><!-- 萧子期 · 面部资产 -->
+  <div id="sec-xiaoziqi-face"></div>
+  <div class="section-title"><div class="line"></div><span class="label">📐 萧子期 · 日常面部（7张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-xiaoziqi-face">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-face')">
+      <img src="萧子期_面部_正面正视.jpg" alt="正面正视" loading="lazy">
+      <div class="card-info"><div class="card-name">正面正视</div><div class="card-desc">标准面部参考 · 五官干净·气质安静克制</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-face')">
+      <img src="萧子期_面部_左侧45度.jpg" alt="左侧45度" loading="lazy">
+      <div class="card-info"><div class="card-name">左侧45°</div><div class="card-desc">面部角度参考</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-face')">
+      <img src="萧子期_面部_右侧45度.jpg" alt="右侧45度" loading="lazy">
+      <div class="card-info"><div class="card-name">右侧45°</div><div class="card-desc">面部角度参考</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-face')">
+      <img src="萧子期_面部_左侧正侧.jpg" alt="左侧正侧" loading="lazy">
+      <div class="card-info"><div class="card-name">左侧正侧</div><div class="card-desc">完整侧脸轮廓</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-face')">
+      <img src="萧子期_面部_右侧正侧.jpg" alt="右侧正侧" loading="lazy">
+      <div class="card-info"><div class="card-name">右侧正侧</div><div class="card-desc">完整侧脸轮廓</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-face')">
+      <img src="萧子期_面部_仰视角度.jpg" alt="仰视角度" loading="lazy">
+      <div class="card-info"><div class="card-name">仰视角度</div><div class="card-desc">低角度面部参考</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-face')">
+      <img src="萧子期_面部_俯视角度.jpg" alt="俯视角度" loading="lazy">
+      <div class="card-info"><div class="card-name">俯视角度</div><div class="card-desc">高角度面部参考</div></div>
+    </div>
+  </div>
+
+  <!-- 萧子期 · 表情资产 -->
+  <div id="sec-xiaoziqi-expr"></div>
+  <div class="section-title"><div class="line"></div><span class="label">😶 萧子期 · 日常表情（12张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-xiaoziqi-expr">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-expr')">
+      <img src="萧子期_表情_默认状态.jpg" alt="默认状态" loading="lazy">
+      <div class="card-info"><div class="card-name">默认状态</div><div class="card-desc">基准表情 · 安静克制</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-expr')">
+      <img src="萧子期_表情_轻微微笑.jpg" alt="轻微微笑" loading="lazy">
+      <div class="card-info"><div class="card-name">轻微微笑</div><div class="card-desc">罕见的柔和时刻</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-expr')">
+      <img src="萧子期_表情_释然.jpg" alt="释然" loading="lazy">
+      <div class="card-info"><div class="card-name">释然</div><div class="card-desc">案件解决后的放松</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-expr')">
+      <img src="萧子期_表情_思考.jpg" alt="思考" loading="lazy">
+      <div class="card-info"><div class="card-name">思考</div><div class="card-desc">分析异常植物线索</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-expr')">
+      <img src="萧子期_表情_疑惑.jpg" alt="疑惑" loading="lazy">
+      <div class="card-info"><div class="card-name">疑惑</div><div class="card-desc">线索矛盾的瞬间</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-expr')">
+      <img src="萧子期_表情_犹豫.jpg" alt="犹豫" loading="lazy">
+      <div class="card-info"><div class="card-name">犹豫</div><div class="card-desc">艰难抉择</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-expr')">
+      <img src="萧子期_表情_惊讶.jpg" alt="惊讶" loading="lazy">
+      <div class="card-info"><div class="card-name">惊讶</div><div class="card-desc">意外发现</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-expr')">
+      <img src="萧子期_表情_恐惧.jpg" alt="恐惧" loading="lazy">
+      <div class="card-info"><div class="card-name">恐惧</div><div class="card-desc">面对渊木深处的未知</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-expr')">
+      <img src="萧子期_表情_悲伤.jpg" alt="悲伤" loading="lazy">
+      <div class="card-info"><div class="card-name">悲伤</div><div class="card-desc">无法改变过去的沉重</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-expr')">
+      <img src="萧子期_表情_愤怒.jpg" alt="愤怒" loading="lazy">
+      <div class="card-info"><div class="card-name">愤怒</div><div class="card-desc">对异常植物的压制性愤怒</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-expr')">
+      <img src="萧子期_表情_压力状态.jpg" alt="压力状态" loading="lazy">
+      <div class="card-info"><div class="card-name">压力状态</div><div class="card-desc">独自承受时的微表情</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaoziqi-expr')">
+      <img src="萧子期_表情_角色招牌.jpg" alt="角色招牌" loading="lazy">
+      <div class="card-info"><div class="card-name">角色招牌</div><div class="card-desc">最具辨识度的表情定帧</div></div>
+    </div>
+  </div>
+
+  <!-- ═══ 陈宇晨 ═══ -->
+  <div class="cat-divider" id="bible-chenyuchen">
+    <div class="line"></div><span class="cat-label">陈 宇 晨 · 发 明 者</span><div class="line"></div>
+  </div>
+
+  <div class="bible-core">
+    <div class="bible-definition">
+      <strong>22岁 · 技术支援 · 少年发明者 · 异常装备制造者</strong><br>
+      团队中的行动派。解决问题的方法不是经验，而是创造。改造设备、制造工具、临场发挥。<br>
+      核心欲望：希望被别人看见。<br>
+      造型关键词：DIY · 机能 · 少年冒险者 · 行动派<br>
+      装备：改造背包、扫描设备、工具包、千面昙薄膜（伪装变脸）
+    </div>
+  </div>
+
+  <div class="voice-box">
+    <div class="voice-item"><span class="voice-label">🎙️ 长版</span><audio controls preload="none" src="配音/陈宇晨_配音_谁知道他们这也能跟过来.mp3"></audio></div>
+    <div class="voice-item"><span class="voice-label">🎙️ 短版</span><audio controls preload="none" src="配音/陈宇晨_配音_被异常本草侵蚀的人.mp3"></audio></div>
+  </div>
+
+    <div id="sec-chenyuchen"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 陈宇晨 · 新造型（6套 · 12张）</span><div class="line"></div></div>
+  <div class="bible-core" style="max-width:900px;margin:0 auto 20px">
+    <div class="bible-definition">
+      <strong>风格迭代 · 复古都市调性</strong> —— 故事与调性调整后，陈宇晨造型改为复古都市风：工装牛仔 / 学院休闲 / 音乐少年 / 西部工装 / 文艺针织 多套变化，每套含全身照与头部特写。
+    </div>
+  </div>
+  <div id="sec-chenyuchen-1"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 陈宇晨 · 新造型 1（2张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-chenyuchen-1">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-1')">
+      <img src="陈宇晨_新造型1_全身.jpg" alt="新造型1 全身" loading="lazy">
+      <div class="card-info"><div class="card-name">全身</div><div class="card-desc">卡其工装牛仔夹克+浅蓝牛仔衬衫+米白短裤+米色船鞋</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-1')">
+      <img src="陈宇晨_新造型1_头部.jpg" alt="新造型1 头部" loading="lazy">
+      <div class="card-info"><div class="card-name">头部</div><div class="card-desc">复古工装 · 卡其牛仔</div></div>
+    </div>
+  </div>
+
+  <div id="sec-chenyuchen-2"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 陈宇晨 · 新造型 2（2张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-chenyuchen-2">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-2')">
+      <img src="陈宇晨_新造型2_全身.jpg" alt="新造型2 全身" loading="lazy">
+      <div class="card-info"><div class="card-name">全身</div><div class="card-desc">深蓝连帽防风夹克+浅蓝衬衫+白高腰短裤+深棕乐福鞋+蓝绿吊坠</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-2')">
+      <img src="陈宇晨_新造型2_头部.jpg" alt="新造型2 头部" loading="lazy">
+      <div class="card-info"><div class="card-name">头部</div><div class="card-desc">学院休闲 · 深蓝连帽</div></div>
+    </div>
+  </div>
+
+  <div id="sec-chenyuchen-3"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 陈宇晨 · 新造型 3（2张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-chenyuchen-3">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-3')">
+      <img src="陈宇晨_新造型3_全身.jpg" alt="新造型3 全身" loading="lazy">
+      <div class="card-info"><div class="card-name">全身</div><div class="card-desc">蓝白针织披肩+白T+深海军蓝短裤+黑头戴耳机+深棕乐福鞋</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-3')">
+      <img src="陈宇晨_新造型3_头部.jpg" alt="新造型3 头部" loading="lazy">
+      <div class="card-info"><div class="card-name">头部</div><div class="card-desc">音乐少年 · 蓝白披肩</div></div>
+    </div>
+  </div>
+
+  <div id="sec-chenyuchen-4"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 陈宇晨 · 新造型 4（2张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-chenyuchen-4">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-4')">
+      <img src="陈宇晨_新造型4_全身.jpg" alt="新造型4 全身" loading="lazy">
+      <div class="card-info"><div class="card-name">全身</div><div class="card-desc">深蓝短袖翻领外套+蓝白条纹长袖+米白工装短裤+浅棕高帮靴+绿松石吊坠</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-4')">
+      <img src="陈宇晨_新造型4_头部.jpg" alt="新造型4 头部" loading="lazy">
+      <div class="card-info"><div class="card-name">头部</div><div class="card-desc">西部工装 · 蓝白条纹</div></div>
+    </div>
+  </div>
+
+  <div id="sec-chenyuchen-5"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 陈宇晨 · 新造型 5（2张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-chenyuchen-5">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-5')">
+      <img src="陈宇晨_新造型5_全身.jpg" alt="新造型5 全身" loading="lazy">
+      <div class="card-info"><div class="card-name">全身</div><div class="card-desc">深靛蓝牛仔夹克+蓝灰格纹衬衫+浅灰工装短裤+深蓝黑皮靴+蓝绿吊坠</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-5')">
+      <img src="陈宇晨_新造型5_头部.jpg" alt="新造型5 头部" loading="lazy">
+      <div class="card-info"><div class="card-name">头部</div><div class="card-desc">复古牛仔 · 格纹叠穿</div></div>
+    </div>
+  </div>
+
+  <div id="sec-chenyuchen-6"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 陈宇晨 · 新造型 6（2张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-chenyuchen-6">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-6')">
+      <img src="陈宇晨_新造型6_全身.jpg" alt="新造型6 全身" loading="lazy">
+      <div class="card-info"><div class="card-name">全身</div><div class="card-desc">芥末黄无袖针织背心+灰褐宽松短裤+黑短靴+绿叶胸针</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-6')">
+      <img src="陈宇晨_新造型6_头部.jpg" alt="新造型6 头部" loading="lazy">
+      <div class="card-info"><div class="card-name">头部</div><div class="card-desc">文艺针织 · 明黄背心</div></div>
+    </div>
+  </div>
+
+  <div id="sec-chenyuchen-face"></div>
+  <div class="section-title"><div class="line"></div><span class="label">📐 陈宇晨 · 面部资产（7张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-chenyuchen-face">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-face')">
+      <img src="陈宇晨_面部_正面正视.jpg" alt="正面正视" loading="lazy">
+      <div class="card-info"><div class="card-name">正面正视</div><div class="card-desc">标准面部 · 清俊书卷气</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-face')">
+      <img src="陈宇晨_面部_左侧45度.jpg" alt="左侧45度" loading="lazy">
+      <div class="card-info"><div class="card-name">左侧45°</div><div class="card-desc">面部角度参考</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-face')">
+      <img src="陈宇晨_面部_右侧45度.jpg" alt="右侧45度" loading="lazy">
+      <div class="card-info"><div class="card-name">右侧45°</div><div class="card-desc">面部角度参考</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-face')">
+      <img src="陈宇晨_面部_左侧正侧.jpg" alt="左侧正侧" loading="lazy">
+      <div class="card-info"><div class="card-name">左侧正侧</div><div class="card-desc">面部角度参考</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-face')">
+      <img src="陈宇晨_面部_右侧正侧.jpg" alt="右侧正侧" loading="lazy">
+      <div class="card-info"><div class="card-name">右侧正侧</div><div class="card-desc">面部角度参考</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-face')">
+      <img src="陈宇晨_面部_仰视角度.jpg" alt="仰视角度" loading="lazy">
+      <div class="card-info"><div class="card-name">仰视角度</div><div class="card-desc">面部角度参考</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-face')">
+      <img src="陈宇晨_面部_俯视角度.jpg" alt="俯视角度" loading="lazy">
+      <div class="card-info"><div class="card-name">俯视角度</div><div class="card-desc">面部角度参考</div></div>
+    </div>
+  </div>
+
+  <div id="sec-chenyuchen-expr"></div>
+  <div class="section-title"><div class="line"></div><span class="label">😶 陈宇晨 · 表情资产（12张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-chenyuchen-expr">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-expr')">
+      <img src="陈宇晨_表情_默认状态.jpg" alt="默认状态" loading="lazy">
+      <div class="card-info"><div class="card-name">默认状态</div><div class="card-desc">基准表情 · 温和疏离</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-expr')">
+      <img src="陈宇晨_表情_轻微微笑.jpg" alt="轻微微笑" loading="lazy">
+      <div class="card-info"><div class="card-name">轻微微笑</div><div class="card-desc">礼貌的温和</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-expr')">
+      <img src="陈宇晨_表情_释然.jpg" alt="释然" loading="lazy">
+      <div class="card-info"><div class="card-name">释然</div><div class="card-desc">如释重负</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-expr')">
+      <img src="陈宇晨_表情_思考.jpg" alt="思考" loading="lazy">
+      <div class="card-info"><div class="card-name">思考</div><div class="card-desc">冷静分析</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-expr')">
+      <img src="陈宇晨_表情_惊讶.jpg" alt="惊讶" loading="lazy">
+      <div class="card-info"><div class="card-name">惊讶</div><div class="card-desc">瞳孔微缩</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-expr')">
+      <img src="陈宇晨_表情_疑惑.jpg" alt="疑惑" loading="lazy">
+      <div class="card-info"><div class="card-name">疑惑</div><div class="card-desc">眉头微蹙</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-expr')">
+      <img src="陈宇晨_表情_犹豫.jpg" alt="犹豫" loading="lazy">
+      <div class="card-info"><div class="card-name">犹豫</div><div class="card-desc">欲言又止</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-expr')">
+      <img src="陈宇晨_表情_愤怒.jpg" alt="愤怒" loading="lazy">
+      <div class="card-info"><div class="card-name">愤怒</div><div class="card-desc">压抑的怒意</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-expr')">
+      <img src="陈宇晨_表情_悲伤.jpg" alt="悲伤" loading="lazy">
+      <div class="card-info"><div class="card-name">悲伤</div><div class="card-desc">低沉</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-expr')">
+      <img src="陈宇晨_表情_恐惧.jpg" alt="恐惧" loading="lazy">
+      <div class="card-info"><div class="card-name">恐惧</div><div class="card-desc">警觉</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-expr')">
+      <img src="陈宇晨_表情_压力状态.jpg" alt="压力状态" loading="lazy">
+      <div class="card-info"><div class="card-name">压力状态</div><div class="card-desc">高压紧绷</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chenyuchen-expr')">
+      <img src="陈宇晨_表情_角色招牌.jpg" alt="角色招牌" loading="lazy">
+      <div class="card-info"><div class="card-name">角色招牌</div><div class="card-desc">他的典型神情</div></div>
+    </div>
+  </div>
+
+  <!-- ═══ 程雨馨 ═══ -->
+  <div class="cat-divider" id="bible-chengyuxin">
+    <div class="line"></div><span class="cat-label">程 雨 馨 · 感 知 者</span><div class="line"></div>
+  </div>
+
+  <div class="bible-core">
+    <div class="bible-definition">
+      <strong>24岁 · 美院学生 · 异常嗅觉拥有者 · 植物感知者</strong><br>
+      观众进入异常世界的入口。一直认为自己的敏感是一种负担。<br>
+      成长弧线：隐藏自己 → 接纳自己 → 利用能力帮助别人。<br>
+      造型关键词：轻盈 · 自然 · 观察者 · 成长<br>
+      装备：气味标签、样本袋、记录本
+    </div>
+  </div>
+
+  <div class="voice-box">
+    <div class="voice-item"><span class="voice-label">🎙️ 长版</span><audio controls preload="none" src="配音/程雨馨_配音_还有还有，谢师宴结束那天晚上.mp3"></audio></div>
+    <div class="voice-item"><span class="voice-label">🎙️ 短版</span><audio controls preload="none" src="配音/程雨馨_配音_感觉好多了，谢谢你.mp3"></audio></div>
+  </div>
+
+    <div id="sec-chengyuxin"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 程雨馨 · 新造型（4套 · 8张）</span><div class="line"></div></div>
+  <div class="bible-core" style="max-width:900px;margin:0 auto 20px">
+    <div class="bible-definition">
+      <strong>风格迭代 · 复古都市调性</strong> —— 故事与调性调整后，程雨馨造型改为复古都市风，每套含全身照与头部特写。
+    </div>
+  </div>
+  <div id="sec-chengyuxin-1"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 程雨馨 · 新造型 1（2张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-chengyuxin-1">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-1')">
+      <img src="程雨馨_新造型1_全身.jpg" alt="新造型 1 · 全身" loading="lazy">
+      <div class="card-info"><div class="card-name">新造型 1 · 全身</div><div class="card-desc">程雨馨新造型 1</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-1')">
+      <img src="程雨馨_新造型1_头部.jpg" alt="新造型 1 · 头部" loading="lazy">
+      <div class="card-info"><div class="card-name">新造型 1 · 头部</div><div class="card-desc">程雨馨新造型 1</div></div>
+    </div>
+  </div>
+
+  <div id="sec-chengyuxin-2"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 程雨馨 · 新造型 2（2张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-chengyuxin-2">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-2')">
+      <img src="程雨馨_新造型2_全身.jpg" alt="新造型 2 · 全身" loading="lazy">
+      <div class="card-info"><div class="card-name">新造型 2 · 全身</div><div class="card-desc">程雨馨新造型 2</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-2')">
+      <img src="程雨馨_新造型2_头部.jpg" alt="新造型 2 · 头部" loading="lazy">
+      <div class="card-info"><div class="card-name">新造型 2 · 头部</div><div class="card-desc">程雨馨新造型 2</div></div>
+    </div>
+  </div>
+
+  <div id="sec-chengyuxin-3"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 程雨馨 · 新造型 3（2张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-chengyuxin-3">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-3')">
+      <img src="程雨馨_新造型3_全身.jpg" alt="新造型 3 · 全身" loading="lazy">
+      <div class="card-info"><div class="card-name">新造型 3 · 全身</div><div class="card-desc">程雨馨新造型 3</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-3')">
+      <img src="程雨馨_新造型3_头部.jpg" alt="新造型 3 · 头部" loading="lazy">
+      <div class="card-info"><div class="card-name">新造型 3 · 头部</div><div class="card-desc">程雨馨新造型 3</div></div>
+    </div>
+  </div>
+
+  <div id="sec-chengyuxin-4"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 程雨馨 · 新造型 4（2张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-chengyuxin-4">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-4')">
+      <img src="程雨馨_新造型4_全身.jpg" alt="新造型 4 · 全身" loading="lazy">
+      <div class="card-info"><div class="card-name">新造型 4 · 全身</div><div class="card-desc">程雨馨新造型 4</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-4')">
+      <img src="程雨馨_新造型4_头部.jpg" alt="新造型 4 · 头部" loading="lazy">
+      <div class="card-info"><div class="card-name">新造型 4 · 头部</div><div class="card-desc">程雨馨新造型 4</div></div>
+    </div>
+  </div>
+
+  <div id="sec-chengyuxin-face"></div>
+  <div class="section-title"><div class="line"></div><span class="label">📐 程雨馨 · 面部资产（7张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-chengyuxin-face">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-face')">
+      <img src="程雨馨_面部_正面正视.jpg" alt="正面正视" loading="lazy">
+      <div class="card-info"><div class="card-name">正面正视</div><div class="card-desc">标准面部 · 自然清透·安静敏感</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-face')">
+      <img src="程雨馨_面部_左侧45度.jpg" alt="左侧45度" loading="lazy">
+      <div class="card-info"><div class="card-name">左侧45°</div><div class="card-desc">面部角度参考</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-face')">
+      <img src="程雨馨_面部_右侧45度.jpg" alt="右侧45度" loading="lazy">
+      <div class="card-info"><div class="card-name">右侧45°</div><div class="card-desc">面部角度参考</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-face')">
+      <img src="程雨馨_面部_左侧正侧.jpg" alt="左侧正侧" loading="lazy">
+      <div class="card-info"><div class="card-name">左侧正侧</div><div class="card-desc">完整侧脸轮廓</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-face')">
+      <img src="程雨馨_面部_右侧正侧.jpg" alt="右侧正侧" loading="lazy">
+      <div class="card-info"><div class="card-name">右侧正侧</div><div class="card-desc">完整侧脸轮廓</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-face')">
+      <img src="程雨馨_面部_仰视角度.jpg" alt="仰视角度" loading="lazy">
+      <div class="card-info"><div class="card-name">仰视角度</div><div class="card-desc">低角度面部参考</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-face')">
+      <img src="程雨馨_面部_俯视角度.jpg" alt="俯视角度" loading="lazy">
+      <div class="card-info"><div class="card-name">俯视角度</div><div class="card-desc">高角度面部参考</div></div>
+    </div>
+  </div>
+
+  <!-- 程雨馨 · 表情资产 -->
+  <div id="sec-chengyuxin-expr"></div>
+  <div class="section-title"><div class="line"></div><span class="label">😶 程雨馨 · 表情资产（12张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-chengyuxin-expr">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-expr')">
+      <img src="程雨馨_表情_默认状态.jpg" alt="默认状态" loading="lazy">
+      <div class="card-info"><div class="card-name">默认状态</div><div class="card-desc">基准表情 · 安静敏感的观察者</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-expr')">
+      <img src="程雨馨_表情_轻微微笑.jpg" alt="轻微微笑" loading="lazy">
+      <div class="card-info"><div class="card-name">轻微微笑</div><div class="card-desc">发现异常植物线索的喜悦</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-expr')">
+      <img src="程雨馨_表情_释然.jpg" alt="释然" loading="lazy">
+      <div class="card-info"><div class="card-name">释然</div><div class="card-desc">接受自己的能力后放松</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-expr')">
+      <img src="程雨馨_表情_思考.jpg" alt="思考" loading="lazy">
+      <div class="card-info"><div class="card-name">思考</div><div class="card-desc">分析气味标签时的专注</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-expr')">
+      <img src="程雨馨_表情_疑惑.jpg" alt="疑惑" loading="lazy">
+      <div class="card-info"><div class="card-name">疑惑</div><div class="card-desc">异常气味来源不明</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-expr')">
+      <img src="程雨馨_表情_犹豫.jpg" alt="犹豫" loading="lazy">
+      <div class="card-info"><div class="card-name">犹豫</div><div class="card-desc">是否告诉团队自己的感知</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-expr')">
+      <img src="程雨馨_表情_惊讶.jpg" alt="惊讶" loading="lazy">
+      <div class="card-info"><div class="card-name">惊讶</div><div class="card-desc">第一次看见渊木本体</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-expr')">
+      <img src="程雨馨_表情_恐惧.jpg" alt="恐惧" loading="lazy">
+      <div class="card-info"><div class="card-name">恐惧</div><div class="card-desc">感知被渊木反噬的瞬间</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-expr')">
+      <img src="程雨馨_表情_悲伤.jpg" alt="悲伤" loading="lazy">
+      <div class="card-info"><div class="card-name">悲伤</div><div class="card-desc">无法拯救黄雅悦的自责</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-expr')">
+      <img src="程雨馨_表情_愤怒.jpg" alt="愤怒" loading="lazy">
+      <div class="card-info"><div class="card-name">愤怒</div><div class="card-desc">对成华集团隐瞒真相的愤怒</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-expr')">
+      <img src="程雨馨_表情_压力状态.jpg" alt="压力状态" loading="lazy">
+      <div class="card-info"><div class="card-name">压力状态</div><div class="card-desc">异常嗅觉过载时的疲惫</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'chengyuxin-expr')">
+      <img src="程雨馨_表情_角色招牌.jpg" alt="角色招牌" loading="lazy">
+      <div class="card-info"><div class="card-name">角色招牌</div><div class="card-desc">清透自然的最具辨识度表情</div></div>
+    </div>
+  </div>
+  <!-- 程雨馨 · 一致性资产 -->
+  <!-- ═══ 神秘老者 ═══ -->
+  <div class="cat-divider" id="bible-oldman">
+    <div class="line"></div><span class="cat-label">神 秘 老 者</span><div class="line"></div>
+  </div>
+  <div class="bible-core">
+    <div class="bible-definition">
+      <strong>年龄不详 · 前代异常本草调查者 · 采风香堂前身「守蕈人」成员</strong><br>
+      隐退多年的老调查者。知晓渊木的古老秘密，是三人组最重要的信息源与精神导师。<br>
+      核心谜团：他为什么隐退？他手中那本残缺的《蕈谱》撕掉的是什么？<br>
+      造型关键词：沉稳 · 神秘 · 古老智慧 · 隐世者
+    </div>
+  </div>
+
+  <div id="sec-oldman"></div>
+  <div class="section-title"><div class="line"></div><span class="label">🧓 神秘老者 · 造型资产（5张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-oldman">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman')">
+      <img src="神秘老者_正面全身.jpg" alt="正面全身" loading="lazy">
+      <div class="card-info"><div class="card-name">正面全身</div><div class="card-desc">标准站姿 · 中式长衫·沉稳内敛</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman')">
+      <img src="神秘老者_背面全身.jpg" alt="背面全身" loading="lazy">
+      <div class="card-info"><div class="card-name">背面全身</div><div class="card-desc">背后视角</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman')">
+      <img src="神秘老者_侧面全身.jpg" alt="侧面全身" loading="lazy">
+      <div class="card-info"><div class="card-name">侧面全身</div><div class="card-desc">侧面轮廓·古老智慧气质</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman')">
+      <img src="神秘老者_特写细节.jpg" alt="特写细节" loading="lazy">
+      <div class="card-info"><div class="card-name">特写细节</div><div class="card-desc">面部+双手·旧蕈谱·疤痕细节</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman')">
+      <img src="神秘老者_动态站姿.jpg" alt="动态站姿" loading="lazy">
+      <div class="card-info"><div class="card-name">动态站姿</div><div class="card-desc">翻阅蕈谱·传授知识姿态</div></div>
+    </div>
+  </div>
+
+  <div id="sec-oldman-face"></div>
+  <div class="section-title"><div class="line"></div><span class="label">📐 神秘老者 · 面部资产（7张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-oldman-face">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-face')">
+      <img src="神秘老者_面部_正面正视.jpg" alt="正面正视" loading="lazy">
+      <div class="card-info"><div class="card-name">正面正视</div><div class="card-desc">标准面部·目光深邃</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-face')">
+      <img src="神秘老者_面部_左侧45度.jpg" alt="左侧45度" loading="lazy">
+      <div class="card-info"><div class="card-name">左侧45°</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-face')">
+      <img src="神秘老者_面部_右侧45度.jpg" alt="右侧45度" loading="lazy">
+      <div class="card-info"><div class="card-name">右侧45°</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-face')">
+      <img src="神秘老者_面部_左侧正侧.jpg" alt="左侧正侧" loading="lazy">
+      <div class="card-info"><div class="card-name">左侧正侧</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-face')">
+      <img src="神秘老者_面部_右侧正侧.jpg" alt="右侧正侧" loading="lazy">
+      <div class="card-info"><div class="card-name">右侧正侧</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-face')">
+      <img src="神秘老者_面部_仰视角度.jpg" alt="仰视角度" loading="lazy">
+      <div class="card-info"><div class="card-name">仰视角度</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-face')">
+      <img src="神秘老者_面部_俯视角度.jpg" alt="俯视角度" loading="lazy">
+      <div class="card-info"><div class="card-name">俯视角度</div></div>
+    </div>
+  </div>
+
+  <div id="sec-oldman-expr"></div>
+  <div class="section-title"><div class="line"></div><span class="label">😶 神秘老者 · 表情资产（12张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-oldman-expr">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-expr')">
+      <img src="神秘老者_表情_默认状态.jpg" alt="默认状态" loading="lazy">
+      <div class="card-info"><div class="card-name">默认状态</div><div class="card-desc">基准表情·深不可测</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-expr')">
+      <img src="神秘老者_表情_轻微微笑.jpg" alt="轻微微笑" loading="lazy">
+      <div class="card-info"><div class="card-name">轻微微笑</div><div class="card-desc">看着三个年轻人成长</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-expr')">
+      <img src="神秘老者_表情_释然.jpg" alt="释然" loading="lazy">
+      <div class="card-info"><div class="card-name">释然</div><div class="card-desc">秘密终于有人继承</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-expr')">
+      <img src="神秘老者_表情_思考.jpg" alt="思考" loading="lazy">
+      <div class="card-info"><div class="card-name">思考</div><div class="card-desc">回忆古老的渊木传说</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-expr')">
+      <img src="神秘老者_表情_疑惑.jpg" alt="疑惑" loading="lazy">
+      <div class="card-info"><div class="card-name">疑惑</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-expr')">
+      <img src="神秘老者_表情_犹豫.jpg" alt="犹豫" loading="lazy">
+      <div class="card-info"><div class="card-name">犹豫</div><div class="card-desc">是否说出全部真相</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-expr')">
+      <img src="神秘老者_表情_惊讶.jpg" alt="惊讶" loading="lazy">
+      <div class="card-info"><div class="card-name">惊讶</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-expr')">
+      <img src="神秘老者_表情_恐惧.jpg" alt="恐惧" loading="lazy">
+      <div class="card-info"><div class="card-name">恐惧</div><div class="card-desc">渊木苏醒的预感</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-expr')">
+      <img src="神秘老者_表情_悲伤.jpg" alt="悲伤" loading="lazy">
+      <div class="card-info"><div class="card-name">悲伤</div><div class="card-desc">对逝去同伴的追忆</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-expr')">
+      <img src="神秘老者_表情_愤怒.jpg" alt="愤怒" loading="lazy">
+      <div class="card-info"><div class="card-name">愤怒</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-expr')">
+      <img src="神秘老者_表情_压力状态.jpg" alt="压力状态" loading="lazy">
+      <div class="card-info"><div class="card-name">压力状态</div><div class="card-desc">被过去记忆压垮的瞬间</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-expr')">
+      <img src="神秘老者_表情_角色招牌.jpg" alt="角色招牌" loading="lazy">
+      <div class="card-info"><div class="card-name">角色招牌</div><div class="card-desc">最具代表性的深邃表情</div></div>
+    </div>
+  </div>
+
+  <div id="sec-oldman-consistency"></div>
+  <div class="section-title"><div class="line"></div><span class="label">🔗 神秘老者 · 一致性资产（4张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-oldman-consistency">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-consistency')">
+      <img src="神秘老者_一致性_剪影识别系统.jpg" alt="剪影识别系统" loading="lazy">
+      <div class="card-info"><div class="card-name">剪影识别系统</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-consistency')">
+      <img src="神秘老者_一致性_服装结构与材质板.jpg" alt="服装结构与材质板" loading="lazy">
+      <div class="card-info"><div class="card-name">服装结构与材质板</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-consistency')">
+      <img src="神秘老者_一致性_脸部_眼镜_发型细节.jpg" alt="脸部眼镜发型细节" loading="lazy">
+      <div class="card-info"><div class="card-name">脸部+眼镜+发型细节</div></div>
+    </div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'oldman-consistency')">
+      <img src="神秘老者_一致性_随身物资产.jpg" alt="随身物资产" loading="lazy">
+      <div class="card-info"><div class="card-name">随身物资产</div><div class="card-desc">残破蕈谱+旧怀表+守蕈人信物</div></div>
+    </div>
+  </div>
+
+  <!-- ═══ 虹姐 ═══ -->
+  <div class="cat-divider" id="bible-hongjie">
+    <div class="line"></div><span class="cat-label">虹 姐 · 香 堂 主</span><div class="line"></div>
+  </div>
+
+  <div class="bible-core">
+    <div class="bible-definition">
+      <strong>采风香堂老板 · 成熟女性 · 坐轮椅 · 黑猫常伴</strong><br>
+      连接三人组与隐藏世界的关键人物。她知道很多异常事件背后的规则。稳定、神秘，是团队的锚点与后盾。
+    </div>
+  </div>
+
+  <div class="voice-box">
+    <div class="voice-item"><span class="voice-label">🎙️ 长版</span><audio controls preload="none" src="配音/虹姐_配音_异常本草，是一些罕见危险的植物.mp3"></audio></div>
+    <div class="voice-item"><span class="voice-label">🎙️ 短版</span><audio controls preload="none" src="配音/虹姐_配音_我们一面经营调香生意.mp3"></audio></div>
+  </div>
+
+  <div id="sec-hongjie"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 虹姐 · 造型资产（5张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-hongjie">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie')">
+      <img src="虹姐_正面全身.jpg" alt="正面全身" loading="lazy">
+      <div class="card-info"><div class="card-name">正面全身</div><div class="card-desc">坐轮椅标准正面 · 成熟女性·沉稳气质</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie')">
+      <img src="虹姐_背面全身.jpg" alt="背面全身" loading="lazy">
+      <div class="card-info"><div class="card-name">背面全身</div><div class="card-desc">轮椅背后视角</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie')">
+      <img src="虹姐_侧面全身.jpg" alt="侧面全身" loading="lazy">
+      <div class="card-info"><div class="card-name">侧面全身</div><div class="card-desc">侧面轮椅轮廓 · 黑猫常伴</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie')">
+      <img src="虹姐_特写细节.jpg" alt="特写细节" loading="lazy">
+      <div class="card-info"><div class="card-name">特写细节</div><div class="card-desc">面部+手部·茶具·旧照片细节</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie')">
+      <img src="虹姐_动态站姿.jpg" alt="动态站姿" loading="lazy">
+      <div class="card-info"><div class="card-name">动态站姿</div><div class="card-desc">自然坐姿 · 与三人组对话状态</div></div></div>
+  </div>
+
+  <div class="section-title"><div class="line"></div><span class="label">📐 虹姐 · 面部资产（7张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-hongjie-face">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-face')">
+      <img src="虹姐_面部_正面正视.jpg" alt="正面正视" loading="lazy">
+      <div class="card-info"><div class="card-name">正面正视</div><div class="card-desc">标准面部 · 成熟稳定·神秘感</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-face')">
+      <img src="虹姐_面部_左侧45度.jpg" alt="左侧45度" loading="lazy"><div class="card-info"><div class="card-name">左侧45°</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-face')">
+      <img src="虹姐_面部_右侧45度.jpg" alt="右侧45度" loading="lazy"><div class="card-info"><div class="card-name">右侧45°</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-face')">
+      <img src="虹姐_面部_左侧正侧.jpg" alt="左侧正侧" loading="lazy"><div class="card-info"><div class="card-name">左侧正侧</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-face')">
+      <img src="虹姐_面部_右侧正侧.jpg" alt="右侧正侧" loading="lazy"><div class="card-info"><div class="card-name">右侧正侧</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-face')">
+      <img src="虹姐_面部_仰视角度.jpg" alt="仰视角度" loading="lazy"><div class="card-info"><div class="card-name">仰视角度</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-face')">
+      <img src="虹姐_面部_俯视角度.jpg" alt="俯视角度" loading="lazy"><div class="card-info"><div class="card-name">俯视角度</div></div></div>
+  </div>
+
+  <div id="sec-hongjie-expr"></div>
+  <div class="section-title"><div class="line"></div><span class="label">😶 虹姐 · 表情资产（12张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-hongjie-expr">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-expr')">
+      <img src="虹姐_表情_默认状态.jpg" alt="默认状态" loading="lazy"><div class="card-info"><div class="card-name">默认状态</div><div class="card-desc">基准表情 · 深不可测的平静</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-expr')">
+      <img src="虹姐_表情_轻微微笑.jpg" alt="轻微微笑" loading="lazy"><div class="card-info"><div class="card-name">轻微微笑</div><div class="card-desc">看三人组成长的欣慰</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-expr')">
+      <img src="虹姐_表情_释然.jpg" alt="释然" loading="lazy"><div class="card-info"><div class="card-name">释然</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-expr')">
+      <img src="虹姐_表情_思考.jpg" alt="思考" loading="lazy"><div class="card-info"><div class="card-name">思考</div><div class="card-desc">回忆过去的异常事件</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-expr')">
+      <img src="虹姐_表情_疑惑.jpg" alt="疑惑" loading="lazy"><div class="card-info"><div class="card-name">疑惑</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-expr')">
+      <img src="虹姐_表情_犹豫.jpg" alt="犹豫" loading="lazy"><div class="card-info"><div class="card-name">犹豫</div><div class="card-desc">是否告诉三人组全部真相</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-expr')">
+      <img src="虹姐_表情_惊讶.jpg" alt="惊讶" loading="lazy"><div class="card-info"><div class="card-name">惊讶</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-expr')">
+      <img src="虹姐_表情_恐惧.jpg" alt="恐惧" loading="lazy"><div class="card-info"><div class="card-name">恐惧</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-expr')">
+      <img src="虹姐_表情_悲伤.jpg" alt="悲伤" loading="lazy"><div class="card-info"><div class="card-name">悲伤</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-expr')">
+      <img src="虹姐_表情_愤怒.jpg" alt="愤怒" loading="lazy"><div class="card-info"><div class="card-name">愤怒</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-expr')">
+      <img src="虹姐_表情_压力状态.jpg" alt="压力状态" loading="lazy"><div class="card-info"><div class="card-name">压力状态</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-expr')">
+      <img src="虹姐_表情_角色招牌.jpg" alt="角色招牌" loading="lazy"><div class="card-info"><div class="card-name">角色招牌</div><div class="card-desc">神秘与温柔并存的标志表情</div></div></div>
+  </div>
+
+  <div id="sec-hongjie-consistency"></div>
+  <div class="section-title"><div class="line"></div><span class="label">🔗 虹姐 · 一致性资产（4张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-hongjie-consistency">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-consistency')">
+      <img src="虹姐_一致性_剪影识别系统.jpg" alt="剪影识别系统" loading="lazy"><div class="card-info"><div class="card-name">剪影识别系统</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-consistency')">
+      <img src="虹姐_一致性_服装结构与材质板.jpg" alt="服装结构与材质板" loading="lazy"><div class="card-info"><div class="card-name">服装结构与材质板</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-consistency')">
+      <img src="虹姐_一致性_脸部_眼镜_发型细节.jpg" alt="脸部眼镜发型细节" loading="lazy"><div class="card-info"><div class="card-name">脸部+发型细节</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'hongjie-consistency')">
+      <img src="虹姐_一致性_随身物资产.jpg" alt="随身物资产" loading="lazy"><div class="card-info"><div class="card-name">随身物资产</div><div class="card-desc">黑猫常伴·轮椅·茶具·旧照片</div></div></div>
+  </div>
+
+  <!-- ═══ 黄雅悦（感染） ═══ -->
+  <div class="cat-divider" id="bible-huangyayue">
+    <div class="line"></div><span class="cat-label">黄 雅 悦 · 感 染 体</span><div class="line"></div>
+  </div>
+  <div class="bible-core">
+    <div class="bible-definition">
+      <strong>约24岁 · 程雨馨学姐 · 成华集团实习生 · 渊木感染宿主</strong><br>
+      EP01 黄雅悦消失事件的核心受害者。毕业典礼后在地下停车场被灯盏蕈拟态寄生，成为渊木感染网络的早期宿主。<br>
+      感染形态：身体局部木质化·皮肤浮现情绪年轮·意识被植物节律接管。<br>
+      造型关键词：被侵蚀的清爽年轻感 · 木质病变 · 植物与人的过渡态
+    </div>
+  </div>
+
+  <div id="sec-huangyayue"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 黄雅悦（感染）· 造型资产（5张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-huangyayue">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue')">
+      <img src="黄雅悦感染_正面全身.jpg" alt="正面全身" loading="lazy">
+      <div class="card-info"><div class="card-name">正面全身</div><div class="card-desc">感染体标准站姿 · 木质病变初现</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue')">
+      <img src="黄雅悦感染_背面全身.jpg" alt="背面全身" loading="lazy">
+      <div class="card-info"><div class="card-name">背面全身</div><div class="card-desc">背后视角 · 根须渗透痕迹</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue')">
+      <img src="黄雅悦感染_侧面全身.jpg" alt="侧面全身" loading="lazy">
+      <div class="card-info"><div class="card-name">侧面全身</div><div class="card-desc">侧面轮廓 · 植物化姿态</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue')">
+      <img src="黄雅悦感染_特写细节.jpg" alt="特写细节" loading="lazy">
+      <div class="card-info"><div class="card-name">特写细节</div><div class="card-desc">面部+皮肤 · 情绪年轮/树脂结节</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue')">
+      <img src="黄雅悦感染_动态站姿.jpg" alt="动态站姿" loading="lazy">
+      <div class="card-info"><div class="card-name">动态站姿</div><div class="card-desc">被植物节律接管的身体</div></div></div>
+  </div>
+
+  <div id="sec-huangyayue-face"></div>
+  <div class="section-title"><div class="line"></div><span class="label">📐 黄雅悦（感染）· 面部资产（7张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-huangyayue-face">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-face')">
+      <img src="黄雅悦感染_面部_正面正视.jpg" alt="正面正视" loading="lazy">
+      <div class="card-info"><div class="card-name">正面正视</div><div class="card-desc">感染体面部 · 清爽感被侵蚀</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-face')">
+      <img src="黄雅悦感染_面部_左侧45度.jpg" alt="左侧45度" loading="lazy"><div class="card-info"><div class="card-name">左侧45°</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-face')">
+      <img src="黄雅悦感染_面部_右侧45度.jpg" alt="右侧45度" loading="lazy"><div class="card-info"><div class="card-name">右侧45°</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-face')">
+      <img src="黄雅悦感染_面部_左侧正侧.jpg" alt="左侧正侧" loading="lazy"><div class="card-info"><div class="card-name">左侧正侧</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-face')">
+      <img src="黄雅悦感染_面部_右侧正侧.jpg" alt="右侧正侧" loading="lazy"><div class="card-info"><div class="card-name">右侧正侧</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-face')">
+      <img src="黄雅悦感染_面部_仰视角度.jpg" alt="仰视角度" loading="lazy"><div class="card-info"><div class="card-name">仰视角度</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-face')">
+      <img src="黄雅悦感染_面部_俯视角度.jpg" alt="俯视角度" loading="lazy"><div class="card-info"><div class="card-name">俯视角度</div></div></div>
+  </div>
+
+  <div id="sec-huangyayue-expr"></div>
+  <div class="section-title"><div class="line"></div><span class="label">😶 黄雅悦（感染）· 表情资产（12张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-huangyayue-expr">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-expr')">
+      <img src="黄雅悦感染_表情_默认状态.jpg" alt="默认状态" loading="lazy">
+      <div class="card-info"><div class="card-name">默认状态</div><div class="card-desc">感染体基准表情</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-expr')">
+      <img src="黄雅悦感染_表情_轻微微笑.jpg" alt="轻微微笑" loading="lazy">
+      <div class="card-info"><div class="card-name">轻微微笑</div><div class="card-desc">残留的自我意识</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-expr')">
+      <img src="黄雅悦感染_表情_释然.jpg" alt="释然" loading="lazy"><div class="card-info"><div class="card-name">释然</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-expr')">
+      <img src="黄雅悦感染_表情_思考.jpg" alt="思考" loading="lazy"><div class="card-info"><div class="card-name">思考</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-expr')">
+      <img src="黄雅悦感染_表情_疑惑.jpg" alt="疑惑" loading="lazy"><div class="card-info"><div class="card-name">疑惑</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-expr')">
+      <img src="黄雅悦感染_表情_犹豫.jpg" alt="犹豫" loading="lazy"><div class="card-info"><div class="card-name">犹豫</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-expr')">
+      <img src="黄雅悦感染_表情_惊讶.jpg" alt="惊讶" loading="lazy"><div class="card-info"><div class="card-name">惊讶</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-expr')">
+      <img src="黄雅悦感染_表情_恐惧.jpg" alt="恐惧" loading="lazy"><div class="card-info"><div class="card-name">恐惧</div><div class="card-desc">意识到自己正在异化</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-expr')">
+      <img src="黄雅悦感染_表情_悲伤.jpg" alt="悲伤" loading="lazy"><div class="card-info"><div class="card-name">悲伤</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-expr')">
+      <img src="黄雅悦感染_表情_愤怒.jpg" alt="愤怒" loading="lazy"><div class="card-info"><div class="card-name">愤怒</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-expr')">
+      <img src="黄雅悦感染_表情_压力状态.jpg" alt="压力状态" loading="lazy"><div class="card-info"><div class="card-name">压力状态</div><div class="card-desc">被渊木意识压迫</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-expr')">
+      <img src="黄雅悦感染_表情_角色招牌.jpg" alt="角色招牌" loading="lazy"><div class="card-info"><div class="card-name">角色招牌</div><div class="card-desc">感染体最具辨识度的表情</div></div></div>
+  </div>
+
+  <!-- ═══ 黄雅悦（正常） ═══ -->
+  <div class="cat-divider" id="bible-huangyayue-normal">
+    <div class="line"></div><span class="cat-label">黄 雅 悦 · 正 常 形 态</span><div class="line"></div>
+  </div>
+  <div class="bible-core">
+    <div class="bible-definition">
+      <strong>约24岁 · 程雨馨学姐 · 成华集团实习生</strong><br>
+      EP01 黄雅悦消失事件的核心人物。毕业典礼上带着向日葵的清爽年轻女性，成华集团「正念计划」的实习参与者。<br>
+      与上方「感染形态」对照：正常形态是清爽、明亮、普通的都市年轻女性——感染后木质病变与情绪年轮侵蚀的对比主体。<br>
+      造型关键词：清爽年轻感 · 学士服/白T · 向日葵 · 未被侵蚀的明亮
+    </div>
+  </div>
+
+  <div class="voice-box">
+    <div class="voice-item"><span class="voice-label">🎙️ 长版</span><audio controls preload="none" src="配音/黄雅悦_配音_所以你不仅能闻出味道.mp3"></audio></div>
+    <div class="voice-item"><span class="voice-label">🎙️ 短版</span><audio controls preload="none" src="配音/黄雅悦_配音_我说你这面.mp3"></audio></div>
+  </div>
+
+  <div id="sec-huangyayue-normal"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 黄雅悦 · 造型资产（5张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-huangyayue-normal">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal')">
+      <img src="黄雅悦_正面全身.jpg" alt="正面全身" loading="lazy">
+      <div class="card-info"><div class="card-name">正面全身</div><div class="card-desc">标准站姿 · 清爽明亮的年轻女性</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal')">
+      <img src="黄雅悦_背面全身.jpg" alt="背面全身" loading="lazy"><div class="card-info"><div class="card-name">背面全身</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal')">
+      <img src="黄雅悦_侧面全身.jpg" alt="侧面全身" loading="lazy"><div class="card-info"><div class="card-name">侧面全身</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal')">
+      <img src="黄雅悦_特写细节.jpg" alt="特写细节" loading="lazy">
+      <div class="card-info"><div class="card-name">特写细节</div><div class="card-desc">面部+上半身 · 无病变的干净皮肤</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal')">
+      <img src="黄雅悦_动态站姿.jpg" alt="动态站姿" loading="lazy">
+      <div class="card-info"><div class="card-name">动态站姿</div><div class="card-desc">毕业典礼 · 向日葵·学士服</div></div></div>
+  </div>
+
+  <div id="sec-huangyayue-normal-face"></div>
+  <div class="section-title"><div class="line"></div><span class="label">📐 黄雅悦 · 面部资产（7张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-huangyayue-normal-face">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-face')">
+      <img src="黄雅悦_面部_正面正视.jpg" alt="正面正视" loading="lazy">
+      <div class="card-info"><div class="card-name">正面正视</div><div class="card-desc">标准面部 · 清爽年轻</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-face')">
+      <img src="黄雅悦_面部_左侧45度.jpg" alt="左侧45度" loading="lazy"><div class="card-info"><div class="card-name">左侧45°</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-face')">
+      <img src="黄雅悦_面部_右侧45度.jpg" alt="右侧45度" loading="lazy"><div class="card-info"><div class="card-name">右侧45°</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-face')">
+      <img src="黄雅悦_面部_左侧正侧.jpg" alt="左侧正侧" loading="lazy"><div class="card-info"><div class="card-name">左侧正侧</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-face')">
+      <img src="黄雅悦_面部_右侧正侧.jpg" alt="右侧正侧" loading="lazy"><div class="card-info"><div class="card-name">右侧正侧</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-face')">
+      <img src="黄雅悦_面部_仰视角度.jpg" alt="仰视角度" loading="lazy"><div class="card-info"><div class="card-name">仰视角度</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-face')">
+      <img src="黄雅悦_面部_俯视角度.jpg" alt="俯视角度" loading="lazy"><div class="card-info"><div class="card-name">俯视角度</div></div></div>
+  </div>
+
+  <div id="sec-huangyayue-normal-expr"></div>
+  <div class="section-title"><div class="line"></div><span class="label">😶 黄雅悦 · 表情资产（12张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-huangyayue-normal-expr">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-expr')">
+      <img src="黄雅悦_表情_默认状态.jpg" alt="默认状态" loading="lazy"><div class="card-info"><div class="card-name">默认状态</div><div class="card-desc">基准表情 · 明亮自然</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-expr')">
+      <img src="黄雅悦_表情_轻微微笑.jpg" alt="轻微微笑" loading="lazy"><div class="card-info"><div class="card-name">轻微微笑</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-expr')">
+      <img src="黄雅悦_表情_释然.jpg" alt="释然" loading="lazy"><div class="card-info"><div class="card-name">释然</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-expr')">
+      <img src="黄雅悦_表情_思考.jpg" alt="思考" loading="lazy"><div class="card-info"><div class="card-name">思考</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-expr')">
+      <img src="黄雅悦_表情_疑惑.jpg" alt="疑惑" loading="lazy"><div class="card-info"><div class="card-name">疑惑</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-expr')">
+      <img src="黄雅悦_表情_犹豫.jpg" alt="犹豫" loading="lazy"><div class="card-info"><div class="card-name">犹豫</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-expr')">
+      <img src="黄雅悦_表情_惊讶.jpg" alt="惊讶" loading="lazy"><div class="card-info"><div class="card-name">惊讶</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-expr')">
+      <img src="黄雅悦_表情_恐惧.jpg" alt="恐惧" loading="lazy"><div class="card-info"><div class="card-name">恐惧</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-expr')">
+      <img src="黄雅悦_表情_悲伤.jpg" alt="悲伤" loading="lazy"><div class="card-info"><div class="card-name">悲伤</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-expr')">
+      <img src="黄雅悦_表情_愤怒.jpg" alt="愤怒" loading="lazy"><div class="card-info"><div class="card-name">愤怒</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-expr')">
+      <img src="黄雅悦_表情_压力状态.jpg" alt="压力状态" loading="lazy"><div class="card-info"><div class="card-name">压力状态</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-expr')">
+      <img src="黄雅悦_表情_角色招牌.jpg" alt="角色招牌" loading="lazy"><div class="card-info"><div class="card-name">角色招牌</div><div class="card-desc">向日葵般的明亮笑容</div></div></div>
+  </div>
+
+  <!-- 黄雅悦 · 一致性补充 -->
+  <div id="sec-huangyayue-normal-cons"></div>
+  <div class="section-title"><div class="line"></div><span class="label">🔗 黄雅悦 · 一致性补充（3张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-huangyayue-normal-cons">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-cons')">
+      <img src="黄雅悦_一致性_标准三视图.jpg" alt="标准三视图" loading="lazy">
+      <div class="card-info"><div class="card-name">标准三视图</div><div class="card-desc">正/侧/背三视图 · 服装结构锁型</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-cons')">
+      <img src="黄雅悦_一致性_纯服装细节.jpg" alt="纯服装细节" loading="lazy">
+      <div class="card-info"><div class="card-name">纯服装细节</div><div class="card-desc">无人物干扰 · 材质与版型细节</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'huangyayue-normal-cons')">
+      <img src="黄雅悦_一致性_造型定妆_无头手.jpg" alt="造型定妆无头手" loading="lazy">
+      <div class="card-info"><div class="card-name">造型定妆（无头手）</div><div class="card-desc">定妆参考 · 专注服装造型</div></div></div>
+  </div>
+
+  <!-- ═══ 林勇 ═══ -->
+  <div class="cat-divider" id="bible-linyong">
+    <div class="line"></div><span class="cat-label">林 勇</span><div class="line"></div>
+  </div>
+  <div class="bible-core">
+    <div class="bible-definition">
+      <strong>年龄不详 · 独居者 · 渊木感染源头之一</strong><br>
+      第一案《渊木》关键人物。衰败住宅的主人，与怨灵木深度接触，成为渊木感染网络最早的宿主之一。<br>
+      核心谜团：他的住宅里发生了什么？他与渊木的关系是宿主还是共谋？<br>
+      造型关键词：衰败 · 被侵蚀的日常 · 沉默 · 失去生活痕迹的人
+    </div>
+  </div>
+
+  <div id="sec-linyong"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 林勇 · 造型资产（5张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-linyong">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong')">
+      <img src="林勇_正面全身.jpg" alt="正面全身" loading="lazy">
+      <div class="card-info"><div class="card-name">正面全身</div><div class="card-desc">标准站姿 · 衰败感衣着·沉默气质</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong')">
+      <img src="林勇_背面全身.jpg" alt="背面全身" loading="lazy"><div class="card-info"><div class="card-name">背面全身</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong')">
+      <img src="林勇_侧面全身.jpg" alt="侧面全身" loading="lazy"><div class="card-info"><div class="card-name">侧面全身</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong')">
+      <img src="林勇_特写细节.jpg" alt="特写细节" loading="lazy">
+      <div class="card-info"><div class="card-name">特写细节</div><div class="card-desc">面部+双手 · 与怨灵木接触的痕迹</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong')">
+      <img src="林勇_动态站姿.jpg" alt="动态站姿" loading="lazy"><div class="card-info"><div class="card-name">动态站姿</div><div class="card-desc">日常行动 · 被生活压垮的姿态</div></div></div>
+  </div>
+
+  <div id="sec-linyong-face"></div>
+  <div class="section-title"><div class="line"></div><span class="label">📐 林勇 · 面部资产（7张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-linyong-face">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong-face')">
+      <img src="林勇_面部_正面正视.jpg" alt="正面正视" loading="lazy">
+      <div class="card-info"><div class="card-name">正面正视</div><div class="card-desc">标准面部 · 沉默压抑</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong-face')">
+      <img src="林勇_面部_左侧45度.jpg" alt="左侧45度" loading="lazy"><div class="card-info"><div class="card-name">左侧45°</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong-face')">
+      <img src="林勇_面部_右侧45度.jpg" alt="右侧45度" loading="lazy"><div class="card-info"><div class="card-name">右侧45°</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong-face')">
+      <img src="林勇_面部_左侧正侧.jpg" alt="左侧正侧" loading="lazy"><div class="card-info"><div class="card-name">左侧正侧</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong-face')">
+      <img src="林勇_面部_右侧正侧.jpg" alt="右侧正侧" loading="lazy"><div class="card-info"><div class="card-name">右侧正侧</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong-face')">
+      <img src="林勇_面部_仰视角度.jpg" alt="仰视角度" loading="lazy"><div class="card-info"><div class="card-name">仰视角度</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong-face')">
+      <img src="林勇_面部_俯视角度.jpg" alt="俯视角度" loading="lazy"><div class="card-info"><div class="card-name">俯视角度</div></div></div>
+  </div>
+
+  <div id="sec-linyong-expr"></div>
+  <div class="section-title"><div class="line"></div><span class="label">😶 林勇 · 表情资产（12张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-linyong-expr">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong-expr')">
+      <img src="林勇_表情_默认状态.jpg" alt="默认状态" loading="lazy"><div class="card-info"><div class="card-name">默认状态</div><div class="card-desc">基准表情 · 麻木</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong-expr')">
+      <img src="林勇_表情_轻微微笑.jpg" alt="轻微微笑" loading="lazy"><div class="card-info"><div class="card-name">轻微微笑</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong-expr')">
+      <img src="林勇_表情_释然.jpg" alt="释然" loading="lazy"><div class="card-info"><div class="card-name">释然</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong-expr')">
+      <img src="林勇_表情_思考.jpg" alt="思考" loading="lazy"><div class="card-info"><div class="card-name">思考</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong-expr')">
+      <img src="林勇_表情_疑惑.jpg" alt="疑惑" loading="lazy"><div class="card-info"><div class="card-name">疑惑</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong-expr')">
+      <img src="林勇_表情_犹豫.jpg" alt="犹豫" loading="lazy"><div class="card-info"><div class="card-name">犹豫</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong-expr')">
+      <img src="林勇_表情_惊讶.jpg" alt="惊讶" loading="lazy"><div class="card-info"><div class="card-name">惊讶</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong-expr')">
+      <img src="林勇_表情_恐惧.jpg" alt="恐惧" loading="lazy"><div class="card-info"><div class="card-name">恐惧</div><div class="card-desc">面对怨灵木本体</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong-expr')">
+      <img src="林勇_表情_悲伤.jpg" alt="悲伤" loading="lazy"><div class="card-info"><div class="card-name">悲伤</div><div class="card-desc">失去一切的沉默</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong-expr')">
+      <img src="林勇_表情_愤怒.jpg" alt="愤怒" loading="lazy"><div class="card-info"><div class="card-name">愤怒</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong-expr')">
+      <img src="林勇_表情_压力状态.jpg" alt="压力状态" loading="lazy"><div class="card-info"><div class="card-name">压力状态</div><div class="card-desc">被感染记忆压迫</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'linyong-expr')">
+      <img src="林勇_表情_角色招牌.jpg" alt="角色招牌" loading="lazy"><div class="card-info"><div class="card-name">角色招牌</div><div class="card-desc">最具辨识度的压抑表情</div></div></div>
+  </div>
+
+  <!-- ═══ 小林平时 ═══ -->
+  <div class="cat-divider" id="bible-xiaolin">
+    <div class="line"></div><span class="cat-label">小 林 平 时</span><div class="line"></div>
+  </div>
+  <div class="bible-core">
+    <div class="bible-definition">
+      <strong>24岁 · 植物博物馆年轻馆员</strong><br>
+      工作马甲里穿着印花T恤的年轻馆员。EP01 博物馆之夜的核心受害者：为程雨馨送还相机包时被怨灵木细根攻击，伤口根须钻入皮下，成为第二位被寄生的宿主。<br>
+      关键时刻：萧子期用抑制液控制感染，最终随古树沉寂而摆脱寄生。<br>
+      造型关键词：年轻馆员 · 工作马甲 · 被寄生的创伤 · 恢复后的松弛
+    </div>
+  </div>
+
+  <div id="sec-xiaolin"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 小林平时 · 造型资产（1张）</span><div class="line"></div></div>
+  <div class="card-grid cols-4" id="grid-xiaolin">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin')">
+      <img src="小林平时_背面全身.jpg" alt="背面全身" loading="lazy"><div class="card-info"><div class="card-name">背面全身</div><div class="card-desc">背影视角 · 内搭不可见</div></div></div>
+  </div>
+
+  <div id="sec-xiaolin-face"></div>
+  <div class="section-title"><div class="line"></div><span class="label">📐 小林平时 · 面部资产（7张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-xiaolin-face">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-face')">
+      <img src="小林平时_面部_正面正视.jpg" alt="正面正视" loading="lazy">
+      <div class="card-info"><div class="card-name">正面正视</div><div class="card-desc">标准面部 · 清爽年轻馆员</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-face')">
+      <img src="小林平时_面部_左侧45度.jpg" alt="左侧45度" loading="lazy"><div class="card-info"><div class="card-name">左侧45°</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-face')">
+      <img src="小林平时_面部_右侧45度.jpg" alt="右侧45度" loading="lazy"><div class="card-info"><div class="card-name">右侧45°</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-face')">
+      <img src="小林平时_面部_左侧正侧.jpg" alt="左侧正侧" loading="lazy"><div class="card-info"><div class="card-name">左侧正侧</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-face')">
+      <img src="小林平时_面部_右侧正侧.jpg" alt="右侧正侧" loading="lazy"><div class="card-info"><div class="card-name">右侧正侧</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-face')">
+      <img src="小林平时_面部_仰视角度.jpg" alt="仰视角度" loading="lazy"><div class="card-info"><div class="card-name">仰视角度</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-face')">
+      <img src="小林平时_面部_俯视角度.jpg" alt="俯视角度" loading="lazy"><div class="card-info"><div class="card-name">俯视角度</div></div></div>
+  </div>
+
+  <div id="sec-xiaolin-expr"></div>
+  <div class="section-title"><div class="line"></div><span class="label">😶 小林平时 · 表情资产（12张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-xiaolin-expr">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-expr')">
+      <img src="小林平时_表情_默认状态.jpg" alt="默认状态" loading="lazy"><div class="card-info"><div class="card-name">默认状态</div><div class="card-desc">基准表情 · 松弛年轻</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-expr')">
+      <img src="小林平时_表情_轻微微笑.jpg" alt="轻微微笑" loading="lazy"><div class="card-info"><div class="card-name">轻微微笑</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-expr')">
+      <img src="小林平时_表情_释然.jpg" alt="释然" loading="lazy"><div class="card-info"><div class="card-name">释然</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-expr')">
+      <img src="小林平时_表情_思考.jpg" alt="思考" loading="lazy"><div class="card-info"><div class="card-name">思考</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-expr')">
+      <img src="小林平时_表情_疑惑.jpg" alt="疑惑" loading="lazy"><div class="card-info"><div class="card-name">疑惑</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-expr')">
+      <img src="小林平时_表情_犹豫.jpg" alt="犹豫" loading="lazy"><div class="card-info"><div class="card-name">犹豫</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-expr')">
+      <img src="小林平时_表情_惊讶.jpg" alt="惊讶" loading="lazy"><div class="card-info"><div class="card-name">惊讶</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-expr')">
+      <img src="小林平时_表情_恐惧.jpg" alt="恐惧" loading="lazy"><div class="card-info"><div class="card-name">恐惧</div><div class="card-desc">细根射向后颈的瞬间</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-expr')">
+      <img src="小林平时_表情_悲伤.jpg" alt="悲伤" loading="lazy"><div class="card-info"><div class="card-name">悲伤</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-expr')">
+      <img src="小林平时_表情_愤怒.jpg" alt="愤怒" loading="lazy"><div class="card-info"><div class="card-name">愤怒</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-expr')">
+      <img src="小林平时_表情_压力状态.jpg" alt="压力状态" loading="lazy"><div class="card-info"><div class="card-name">压力状态</div><div class="card-desc">根须钻入皮下的痛苦</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-expr')">
+      <img src="小林平时_表情_角色招牌.jpg" alt="角色招牌" loading="lazy"><div class="card-info"><div class="card-name">角色招牌</div><div class="card-desc">最具辨识度的表情</div></div></div>
+  </div>
+  <!-- 小林平时 · 一致性补充 -->
+  <div id="sec-xiaolin-cons-add"></div>
+  <div class="section-title"><div class="line"></div><span class="label">🔗 小林平时 · 一致性补充（3张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-xiaolin-cons-add">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-cons-add')">
+      <img src="小林平时_一致性_标准三视图.jpg" alt="标准三视图" loading="lazy">
+      <div class="card-info"><div class="card-name">标准三视图</div><div class="card-desc">正/侧/背三视图 · 服装结构锁型</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-cons-add')">
+      <img src="小林平时_一致性_纯服装细节.jpg" alt="纯服装细节" loading="lazy">
+      <div class="card-info"><div class="card-name">纯服装细节</div><div class="card-desc">无人物干扰 · 材质与版型细节</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-cons-add')">
+      <img src="小林平时_一致性_造型定妆_无头手.jpg" alt="造型定妆无头手" loading="lazy">
+      <div class="card-info"><div class="card-name">造型定妆（无头手）</div><div class="card-desc">定妆参考 · 专注服装造型</div></div></div>
+  </div>
+
+  <!-- ═══ 小林平时（感染） ═══ -->
+  <div class="cat-divider" id="bible-xiaolin-infected">
+    <div class="line"></div><span class="cat-label">小 林 平 时 · 感 染 体</span><div class="line"></div>
+  </div>
+  <div class="bible-core">
+    <div class="bible-definition">
+      <strong>24岁 · 植物博物馆年轻馆员 · 怨灵木感染宿主</strong><br>
+      EP01 博物馆之夜第二位被寄生的宿主：为程雨馨送还相机包时被细根射中后颈，伤口根须钻入皮下，暗绿色纹路朝锁骨蔓延，瞳孔浮现树轮纹路。<br>
+      与上方「正常形态」对照：感染后身体被植物节律接管，木纹爬上半张脸，成为渊木意志的延伸。<br>
+      造型关键词：被侵蚀的年轻馆员 · 木质病变 · 木纹爬脸 · 植物接管
+    </div>
+  </div>
+
+  <div id="sec-xiaolin-infected"></div>
+  <div class="section-title"><div class="line"></div><span class="label">👘 小林感染 · 造型资产（5张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-xiaolin-infected">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected')">
+      <img src="小林感染_正面全身.jpg" alt="正面全身" loading="lazy">
+      <div class="card-info"><div class="card-name">正面全身</div><div class="card-desc">感染体标准站姿 · 木纹侵蚀工作马甲</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected')">
+      <img src="小林感染_背面全身.jpg" alt="背面全身" loading="lazy"><div class="card-info"><div class="card-name">背面全身</div><div class="card-desc">背后视角 · 根须渗透痕迹</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected')">
+      <img src="小林感染_侧面全身.jpg" alt="侧面全身" loading="lazy"><div class="card-info"><div class="card-name">侧面全身</div><div class="card-desc">侧面轮廓 · 植物化姿态</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected')">
+      <img src="小林感染_特写细节.jpg" alt="特写细节" loading="lazy">
+      <div class="card-info"><div class="card-name">特写细节</div><div class="card-desc">面部+肩颈 · 根须钻入的伤口</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected')">
+      <img src="小林感染_动态站姿.jpg" alt="动态站姿" loading="lazy">
+      <div class="card-info"><div class="card-name">动态站姿</div><div class="card-desc">被植物节律接管的身体</div></div></div>
+  </div>
+
+  <div id="sec-xiaolin-infected-face"></div>
+  <div class="section-title"><div class="line"></div><span class="label">📐 小林感染 · 面部资产（7张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-xiaolin-infected-face">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected-face')">
+      <img src="小林感染_面部_正面正视.jpg" alt="正面正视" loading="lazy">
+      <div class="card-info"><div class="card-name">正面正视</div><div class="card-desc">感染体面部 · 木纹爬上半张脸</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected-face')">
+      <img src="小林感染_面部_左侧45度.jpg" alt="左侧45度" loading="lazy"><div class="card-info"><div class="card-name">左侧45°</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected-face')">
+      <img src="小林感染_面部_右侧45度.jpg" alt="右侧45度" loading="lazy"><div class="card-info"><div class="card-name">右侧45°</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected-face')">
+      <img src="小林感染_面部_左侧正侧.jpg" alt="左侧正侧" loading="lazy"><div class="card-info"><div class="card-name">左侧正侧</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected-face')">
+      <img src="小林感染_面部_右侧正侧.jpg" alt="右侧正侧" loading="lazy"><div class="card-info"><div class="card-name">右侧正侧</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected-face')">
+      <img src="小林感染_面部_仰视角度.jpg" alt="仰视角度" loading="lazy"><div class="card-info"><div class="card-name">仰视角度</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected-face')">
+      <img src="小林感染_面部_俯视角度.jpg" alt="俯视角度" loading="lazy"><div class="card-info"><div class="card-name">俯视角度</div></div></div>
+  </div>
+
+  <div id="sec-xiaolin-infected-expr"></div>
+  <div class="section-title"><div class="line"></div><span class="label">😶 小林感染 · 表情资产（12张）</span><div class="line"></div></div>
+  <div class="card-grid" id="grid-xiaolin-infected-expr">
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected-expr')">
+      <img src="小林感染_表情_默认状态.jpg" alt="默认状态" loading="lazy"><div class="card-info"><div class="card-name">默认状态</div><div class="card-desc">感染体基准表情</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected-expr')">
+      <img src="小林感染_表情_轻微微笑.jpg" alt="轻微微笑" loading="lazy"><div class="card-info"><div class="card-name">轻微微笑</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected-expr')">
+      <img src="小林感染_表情_释然.jpg" alt="释然" loading="lazy"><div class="card-info"><div class="card-name">释然</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected-expr')">
+      <img src="小林感染_表情_思考.jpg" alt="思考" loading="lazy"><div class="card-info"><div class="card-name">思考</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected-expr')">
+      <img src="小林感染_表情_疑惑.jpg" alt="疑惑" loading="lazy"><div class="card-info"><div class="card-name">疑惑</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected-expr')">
+      <img src="小林感染_表情_犹豫.jpg" alt="犹豫" loading="lazy"><div class="card-info"><div class="card-name">犹豫</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected-expr')">
+      <img src="小林感染_表情_惊讶.jpg" alt="惊讶" loading="lazy"><div class="card-info"><div class="card-name">惊讶</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected-expr')">
+      <img src="小林感染_表情_恐惧.jpg" alt="恐惧" loading="lazy"><div class="card-info"><div class="card-name">恐惧</div><div class="card-desc">意识到自己正在异化</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected-expr')">
+      <img src="小林感染_表情_悲伤.jpg" alt="悲伤" loading="lazy"><div class="card-info"><div class="card-name">悲伤</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected-expr')">
+      <img src="小林感染_表情_愤怒.jpg" alt="愤怒" loading="lazy"><div class="card-info"><div class="card-name">愤怒</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected-expr')">
+      <img src="小林感染_表情_压力状态.jpg" alt="压力状态" loading="lazy"><div class="card-info"><div class="card-name">压力状态</div><div class="card-desc">根须在皮下蔓延的剧痛</div></div></div>
+    <div class="card" onclick="openLightbox(this.querySelector('img'),'xiaolin-infected-expr')">
+      <img src="小林感染_表情_角色招牌.jpg" alt="角色招牌" loading="lazy"><div class="card-info"><div class="card-name">角色招牌</div><div class="card-desc">木纹爬脸 · 最惊悚的表情</div></div></div>
+  </div>
+
+  <!-- ═══ 横向对比 ═══ -->
+  <div class="cat-divider" id="cmp-anchor"><div class="line"></div><span class="cat-label">↔ 横 向 对 比</span><div class="line"></div></div>
+  <div class="view-toggle">
+    <button class="active" onclick="setCmpView('grid')">📐 网格视图</button>
+    <button onclick="setCmpView('row')">📏 行对比视图</button>
+  </div>
+
+  <div id="cmp-fullbody"></div>
+  <div class="section-title"><div class="line"></div><span class="label">🔄 全身造型对比</span><div class="line"></div></div>
+  <div class="cmp-subtitle">按资产类型横向对比：正面全身 · 背面全身 · 侧面全身 · 特写细节 · 动态站姿</div>
+  <div id="cmp-fullbody-grid"></div>
+
+  <div id="cmp-face"></div>
+  <div class="section-title"><div class="line"></div><span class="label">🔄 面部角度对比</span><div class="line"></div></div>
+  <div class="cmp-subtitle">按资产类型横向对比：正面正视 · 左右45° · 正侧 · 仰俯视</div>
+  <div id="cmp-face-grid"></div>
+
+  <div id="cmp-expr"></div>
+  <div class="section-title"><div class="line"></div><span class="label">🔄 表情状态对比</span><div class="line"></div></div>
+  <div class="cmp-subtitle">按资产类型横向对比：默认状态 · 微笑 · 释然 · 思考 · 疑惑 · 犹豫 · 惊讶 · 恐惧 · 悲伤 · 愤怒 · 压力 · 招牌</div>
+  <div id="cmp-expr-grid"></div>
+
+  <div id="cmp-consistency"></div>
+  <div class="section-title"><div class="line"></div><span class="label">🔄 一致性资产对比</span><div class="line"></div></div>
+  <div class="cmp-subtitle">按资产类型横向对比：剪影识别 · 服装材质板 · 脸部细节 · 随身物</div>
+  <div id="cmp-consistency-grid"></div>
+
+  <!-- Footer -->
+  <div class="footer">
+    不思异：本草奇探 · 角色造型与视觉资产图集<br>
+    10 位角色 · 292 张造型已入库 · 萧子期已换新造型4套（故事调性大改）
+  </div>
+
+</div>
+</div>
+
+<!-- ═══ LIGHTBOX ═══ -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox(event)">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <span class="lightbox-nav prev" onclick="navLightbox(-1)">‹</span>
+  <span class="lightbox-nav next" onclick="navLightbox(1)">›</span>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+// ===== Password Gate =====
+(function(){
+  var HASH = "019be397cf10ba2e242d7507db0852b1dcab423c62bd150024ef1333a68136aa";
+  if(sessionStorage.getItem("_pw_ok") === HASH){
+    document.getElementById("pwOverlay").classList.add("hidden");
+    return;
+  }
+  async function sha256(m){var e=new TextEncoder().encode(m);var d=await crypto.subtle.digest("SHA-256",e);return Array.from(new Uint8Array(d)).map(function(b){return b.toString(16).padStart(2,"0")}).join("")}
+  window.checkPassword = function(){
+    var v = document.getElementById("pwInput").value;
+    sha256(v).then(function(h){
+      if(h === HASH){
+        sessionStorage.setItem("_pw_ok", HASH);
+        document.getElementById("pwOverlay").classList.add("hidden");
+        document.getElementById("pwError").style.display = "none";
+      } else {
+        document.getElementById("pwError").style.display = "block";
+        document.getElementById("pwInput").value = "";
+      }
+    });
+  };
+})();
+
+// ===== Bible toggle =====
+function toggleBible(){
+  var d=document.getElementById("bibleDetail"),b=document.getElementById("bibleToggle");
+  if(d.classList.contains("active")){d.classList.remove("active");b.innerHTML="▸ 查阅完整美术圣经"}
+  else{d.classList.add("active");b.innerHTML="▾ 收起美术圣经";d.scrollIntoView({behavior:"smooth",block:"nearest"})}
+}
+
+// ===== Copy bible =====
+function copyBible(){
+  var text = document.getElementById("bibleDetail").innerText;
+  navigator.clipboard.writeText(text).then(function(){
+    var c = document.getElementById("copyConfirm");
+    c.style.display = "inline";
+    setTimeout(function(){c.style.display = "none"}, 2000);
+  });
+}
+
+// ===== Lightbox =====
+var currentImages = [];
+var currentIndex = 0;
+
+function openLightbox(img, groupId){
+  var grid = document.getElementById("grid-" + groupId);
+  if(!grid) return;
+  var imgs = grid.querySelectorAll("img");
+  currentImages = Array.from(imgs).map(function(i){return i.src});
+  currentIndex = currentImages.indexOf(img.src);
+  if(currentIndex < 0) currentIndex = 0;
+  showLightbox();
+}
+
+function showLightbox(){
+  document.getElementById("lightboxImg").src = currentImages[currentIndex];
+  document.getElementById("lightbox").classList.add("active");
+}
+
+function closeLightbox(e){
+  if(e && e.target !== document.getElementById("lightbox") && e.target.tagName !== "IMG") return;
+  document.getElementById("lightbox").classList.remove("active");
+}
+
+function navLightbox(dir){
+  currentIndex = (currentIndex + dir + currentImages.length) % currentImages.length;
+  showLightbox();
+}
+
+document.addEventListener("keydown", function(e){
+  if(!document.getElementById("lightbox").classList.contains("active")) return;
+  if(e.key === "Escape") closeLightbox();
+  if(e.key === "ArrowLeft") navLightbox(-1);
+  if(e.key === "ArrowRight") navLightbox(1);
+});
+
+// ===== Cross-Comparison Builder =====
+var CHAR_KEYS = ['xiaoziqi','chenyuchen','chengyuxin','oldman'];
+var CHAR_NAMES = {'xiaoziqi':'萧子期','chenyuchen':'陈宇晨','chengyuxin':'程雨馨','oldman':'神秘老者'};
+var CATS = {
+  fullbody: {grid:'cmp-fullbody-grid', types:['正面全身','背面全身','侧面全身','特写细节','动态站姿']},
+  face:     {grid:'cmp-face-grid',     types:['正面正视','左侧45°','右侧45°','左侧正侧','右侧正侧','仰视角度','俯视角度']},
+  expr:     {grid:'cmp-expr-grid',     types:['默认状态','轻微微笑','释然','思考','疑惑','犹豫','惊讶','恐惧','悲伤','愤怒','压力状态','角色招牌']},
+  consistency:{grid:'cmp-consistency-grid', types:['剪影识别系统','服装结构与材质板','脸部+眼镜+发型细节','脸部+发型细节','随*物资产']}
+};
+
+function buildComparison(){
+  // Scrape all existing cards
+  var allCards = {};
+  CHAR_KEYS.forEach(function(ck){
+    allCards[ck] = {};
+    ['','-face','-expr','-consistency'].forEach(function(suffix){
+      var gridId = 'grid-' + ck + suffix;
+      var grid = document.getElementById(gridId);
+      if(!grid) return;
+      Array.from(grid.querySelectorAll('.card')).forEach(function(card){
+        if(card.classList.contains('placeholder-card')) return;
+        var name = card.querySelector('.card-name');
+        var img = card.querySelector('img');
+        var desc = card.querySelector('.card-desc');
+        if(!name || !img) return;
+        allCards[ck][name.textContent.trim()] = {
+          src: img.src,
+          alt: img.alt || name.textContent.trim(),
+          desc: desc ? desc.textContent.trim() : ''
+        };
+      });
+    });
+  });
+
+  // Build each category
+  for(var cat in CATS){
+    var cfg = CATS[cat];
+    var container = document.getElementById(cfg.grid);
+    if(!container) continue;
+
+    cfg.types.forEach(function(typeName){
+      // Collect cards for this type from each character
+      var cards = [];
+      CHAR_KEYS.forEach(function(ck){
+        // Fuzzy match
+        var matched = null;
+        for(var cn in allCards[ck]){
+          if(cn === typeName || cn.indexOf(typeName) >= 0 || (typeName.indexOf('*')>=0 && new RegExp(typeName.replace(/\*/g,'.*')).test(cn))){
+            matched = allCards[ck][cn];
+            break;
+          }
+        }
+        if(matched) cards.push({char: ck, charName: CHAR_NAMES[ck], data: matched});
+      });
+      if(cards.length === 0) return;
+
+      var subtitle = document.createElement('div');
+      subtitle.className = 'cmp-subtitle';
+      subtitle.textContent = '▸ ' + typeName + ' （' + cards.length + '个角色）';
+      container.appendChild(subtitle);
+
+      var grid = document.createElement('div');
+      grid.className = 'cmp-grid';
+      cards.forEach(function(c){
+        var card = document.createElement('div');
+        card.className = 'cmp-card';
+        card.onclick = function(){ openCmpLightbox(c.data.src, grid); };
+        card.innerHTML = '<img src="' + c.data.src + '" alt="' + c.data.alt + '" loading="lazy">'+
+          '<div class="cmp-info"><div class="cmp-char">' + c.charName + '</div>'+
+          '<div class="cmp-name">' + (c.data.alt || typeName) + '</div></div>';
+        grid.appendChild(card);
+      });
+      container.appendChild(grid);
+    });
+  }
+}
+
+function openCmpLightbox(src, grid){
+  var imgs = grid.querySelectorAll('img');
+  currentImages = Array.from(imgs).map(function(i){return i.src});
+  currentIndex = currentImages.indexOf(src);
+  if(currentIndex < 0) currentIndex = 0;
+  showLightbox();
+}
+
+var cmpView = 'grid';
+function setCmpView(view){
+  cmpView = view;
+  document.querySelectorAll('.view-toggle button').forEach(function(b){
+    b.classList.toggle('active', b.textContent.indexOf(view==='grid'?'网格':'行')>=0);
+  });
+  document.querySelectorAll('.cmp-grid').forEach(function(g){
+    if(view==='row'){
+      g.style.gridTemplateColumns = 'repeat(' + Math.min(5, g.querySelectorAll('.cmp-card').length) + ', 1fr)';
+      g.style.maxWidth = '100%';
+    } else {
+      g.style.gridTemplateColumns = 'repeat(auto-fill, minmax(280px, 1fr))';
+      g.style.maxWidth = '';
+    }
+  });
+}
+
+// Build on page load
+buildComparison();
+
+// ===== Updated Scroll Spy =====
+var navLinks = document.querySelectorAll(".sidebar-nav a[data-nav]");
+var sectionMap = {
+  "top":"#top",
+  "bible-concept":"#bible-concept",
+  "xiaoziqi":"#sec-xiaoziqi",
+  "xiaoziqi-1":"#sec-xiaoziqi-1",
+  "xiaoziqi-2":"#sec-xiaoziqi-2",
+  "xiaoziqi-3":"#sec-xiaoziqi-3",
+  "xiaoziqi-4":"#sec-xiaoziqi-4",
+  "xiaoziqi-face":"#sec-xiaoziqi-face",
+  "xiaoziqi-expr":"#sec-xiaoziqi-expr",
+  "chenyuchen":"#sec-chenyuchen",
+  "chenyuchen-1":"#sec-chenyuchen-1",
+  "chenyuchen-2":"#sec-chenyuchen-2",
+  "chenyuchen-3":"#sec-chenyuchen-3",
+  "chenyuchen-4":"#sec-chenyuchen-4",
+  "chenyuchen-5":"#sec-chenyuchen-5",
+  "chenyuchen-6":"#sec-chenyuchen-6",
+  "chenyuchen-face":"#sec-chenyuchen-face",
+  "chenyuchen-expr":"#sec-chenyuchen-expr",
+  "chengyuxin":"#sec-chengyuxin",
+  "chengyuxin-1":"#sec-chengyuxin-1",
+  "chengyuxin-2":"#sec-chengyuxin-2",
+  "chengyuxin-3":"#sec-chengyuxin-3",
+  "chengyuxin-4":"#sec-chengyuxin-4",
+  "chengyuxin-face":"#sec-chengyuxin-face",
+  "chengyuxin-expr":"#sec-chengyuxin-expr",
+  "oldman":"#sec-oldman",
+  "hongjie":"#sec-hongjie",
+  "hongjie-expr":"#sec-hongjie-expr",
+  "hongjie-consistency":"#sec-hongjie-consistency",
+  "huangyayue":"#sec-huangyayue",
+  "huangyayue-face":"#sec-huangyayue-face",
+  "huangyayue-expr":"#sec-huangyayue-expr",
+  "huangyayue-normal":"#sec-huangyayue-normal",
+  "huangyayue-normal-face":"#sec-huangyayue-normal-face",
+  "huangyayue-normal-expr":"#sec-huangyayue-normal-expr",
+  "huangyayue-normal-cons":"#sec-huangyayue-normal-cons",
+  "linyong":"#sec-linyong",
+  "linyong-face":"#sec-linyong-face",
+  "linyong-expr":"#sec-linyong-expr",
+  "xiaolin":"#sec-xiaolin",
+  "xiaolin-face":"#sec-xiaolin-face",
+  "xiaolin-expr":"#sec-xiaolin-expr",
+  "xiaolin-cons-add":"#sec-xiaolin-cons-add",
+  "xiaolin-infected":"#sec-xiaolin-infected",
+  "xiaolin-infected-face":"#sec-xiaolin-infected-face",
+  "xiaolin-infected-expr":"#sec-xiaolin-infected-expr",
+  "cmp-fullbody":"#cmp-fullbody",
+  "cmp-face":"#cmp-face",
+  "cmp-expr":"#cmp-expr",
+  "cmp-consistency":"#cmp-consistency"
+};
+
+window.addEventListener("scroll", function(){
+  var scrollPos = window.scrollY + 120;
+  var current = "top";
+  for(var key in sectionMap){
+    var el = document.querySelector(sectionMap[key]);
+    if(el && el.offsetTop <= scrollPos) current = key;
+  }
+  navLinks.forEach(function(a){
+    a.classList.toggle("active", a.getAttribute("data-nav") === current);
+  });
+});
+</script>
+</body>
+</html>
