@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>本草奇探 · NPC FaceBible</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#0a0a14;color:#ede4d4;font-family:"PingFang SC","Noto Serif SC",serif;line-height:1.6}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#0a0a14}
+::-webkit-scrollbar-thumb{background:rgba(160,180,130,.25);border-radius:3px}
+
+.pw-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:#0a0a14;z-index:99999;display:flex;align-items:center;justify-content:center;flex-direction:column}
+.pw-overlay.hidden{display:none}
+.pw-box{text-align:center;padding:60px 40px;border:1px solid rgba(160,180,130,.1);border-radius:8px;background:rgba(255,255,255,.01);max-width:400px}
+.pw-box h2{font-size:28px;color:#c8d8b0;letter-spacing:.15em;margin-bottom:24px;font-weight:400}
+.pw-box input{width:100%;padding:12px 16px;background:rgba(255,255,255,.03);border:1px solid rgba(160,180,130,.2);border-radius:4px;color:#ede4d4;font-size:16px;text-align:center;font-family:inherit;outline:none;letter-spacing:.1em}
+.pw-box input:focus{border-color:rgba(160,200,120,.4)}
+.pw-box .pw-error{color:rgba(220,140,120,.6);font-size:12px;margin-top:12px;display:none}
+
+.sidebar{position:fixed;top:0;left:0;width:180px;height:100vh;background:linear-gradient(180deg,#0d0d1f 0%,#0a0a14 100%);border-right:1px solid rgba(160,180,130,.08);z-index:100;overflow-y:auto;padding-bottom:40px}
+.sidebar-logo{padding:28px 16px 20px;text-align:center}
+.sidebar-logo .title{font-size:15px;font-weight:700;color:#c8d8b0;letter-spacing:.12em}
+.sidebar-logo .sub{font-size:10px;color:rgba(160,180,130,.4);letter-spacing:.12em;margin-top:4px}
+.sidebar-nav{padding:0 12px}
+.sidebar-nav a{display:block;padding:8px 12px;font-size:12px;color:rgba(200,180,150,.5);text-decoration:none;border-radius:4px;transition:all .2s}
+.sidebar-nav a:hover,.sidebar-nav a.active{color:#e0d4b8;background:rgba(160,200,120,.08)}
+.sidebar-nav .nav-major{font-size:10px;color:rgba(160,180,130,.35);letter-spacing:.15em;padding:16px 12px 4px;border-top:1px solid rgba(160,180,130,.06);margin-top:4px}
+
+.main{margin-left:180px;min-height:100vh}
+.hero{padding:50px 0 30px;text-align:center}
+.hero h1{font-size:40px;font-weight:700;color:#c8d8b0;letter-spacing:.18em;text-shadow:0 0 50px rgba(140,180,100,.18)}
+.hero .subtitle{font-size:13px;color:rgba(170,190,140,.45);letter-spacing:.2em;margin-top:8px}
+
+.npc-section{max-width:1200px;margin:40px auto 0;padding:0 24px}
+.npc-section .cat-label{font-size:13px;color:rgba(160,180,130,.3);letter-spacing:.2em;padding:0 0 12px;border-bottom:1px solid rgba(160,180,130,.06);margin-bottom:20px}
+
+.npc-card{background:#111524;border:1px solid rgba(160,180,130,.06);border-radius:4px;margin-bottom:28px;overflow:hidden}
+.npc-card .npc-header{padding:14px 20px;border-bottom:1px solid rgba(160,180,130,.05);display:flex;align-items:center;gap:10px}
+.npc-header .npc-id{font-size:10px;color:rgba(160,180,130,.3);letter-spacing:.08em;background:rgba(160,180,130,.06);padding:3px 10px;border-radius:3px}
+.npc-header .npc-name{font-size:15px;color:#d4c8a8;font-weight:600}
+
+.npc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:16px 20px 20px}
+.npc-grid .ver-col{text-align:center}
+.ver-col .ver-label{font-size:10px;color:rgba(160,180,130,.3);letter-spacing:.08em;margin-bottom:6px}
+.ver-col img{width:100%;display:block;border-radius:2px;cursor:pointer;transition:all .2s;aspect-ratio:3/4;object-fit:cover}
+.ver-col img:hover{transform:scale(1.03);border-color:rgba(160,200,120,.3)}
+.ver-col .img-label{font-size:10px;color:rgba(160,180,130,.25);margin-top:4px}
+
+.lightbox-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.94);z-index:9999;align-items:center;justify-content:center}
+.lightbox-overlay.active{display:flex}
+.lightbox-overlay img{max-width:90vw;max-height:90vh;object-fit:contain}
+.lightbox-close{position:fixed;top:20px;right:30px;font-size:30px;color:rgba(200,180,150,.5);cursor:pointer;z-index:10000}
+.lightbox-close:hover{color:#e0d4b8}
+
+.footer{text-align:center;padding:40px 24px 60px;color:rgba(160,180,130,.25);font-size:11px;letter-spacing:.1em}
+</style>
+</head>
+<body>
+
+<div class="pw-overlay" id="pwOverlay">
+  <div class="pw-box">
+    <h2>本 草 奇 探</h2>
+    <input type="password" id="pwInput" placeholder="请输入访问密码" autofocus onkeydown="if(event.key==='Enter')checkPassword()">
+    <div class="pw-error" id="pwError">密码错误，请重试</div>
+  </div>
+</div>
+
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="title">FaceBible</div>
+    <div class="sub">本草奇探 · EP01 NPC</div>
+  </div>
+  <div class="sidebar-nav" id="sidebarNav"></div>
+</nav>
+
+<div class="main" id="top">
+  <div class="hero">
+    <h1>NPC FaceBible</h1>
+    <div class="subtitle">本草奇探 · EP01 · 群像角色面部与造型参考</div>
+  </div>
+  <div id="content-root"></div>
+  <div class="footer">本草奇探 NPC FaceBible · 13 位群像角色 · 52 张参考图</div>
+</div>
+
+<div class="lightbox-overlay" id="lightbox" onclick="this.classList.remove('active')">
+  <span class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('active')">&times;</span>
+  <img id="lightboxImg" src="">
+</div>
+
+<script>
+(function(){
+  var HASH="019be397cf10ba2e242d7507db0852b1dcab423c62bd150024ef1333a68136aa";
+  if(sessionStorage.getItem("_pw_ok")===HASH){document.getElementById("pwOverlay").classList.add("hidden");return}
+  async function sha256(m){var e=new TextEncoder().encode(m);var d=await crypto.subtle.digest("SHA-256",e);return Array.from(new Uint8Array(d)).map(function(b){return b.toString(16).padStart(2,"0")}).join("")}
+  window.checkPassword=function(){var v=document.getElementById("pwInput").value;sha256(v).then(function(h){if(h===HASH){sessionStorage.setItem("_pw_ok",HASH);document.getElementById("pwOverlay").classList.add("hidden")}else{document.getElementById("pwError").style.display="block";document.getElementById("pwInput").value=""}})}
+})();
+
+var npcs=[
+  {id:"NPC-MUSEUM-001",name:"植物博物馆馆长",cat:"museum",catName:"🏛️ 植物博物馆"},
+  {id:"NPC-MUSEUM-002",name:"年轻讲解员",cat:"museum",catName:"🏛️ 植物博物馆"},
+  {id:"NPC-MUSEUM-003",name:"小男孩游客",cat:"museum",catName:"🏛️ 植物博物馆"},
+  {id:"NPC-MUSEUM-004",name:"小孩家长",cat:"museum",catName:"🏛️ 植物博物馆"},
+  {id:"NPC-MUSEUM-005",name:"夜班保洁",cat:"museum",catName:"🏛️ 植物博物馆"},
+  {id:"NPC-MUSEUM-006",name:"植物养护员",cat:"museum",catName:"🏛️ 植物博物馆"},
+  {id:"NPC-VISITOR-001",name:"年轻女性游客",cat:"visitor",catName:"👥 博物馆游客"},
+  {id:"NPC-VISITOR-002",name:"年轻男性游客",cat:"visitor",catName:"👥 博物馆游客"},
+  {id:"NPC-VISITOR-003",name:"老年植物爱好者",cat:"visitor",catName:"👥 博物馆游客"},
+  {id:"NPC-CAMPUS-001",name:"毕业女生A",cat:"campus",catName:"🎓 美院毕业典礼"},
+  {id:"NPC-CAMPUS-002",name:"毕业女生B",cat:"campus",catName:"🎓 美院毕业典礼"},
+  {id:"NPC-CAMPUS-003",name:"毕业男生A",cat:"campus",catName:"🎓 美院毕业典礼"},
+  {id:"NPC-MYSTERY-001",name:"神秘人",cat:"mystery",catName:"❓ 特殊角色"}
+];
+
+var root=document.getElementById("content-root");
+var nav=document.getElementById("sidebarNav");
+var currentCat=null;
+
+nav.innerHTML='<a href="#top">▸ 页面顶部</a>';
+
+npcs.forEach(function(n,i){
+  if(n.cat!==currentCat){
+    currentCat=n.cat;
+    nav.innerHTML+='<div class="nav-major">'+n.catName+'</div>';
+    root.insertAdjacentHTML("beforeend",
+      '<div class="npc-section" id="sec-'+n.cat+'"><div class="cat-label">'+n.catName+'</div></div>'
+    );
+  }
+  nav.innerHTML+='<a href="#npc-'+i+'">'+n.name+'</a>';
+  
+  var id=n.id+"_"+n.name;
+  var html='<div class="npc-card" id="npc-'+i+'">'+
+    '<div class="npc-header"><span class="npc-id">'+n.id+'</span><span class="npc-name">'+n.name+'</span></div>'+
+    '<div class="npc-grid">'+
+      '<div class="ver-col"><div class="ver-label">版本A · 面部</div><img src="'+id+'_verA_01_face.png" onclick="openLightbox(this.src)" loading="lazy"><div class="img-label">01_面部</div></div>'+
+      '<div class="ver-col"><div class="ver-label">版本A · 全身</div><img src="'+id+'_verA_02_body.png" onclick="openLightbox(this.src)" loading="lazy"><div class="img-label">02_全身</div></div>'+
+      '<div class="ver-col"><div class="ver-label">版本B · 面部</div><img src="'+id+'_verB_01_face.png" onclick="openLightbox(this.src)" loading="lazy"><div class="img-label">01_面部</div></div>'+
+      '<div class="ver-col"><div class="ver-label">版本B · 全身</div><img src="'+id+'_verB_02_body.png" onclick="openLightbox(this.src)" loading="lazy"><div class="img-label">02_全身</div></div>'+
+    '</div></div>';
+  document.querySelector("#sec-"+n.cat).insertAdjacentHTML("beforeend",html);
+});
+
+function openLightbox(src){document.getElementById("lightboxImg").src=src;document.getElementById("lightbox").classList.add("active")}
+document.addEventListener("keydown",function(e){if(e.key==="Escape")document.getElementById("lightbox").classList.remove("active")});
+</script>
+</body>
+</html>
